@@ -22,7 +22,7 @@ module.exports = defineConfig({
 
   // Reporter to use
   reporter: [
-    ['html', { outputFolder: '_tests/report' }],
+    ['html', { outputFolder: '_tests/report', open: 'never' }],
     ['list']
   ],
 
@@ -30,6 +30,11 @@ module.exports = defineConfig({
   use: {
     // Base URL for the local server (using uncommon port to avoid conflicts)
     baseURL: 'http://localhost:9753',
+
+    // Run tests headlessly (don't open browser windows)
+    launchOptions: {
+      headless: true,
+    },
 
     // Collect trace when retrying the failed test
     trace: 'on-first-retry',

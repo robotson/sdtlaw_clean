@@ -2027,45 +2027,11 @@ text-decoration:none;
 display:flex;
 position:relative;
 overflow:visible}
-.hero-viewport .framer-lxsbpu{
-height:min-content;
-min-height:122px;
-overflow:var(--overflow-clip-fallback,clip);
-flex-flow:column;
-flex:none;
-place-content:center space-between;
-align-self:stretch;
-align-items:center;
-width:auto;
-padding:24px 24px 32px;
-display:flex;
-position:relative}
-.hero-viewport .framer-fe8lfz{
-height:min-content;
-overflow:var(--overflow-clip-fallback,clip);
-z-index:1;
-flex-flow:row;
-flex:none;
-place-content:center;
-align-items:center;
-gap:22px;
-width:min-content;
-padding:0;
-text-decoration:none;
-display:flex;
-position:relative}
 .hero-viewport .framer-1f7paiy-container{
 z-index:1;
 flex:none;
 width:83px;
 height:22px;
-position:relative}
-.hero-viewport .framer-1nrirgj,.hero-viewport .framer-s1s7y5{
-white-space:pre;
-z-index:1;
-flex:none;
-width:auto;
-height:auto;
 position:relative}
 .hero-viewport :is(.hero-divider,[data-component="divider"]){
 height:min-content;
@@ -2121,13 +2087,6 @@ height:auto}
 .hero-viewport.hero-variant-phone :is(.brand-tagline-box,[data-component="attorneys-at-law"]){
 white-space:pre;
 width:auto}
-.hero-viewport.hero-variant-phone .framer-lxsbpu{
-align-self:unset;
-min-height:unset;
-order:2;
-width:100%}
-.hero-viewport.hero-variant-phone .framer-fe8lfz{
-flex-direction:column}
 .hero-viewport.hero-variant-phone :is(.hero-divider,[data-component="divider"]){
 order:1;
 width:100%}

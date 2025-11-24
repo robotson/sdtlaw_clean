@@ -435,8 +435,8 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
 
   // Initialize mobile menu
   function initMobileMenu() {
-    const menuToggle = document.querySelector('.framer-1080cat');
-    const menuOverlay = document.querySelector('.framer-lxsbpu');
+    const menuToggle = document.querySelector('.sdt-menu-toggle');
+    const menuOverlay = document.querySelector('.sdt-mobile-menu');
     const menuContainer = document.querySelector('.framer-pqPzZ');
 
     if (!menuToggle || !menuOverlay || !menuContainer) {
@@ -532,8 +532,8 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
 
   // Close mobile menu
   function closeMobileMenu() {
-    const menuToggle = document.querySelector('.framer-1080cat');
-    const menuOverlay = document.querySelector('.framer-lxsbpu');
+    const menuToggle = document.querySelector('.sdt-menu-toggle');
+    const menuOverlay = document.querySelector('.sdt-mobile-menu');
 
     if (!menuToggle || !menuOverlay) return;
 
@@ -608,7 +608,7 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
       if (!targetId) return;
 
       // Check if mobile menu is open (we'll close it, so need to scroll extra)
-      const menuOverlay = document.querySelector('.framer-lxsbpu');
+      const menuOverlay = document.querySelector('.sdt-mobile-menu');
       const isPhone = window.innerWidth < 810;
       const menuWasOpen = menuOverlay && window.getComputedStyle(menuOverlay).display !== 'none';
 

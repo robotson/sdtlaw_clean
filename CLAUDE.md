@@ -10,10 +10,23 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 
 ## Rules
 
+### Test Suite Must Always Pass
+- **ALL tests must pass before any work is considered complete**
+- Failing tests are NEVER acceptable - they indicate broken functionality
+- Do not rationalize, explain away, or defer fixing failing tests
+- Do not suggest "moving forward" with failing tests
+- If tests fail after changes, the changes must be fixed or reverted
+- The test suite is the contract - 48/48 passing is the only acceptable state
+
 ### Always Reference Live Framer
 - When matching Framer behavior, check the actual live Framer app
 - Never guess colors, hover states, or behaviors - verify against the live site
 - The Framer app is the source of truth for visual fidelity
+
+### Development Server Ports
+- **NEVER use common ports** (3000, 8000, 8080, 5000, etc.) for local servers
+- Other development work may be running on these ports simultaneously
+- Use the configured port 9753 (npm run serve) or other uncommon ports (9000+)
 
 ### Code Style
 

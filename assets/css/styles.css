@@ -263,12 +263,58 @@
 
 /* Logo */
 .sdt-logo {
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-mmeduu
+   * Original Framer CSS:
+   *   height: min-content; overflow: var(--overflow-clip-fallback, clip);
+   *   z-index: 1; flex-flow: column; flex: none;
+   *   place-content: flex-start center; align-items: flex-start;
+   *   gap: 0; width: min-content; padding: 0;
+   *   text-decoration: none; display: flex; position: relative;
+   * Also replaces .framer-bb2skg (display: block - overridden by flex)
+   * NOTE: Changed overflow from clip to visible to prevent clipping when nested divs removed
+   */
   display: flex;
   flex-direction: column;
+  flex: none;
+  place-content: flex-start center;
+  align-items: flex-start;
+  gap: 0;
+  height: min-content;
+  width: min-content;
+  padding: 0;
+  overflow: visible;
+  z-index: 1;
+  position: relative;
   text-decoration: none;
 }
 
+/* Phone logo has 2px gap and needs vertical adjustment */
+@media (max-width: 809px) {
+  .sdt-logo {
+    gap: 11.5px;
+    padding-top: 9.5px;
+  }
+}
+
 .sdt-logo__title {
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-1nn1bzv
+   * Desktop: white-space: pre-wrap; word-break: break-word;
+   *   z-index: 1; flex: none; width: 358px; height: 25px; position: relative;
+   * Phone: white-space: pre; width: auto; height: auto;
+   */
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-wrap: break-word;
+  z-index: 1;
+  flex: none;
+  width: 358px;
+  height: 25px;
+  position: relative;
+  margin: 0;
+  /* Typography */
   font-family: var(--font-ui);
   font-size: var(--text-lg);
   font-weight: 700;
@@ -276,19 +322,49 @@
   letter-spacing: -0.02em;
 }
 
-.sdt-logo__title p {
-  font-family: var(--font-ui);
-  font-size: inherit;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-red);
-  margin: 0;
+/* Phone logo title adjustments */
+@media (max-width: 809px) {
+  .sdt-logo__title {
+    white-space: pre;
+    width: auto;
+    height: auto;
+    transform: scaleY(0.99);
+    transform-origin: center top;
+  }
 }
 
 .sdt-logo__subtitle {
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-webw9m
+   * Desktop: white-space: pre-wrap; word-break: break-word;
+   *   z-index: 1; flex: none; width: 358px; height: auto; position: relative;
+   * Phone: white-space: pre; width: auto;
+   */
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-wrap: break-word;
+  z-index: 1;
+  flex: none;
+  width: 358px;
+  height: auto;
+  position: relative;
+  margin: -2px 0 0 0;
+  /* Typography */
   font-family: var(--font-ui);
   font-weight: 500;
   color: var(--color-red);
+}
+
+/* Phone subtitle adjustments */
+@media (max-width: 809px) {
+  .sdt-logo__subtitle {
+    white-space: pre;
+    width: auto;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.2;
+  }
 }
 
 /* Tablet/Desktop get explicit font-size */
@@ -298,31 +374,48 @@
   }
 }
 
-.sdt-logo__subtitle p {
-  font-family: var(--font-ui);
-  font-weight: 500;
-  color: var(--color-red);
-  margin: 0;
-}
 
-@media (min-width: 810px) {
-  .sdt-logo__subtitle p {
-    font-size: 18px;
-  }
-}
 
 /* Desktop Navigation */
 .sdt-nav {
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-16gmx1t
+   */
   display: flex;
-  gap: var(--space-8);
+  flex-flow: row;
+  flex: 1 0 0;
+  place-content: center flex-end;
+  align-items: center;
+  gap: 28px;
+  width: 1px;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
 }
 
 .sdt-nav__link {
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-1963nhc and .framer-1p3lurr
+   * Plus nested container centering from framer-HQbrw/framer-1i4q2nc
+   */
+  display: flex;
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 0;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+  text-decoration: none;
+  /* Semantic styles */
   font-family: var(--font-ui);
   font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-gold);
-  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
@@ -332,23 +425,37 @@
 
 /* Mobile Menu Toggle */
 .sdt-menu-toggle {
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-1080cat
+   */
+  height: var(--framer-aspect-ratio-supported, 24px);
+  flex: none;
+  width: 24px;
+  position: relative;
   /* Framer CSS var for icon color */
   --esondr: var(--color-gold);
 }
 
-/* Nav link text containers */
+/* Nav link text - simplified inline span */
 .sdt-nav__link-text {
-  /* Keeping Framer vars as fallback for now */
-  --extracted-r6o4lv: var(--color-gold);
-  --framer-paragraph-spacing: 0px;
-}
-
-.sdt-nav__link-text p {
+  /* Properties from framer-1t2sq07 */
+  display: block;
+  white-space: pre;
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 0;
+  /* Vertical alignment fix - nudge 1px up to match nested flex centering */
+  transform: translateY(-1px);
+  /* Text styling (moved from p tag) */
   font-family: var(--font-ui);
   font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-gold);
-  margin: 0;
+  /* Framer vars for compatibility */
+  --extracted-r6o4lv: var(--color-gold);
+  --framer-paragraph-spacing: 0px;
 }
 
 /* ==========================================================================
@@ -356,10 +463,90 @@
    ========================================================================== */
 
 .sdt-mobile-menu {
+  /*
+   * Layout - replaces Framer's .framer-lxsbpu
+   * Original Framer CSS:
+   *   height: min-content; min-height: 122px;
+   *   overflow: clip; flex-flow: column; flex: none;
+   *   place-content: center space-between; align-self: stretch;
+   *   align-items: center; width: auto; padding: 24px 24px 32px;
+   * Phone variant:
+   *   align-self: unset; min-height: unset; order: 2; width: 100%;
+   */
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  place-content: center space-between;
+  align-self: stretch;
+  align-items: center;
+  height: min-content;
+  min-height: 122px;
+  width: auto;
+  padding: 24px 24px 32px;
+  overflow: var(--overflow-clip-fallback, clip);
+  position: relative;
+  /* Semantic styles */
   background-color: var(--color-red);
 }
 
+/* Phone mobile menu adjustments */
+@media (max-width: 809px) {
+  .sdt-mobile-menu {
+    align-self: unset;
+    min-height: unset;
+    order: 2;
+    width: 100%;
+  }
+}
+
+.sdt-mobile-menu__links {
+  /*
+   * Layout - replaces Framer's .framer-fe8lfz .framer-bb2skg
+   * Original Framer CSS:
+   *   height: min-content; overflow: clip; z-index: 1;
+   *   flex-flow: row; flex: none; place-content: center;
+   *   align-items: center; gap: 22px; width: min-content;
+   *   padding: 0; text-decoration: none;
+   * Phone variant:
+   *   flex-direction: column;
+   */
+  display: flex;
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 22px;
+  height: min-content;
+  width: min-content;
+  padding: 0;
+  overflow: var(--overflow-clip-fallback, clip);
+  z-index: 1;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Phone mobile menu links - column layout */
+@media (max-width: 809px) {
+  .sdt-mobile-menu__links {
+    flex-direction: column;
+  }
+}
+
 .sdt-mobile-menu__link-text {
+  /*
+   * Layout - replaces Framer's .framer-1nrirgj .framer-s1s7y5
+   * Original Framer CSS:
+   *   white-space: pre; z-index: 1; flex: none;
+   *   width: auto; height: auto; position: relative;
+   */
+  display: block;
+  white-space: pre;
+  flex: none;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  position: relative;
+  /* Framer vars */
   --extracted-r6o4lv: var(--color-bg-primary);
   --framer-paragraph-spacing: 0px;
 }
@@ -370,6 +557,47 @@
   --framer-font-size: 18px;
   --framer-font-weight: 500;
   --framer-text-color: var(--extracted-r6o4lv, var(--color-bg-primary));
+}
+
+/* Header Divider */
+.sdt-header-divider {
+  /*
+   * Layout - replaces Framer's .framer-lh0w9u
+   * Original Framer CSS:
+   *   height: min-content; overflow: clip; flex-flow: row;
+   *   flex: none; place-content: center; align-items: center;
+   *   gap: 0; width: 1200px; padding: 0; display: flex;
+   * Phone variant:
+   *   order: 1; width: 100%;
+   */
+  display: flex;
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 0;
+  height: min-content;
+  width: 1200px;
+  padding: 0;
+  overflow: var(--overflow-clip-fallback, clip);
+  position: relative;
+}
+
+/* Phone divider adjustments */
+@media (max-width: 809px) {
+  .sdt-header-divider {
+    order: 1;
+    width: 100%;
+  }
+}
+
+.sdt-header-divider__graphic {
+  /*
+   * SVG graphic sizing
+   */
+  width: 1220px;
+  height: 2px;
+  position: relative;
 }
 
 /* ==========================================================================
@@ -549,6 +777,8 @@
    FOOTER
    ========================================================================== */
 
+/* TEMPORARILY COMMENTED OUT - Phase 1: Dual-class approach
+ * Will be uncommented in Phase 2 when migrating CSS
 .sdt-footer {
   background-color: var(--color-bg-primary);
   padding: var(--space-12) var(--space-6);
@@ -574,6 +804,7 @@
 .sdt-footer__contact a:hover {
   color: var(--color-gold-light);
 }
+*/
 
 /* ==========================================================================
    UTILITIES
