@@ -7,8 +7,9 @@ const { test, expect } = require('@playwright/test');
  * Tests both current and baseline versions across all breakpoints
  * States tested:
  *   - Hero (page load)
- *   - Menu open (phone only)
  *   - Team section
+ *   - Footer section
+ *   - Menu open (phone only)
  *   - Each attorney bio overlay (Tammy, Heidi, Phyllis)
  */
 
@@ -54,6 +55,24 @@ async function scrollToTeam(page) {
         return;
       }
     }
+  });
+  await page.waitForTimeout(500);
+  return true;
+}
+
+/**
+ * Helper: Scroll to the footer
+ */
+async function scrollToFooter(page) {
+  const footer = await findVisible(page, '.framer-yqh5sq');
+  if (footer) {
+    await footer.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(500);
+    return true;
+  }
+  // Fallback: scroll to bottom
+  await page.evaluate(() => {
+    window.scrollTo(0, document.body.scrollHeight);
   });
   await page.waitForTimeout(500);
   return true;
@@ -124,6 +143,17 @@ test.describe('Current Site', () => {
         fullPage: false,
       });
     });
+
+    test('footer section', async ({ page }) => {
+      await page.goto('/');
+      await page.waitForLoadState('networkidle');
+
+      await scrollToFooter(page);
+
+      await expect(page).toHaveScreenshot('current-footer.png', {
+        fullPage: false,
+      });
+    });
   });
 
   test.describe('Bio Overlays', () => {
@@ -159,7 +189,7 @@ test.describe('Phone Menu', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 
-    const menuToggle = await findVisible(page, '.framer-1080cat');
+    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
     if (menuToggle) {
       await menuToggle.click();
       await page.waitForTimeout(500);
@@ -174,7 +204,7 @@ test.describe('Phone Menu', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 
-    const menuToggle = await findVisible(page, '.framer-1080cat');
+    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
     if (menuToggle) {
       await menuToggle.click();
       await page.waitForTimeout(400);
@@ -221,13 +251,26 @@ test.describe('Baseline Comparison', () => {
     expect(currentScreenshot).toMatchSnapshot('baseline-team.png');
   });
 
+  test('footer matches baseline', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+    await scrollToFooter(page);
+    const currentScreenshot = await page.screenshot();
+
+    await page.goto('/_baseline/');
+    await page.waitForLoadState('networkidle');
+    await scrollToFooter(page);
+
+    expect(currentScreenshot).toMatchSnapshot('baseline-footer.png');
+  });
+
   test('mobile menu matches baseline', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'phone', 'Phone only');
 
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 
-    const menuToggle = await findVisible(page, '.framer-1080cat');
+    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
     if (menuToggle) {
       await menuToggle.click();
       await page.waitForTimeout(500);
@@ -237,7 +280,7 @@ test.describe('Baseline Comparison', () => {
     await page.goto('/_baseline/');
     await page.waitForLoadState('networkidle');
 
-    const baselineMenuToggle = await findVisible(page, '.framer-1080cat');
+    const baselineMenuToggle = await findVisible(page, '.sdt-menu-toggle');
     if (baselineMenuToggle) {
       await baselineMenuToggle.click();
       await page.waitForTimeout(500);
