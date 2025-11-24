@@ -1,0 +1,20 @@
+/**
+ * Component Styles
+ * Reusable UI components
+ */
+
+/* ============================================
+   Bio Card Hover Effect
+   Background darkens from cream to warmer tone
+   ============================================ */
+
+.framer-74g9dq {
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+.framer-74g9dq:hover {
+  background-color: rgb(227, 216, 200) !important;
+}
+
+

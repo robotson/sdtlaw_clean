@@ -1,0 +1,135 @@
+/**
+ * Semantic CSS - Human-readable classes
+ * Generated from Framer export
+ *
+ * This file maps Framer's generated classes to semantic names.
+ * Use this as a reference while refactoring HTML.
+ */
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-red-primary: rgb(193, 43, 32);
+  --color-gold-primary: rgb(126, 104, 62);
+  --color-chocolate: rgb(65, 33, 4);
+  --color-beige-bg: rgb(242, 240, 233);
+  --color-beige-light: rgb(227, 216, 200);
+
+  /* Typography */
+  --font-primary: "Montserrat", "Montserrat Placeholder", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 64px;
+
+  /* Breakpoints */
+  --breakpoint-phone: 809.98px;
+  --breakpoint-tablet: 810px;
+  --breakpoint-desktop: 1200px;
+}
+
+/* ==========================================================================
+   CLASS MAPPING REFERENCE
+   ========================================================================== */
+
+/*
+.framer-qTkKF → .page-container
+.framer-Ay79T → .page-wrapper
+.framer-ehclc9 → .header-container
+.framer-dad09o → .header-content
+.framer-mmeduu → .site-logo
+.framer-1nn1bzv → .logo-title
+.framer-webw9m → .logo-subtitle
+.framer-16gmx1t → .desktop-nav
+.framer-1963nhc → .nav-link
+.framer-pqPzZ → .mobile-menu-container
+.framer-lxsbpu → .mobile-menu-overlay
+.framer-1080cat → .menu-toggle-button
+.framer-5AVC2 → .hamburger-icon
+.framer-IRM4W → .close-icon
+.framer-1it12dd → .hero-section
+.framer-rzm4sv → .hero-image-container
+.framer-cs5ilz → .firm-section
+.framer-dmkocz → .firm-text-lockup
+.framer-10j7ie4 → .section-title
+.framer-1wumfrd → .firm-heading
+.framer-w8nyw → .title-underline
+.framer-665ri7 → .firm-content
+.framer-w7llkz → .firm-body-text
+.framer-19ylmsq → .firm-tagline
+.framer-1jtz9wa → .team-section
+.framer-lfv6cn → .team-text-lockup
+.framer-1jg5cl6 → .team-title
+.framer-1524npc → .team-heading
+.framer-16m2jm3 → .team-title-underline
+.framer-1a4l8rq → .attorney-grid
+.framer-ErKEJ → .attorney-card
+.framer-1t887dn → .card-image-wrapper
+.framer-1c0iclv → .card-image-container
+.framer-19bch5h → .card-image
+.framer-ancc5z → .card-content
+.framer-12k40x8 → .card-name-section
+.framer-1bmsbvg → .card-name
+.framer-1pk6khb → .card-title
+.framer-7d20zd → .card-button-wrapper
+.framer-s7y4j1 → .card-button
+.framer-14g9ucr → .gift-section
+.framer-1lck470 → .gift-container
+.framer-1ckblg → .gift-content
+.framer-xe40vr → .gift-ornament-wrapper
+.framer-xua7vr → .gift-ornament
+.framer-3cuwvs → .gift-text
+.framer-1n3d6h9 → .gift-image
+.framer-yqh5sq → .site-footer
+.framer-1u5c0mf → .footer-logo
+.framer-1vu66e8 → .footer-logo-svg
+.framer-10lqhs2 → .footer-contact-info
+.framer-gr9w02 → .footer-address
+.framer-14dk6if → .footer-phone-fax
+.framer-sek6xn → .footer-email
+.ssr-variant → .responsive-variant
+.hidden-1siuntv → .hidden-phone
+.hidden-1xilv83 → .hidden-tablet
+.hidden-72rtr7 → .hidden-desktop
+.framer-72rtr7 → .desktop-variant
+.framer-1xilv83 → .tablet-variant
+.framer-1siuntv → .phone-variant
+*/
+
+/* ==========================================================================
+   RESPONSIVE HELPERS
+   ========================================================================== */
+
+.hidden-phone {
+  display: none;
+}
+
+@media (min-width: 810px) {
+  .hidden-phone {
+    display: initial;
+  }
+  .hidden-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hidden-tablet {
+    display: initial;
+  }
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   TODO: Extract actual CSS rules from embedded styles
+   ========================================================================== */
+
+/* Next step: Run extract-embedded-css.js to pull out all <style> tag content */

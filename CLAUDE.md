@@ -49,8 +49,51 @@ sdtlaw_clean/
 │   ├── svg/            # Icons and dividers
 │   ├── icons/          # Favicons
 │   └── fonts/          # Local fonts
+├── _baseline/          # Frozen pristine copy for visual regression
+├── _tests/             # Playwright visual regression tests
+├── playwright.config.js
+├── package.json
 └── CLAUDE.md           # This file
 ```
+
+## Visual Regression Testing
+
+Uses Playwright for visual regression testing across all breakpoints.
+
+### Test Coverage
+- **Breakpoints**: Phone (390px), Tablet (900px), Desktop (1400px)
+- **States**: Hero, Team section, Bio overlays (3 attorneys), Phone menu
+- **Functional**: Anchor links, overlay open/close, escape key
+
+### Commands
+
+```bash
+# Install dependencies (first time)
+npm install && npx playwright install chromium
+
+# Run all visual regression tests
+npm test
+
+# Run tests for specific breakpoint
+npm run test:phone
+npm run test:tablet
+npm run test:desktop
+
+# Update snapshots after intentional changes
+npm run test:update
+
+# View HTML test report
+npm run test:report
+
+# Start local server (port 9753)
+npm run serve
+```
+
+### Workflow
+1. Make changes to main site files
+2. Run `npm test` to catch visual regressions
+3. If changes are intentional, run `npm run test:update`
+4. Commit updated snapshots
 
 ## Common Commands
 
@@ -59,5 +102,5 @@ sdtlaw_clean/
 open index.html
 
 # Start local server (if needed for testing)
-npx serve .
+npm run serve
 ```

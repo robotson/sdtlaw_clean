@@ -1,0 +1,402 @@
+/**
+ * Bio Overlay Styles
+ * Styles for the Framer bio overlay markup
+ *
+ * Structure:
+ * - Desktop/Tablet (>=810px): Two-column layout with photo+contact | biography
+ * - Phone (<810px): Single column with buttons at bottom
+ *
+ * The markup is captured from the live Framer app and injected via JS.
+ * These styles supplement the inline styles already in the markup.
+ */
+
+/* ============================================
+   Overlay Container (#overlay)
+   ============================================ */
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+#overlay.is-open {
+  display: block;
+}
+
+/* Portal container - positioned relative to viewport */
+#overlay > [data-framer-portal-id] {
+  position: fixed !important;
+  top: 90px !important; /* Below header */
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  overflow-y: auto;
+}
+
+/* Backdrop for click-outside-to-close */
+#overlay > [data-framer-portal-id] > [aria-hidden="true"] {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* ============================================
+   Dialog Container
+   ============================================ */
+
+/* The dialog wrapper */
+#overlay [role="dialog"] {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+/* ============================================
+   Desktop/Tablet Layout (>=810px)
+   ============================================ */
+
+/* Main container with cream background */
+.framer-1edteoo {
+  background-color: rgb(242, 240, 233) !important;
+  border-radius: 24px 24px 0 0;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 500px;
+  padding-bottom: 40px;
+}
+
+/* Biography wrapper */
+.framer-rop5of {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+/* Profile card (left column) */
+.framer-1k4oklk {
+  position: absolute !important;
+  top: 140px !important;
+  left: 40px !important;
+  width: 280px !important;
+  height: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+/* Photo container */
+.framer-1p8rmjh {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.framer-1pi7at3 {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 506 / 632;
+}
+
+/* Image wrapper - only apply 100% to the outermost container */
+/* NOTE: Do NOT add .framer-DCJfz, .framer-1si2gga, .framer-o0j920 here
+   Their sizes are controlled by framer-overlay.css for proper image cropping */
+.framer-mxqsoo-container {
+  /* Size controlled by framer-overlay.css */
+}
+
+.framer-o0j920 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Contact info section */
+.framer-8siksq {
+  margin-top: 20px;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Email and phone rows */
+.framer-hz73lt,
+.framer-e0xee0 {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 5px;
+}
+
+/* SVG icons in contact rows */
+.framer-vu0rjv,
+.framer-1749sgb {
+  width: 18px !important;
+  height: 18px !important;
+  flex-shrink: 0;
+}
+
+/* Address section */
+.framer-1cexlgh {
+  margin-top: 20px;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Biography section (right column) */
+.framer-1etjeh {
+  position: absolute !important;
+  top: 220px !important;
+  left: 380px !important;
+  right: 40px !important;
+  bottom: auto !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Biography heading */
+.framer-1lwgu3k {
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 20px;
+}
+
+/* Biography text container */
+.framer-1xy1e9l {
+  width: 100% !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.framer-4h32yw {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  bottom: auto !important;
+}
+
+/* Header section (name, title, close button) */
+.framer-1hrcbbx {
+  position: absolute !important;
+  top: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: calc(100% - 80px) !important;
+  max-width: 1040px;
+  height: auto !important;
+}
+
+/* Header inner - name/title and close button */
+.framer-9biryz {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Name and title */
+.framer-wjb9w6 {
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Divider line */
+.framer-17say78 {
+  width: 100% !important;
+  height: 3px !important;
+  margin-top: 15px;
+}
+
+.framer-ovoqie {
+  width: 100% !important;
+}
+
+/* Close button container */
+.framer-a94fu2-container {
+  width: 24px !important;
+  height: 24px !important;
+  cursor: pointer;
+}
+
+/* Close button X icon (uses CSS mask) */
+.framer-fpfecg {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(126, 104, 62);
+  cursor: pointer;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.framer-fpfecg:hover {
+  background-color: rgb(193, 43, 32);
+}
+
+/* ============================================
+   Tablet Layout (810px - 1199px)
+   ============================================ */
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  .framer-1edteoo {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .framer-1k4oklk {
+    top: 100px !important;
+    left: 28px !important;
+    width: 200px !important;
+  }
+
+  .framer-1etjeh {
+    top: 160px !important;
+    left: 260px !important;
+    right: 32px !important;
+  }
+
+  .framer-1hrcbbx {
+    top: 22px !important;
+  }
+}
+
+/* ============================================
+   Phone Layout (<810px)
+   Uses completely different classes!
+   ============================================ */
+
+@media (max-width: 809px) {
+  /* Hide desktop/tablet layout classes */
+  .framer-ymfe32-container,
+  .framer-ie57f3-container,
+  .framer-1oqpj2s-container {
+    display: none !important;
+  }
+
+  /* Show phone layout */
+  .framer-185jkq1 {
+    display: block !important;
+  }
+
+  /* Phone popover container */
+  .framer-1udf3gh {
+    width: 100% !important;
+    padding: 0 20px;
+  }
+
+  /* Phone content wrapper */
+  .framer-nis8ht {
+    background-color: rgb(242, 240, 233);
+    border-radius: 16px 16px 0 0;
+    padding: 20px;
+  }
+
+  /* Contact buttons container */
+  .framer-1utqvcz {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  /* Contact button style */
+  .framer-htz6z {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 20px;
+    border: 1px solid rgb(65, 33, 4) !important;
+    border-radius: 40px !important;
+    background: transparent;
+  }
+
+  /* Bio page section */
+  .framer-1tylomn {
+    transform: none !important;
+    left: auto !important;
+    width: 100% !important;
+  }
+
+  /* Phone header */
+  .framer-q1pkkl {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  /* Phone divider */
+  .framer-1l9pg37 {
+    margin-bottom: 20px;
+  }
+
+  /* Phone biography section */
+  .framer-181u6dr {
+    width: 100% !important;
+  }
+
+  .framer-1t70tm6 {
+    width: 100% !important;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
+
+/* ============================================
+   Text Styles (shared across breakpoints)
+   ============================================ */
+
+/* Name heading - red color */
+.framer-styles-preset-19zukr5 {
+  font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  font-weight: 700;
+  color: rgb(193, 43, 32);
+  margin: 0;
+}
+
+/* Body text */
+.framer-styles-preset-19qfgc8 {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(65, 33, 4);
+  margin: 0 0 16px 0;
+}
+
+.framer-styles-preset-19qfgc8:last-child {
+  margin-bottom: 0;
+}
+
+/* Links */
+.framer-styles-preset-bmzyej {
+  color: rgb(65, 33, 4);
+  text-decoration: underline;
+}
+
+.framer-styles-preset-bmzyej:hover {
+  color: rgb(193, 43, 32);
+}
+
+/* Title style */
+.framer-styles-preset-gxwp0p {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 20px;
+  color: rgb(65, 33, 4);
+  margin: 0;
+}

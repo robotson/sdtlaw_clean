@@ -1,0 +1,28 @@
+{
+  "name": "sdtlaw_clean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:phone": "npx playwright test --project=phone",
+    "test:tablet": "npx playwright test --project=tablet",
+    "test:desktop": "npx playwright test --project=desktop",
+    "test:update": "npx playwright test --update-snapshots",
+    "test:report": "npx playwright show-report _tests/report",
+    "serve": "npx serve . -l 9753"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-robotson:robotson/sdtlaw_clean.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "serve": "^14.2.5"
+  }
+}

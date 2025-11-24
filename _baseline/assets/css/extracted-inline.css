@@ -1,0 +1,394 @@
+/**
+ * Extracted Inline Styles
+ * Auto-generated from inline style="" attributes
+ */
+
+.extracted-1 {
+}
+
+.extracted-2 {
+  width:auto;
+}
+
+.extracted-3 {
+  background-color: rgb(242, 240, 233);
+  max-width: 100%;
+  width: 100%;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  will-change: auto;
+}
+
+.extracted-4 {
+  transform: none;
+  transform-origin: 50% 50% 0px;
+}
+
+.extracted-5 {
+  background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233));
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  will-change: auto;
+}
+
+.extracted-6 {
+  --extracted-r6o4lv: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32));
+  --framer-paragraph-spacing: 0px;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+}
+
+.extracted-7 {
+  --font-selector:RlM7TW9udHNlcnJhdC1ib2xk;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-weight:700;
+  --framer-letter-spacing:-0.02em;
+  --framer-text-color:var(--extracted-r6o4lv, var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32)));
+}
+
+.extracted-8 {
+  --font-selector:RlM7TW9udHNlcnJhdC1tZWRpdW0=;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-weight:500;
+  --framer-text-color:var(--extracted-r6o4lv, var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32)));
+}
+
+.extracted-9 {
+  --esondr: var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62));
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  will-change: auto;
+}
+
+.extracted-10 {
+  background-color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32));
+  transform: none;
+  transform-origin: 50% 50% 0px;
+}
+
+.extracted-11 {
+  --extracted-r6o4lv: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233));
+  --framer-paragraph-spacing: 0px;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+}
+
+.extracted-12 {
+  --font-selector: RlM7TW9udHNlcnJhdC1tZWRpdW0=;
+  --framer-font-family: &quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-size: 18px;
+  --framer-font-weight: 500;
+  --framer-text-color: var(--extracted-r6o4lv, var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233)));
+}
+
+.extracted-13 {
+  image-rendering: pixelated;
+  flex-shrink: 0;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+}
+
+.extracted-14 {
+  width:100%;
+  height:100%;
+  aspect-ratio:inherit;
+}
+
+.extracted-15 {
+  width:100%;
+  height:100%;
+}
+
+.extracted-16 {
+  position:absolute;
+  border-radius:inherit;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+.extracted-17 {
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:inherit;
+  object-position:center;
+  object-fit:cover;
+}
+
+.extracted-18 {
+  transform:none;
+}
+
+.extracted-19 {
+  image-rendering:pixelated;
+  flex-shrink:0;
+  fill:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;
+  name&quot;
+  :&quot;
+  Gold 100&quot;
+  } */;
+  color:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;
+  name&quot;
+  :&quot;
+  Gold 100&quot;
+  } */;
+}
+
+.extracted-20 {
+  background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233));
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.extracted-21 {
+  opacity: 1;
+}
+
+.extracted-22 {
+  transform: none;
+  opacity: 1;
+}
+
+.extracted-23 {
+  --extracted-1eung3n: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, rgb(65, 33, 4));
+  transform: none;
+  opacity: 1;
+}
+
+.extracted-24 {
+  --framer-text-color:var(--extracted-1eung3n, var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, rgb(65, 33, 4)));
+}
+
+.extracted-25 {
+  --1m6trwb: 0;
+  --21h8s6: var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62));
+  --pgex8v: 1.3;
+  opacity: 1;
+}
+
+.extracted-26 {
+  image-rendering:pixelated;
+  flex-shrink:0;
+}
+
+.extracted-27 {
+  --framer-text-alignment:center;
+  --framer-text-color:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62));
+}
+
+.extracted-28 {
+  width:auto;
+  aspect-ratio:1.010498687664042;
+  transform:translate(-50%, -50%);
+}
+
+.extracted-29 {
+  image-rendering:pixelated;
+  flex-shrink:0;
+  fill:var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, rgb(65, 33, 4)) /* {&quot;
+  name&quot;
+  :&quot;
+  Chocolate 100&quot;
+  } */;
+  color:var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, rgb(65, 33, 4)) /* {&quot;
+  name&quot;
+  :&quot;
+  Chocolate 100&quot;
+  } */;
+}
+
+.extracted-30 {
+  --font-selector:R0Y7TW9udHNlcnJhdC1yZWd1bGFy;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-size:13px;
+  --framer-letter-spacing:0.01em;
+  --framer-line-height:18px;
+  --framer-text-alignment:center;
+  --framer-text-color:var(--token-36747696-fd4a-419a-9931-2899770c8e42, rgb(227, 216, 200));
+}
+
+.extracted-31 {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.extracted-32 {
+  --1bd4d3i: rgb(0, 0, 0);
+  --otdjsv: rgb(0, 0, 0);
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+.extracted-33 {
+  position:absolute;
+  transform:scale(0.001);
+}
+
+.extracted-34 {
+  --1bd4d3i: rgb(0, 0, 0);
+  --otdjsv: rgb(0, 0, 0);
+  opacity: 1;
+}
+
+.extracted-35 {
+  mask:linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,1) 100%) add;
+  -webkit-mask:linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,1) 100%) add;
+  border-bottom-left-radius:11px;
+  border-bottom-right-radius:11px;
+  border-top-left-radius:11px;
+  border-top-right-radius:11px;
+  box-shadow:inset 0px 0px 0px 1px rgb(0, 0, 0);
+  opacity:0.06;
+}
+
+.extracted-36 {
+  border-bottom-left-radius:11px;
+  border-bottom-right-radius:11px;
+  border-top-left-radius:11px;
+  border-top-right-radius:11px;
+  box-shadow:inset 0px 0px 0px 1px rgb(0, 0, 0);
+  opacity:0.04;
+}
+
+.extracted-37 {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 0;
+  contain: strict;
+}
+
+.extracted-38 {
+  background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233));
+  max-width: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+.extracted-39 {
+  background-color: rgb(242, 240, 233);
+  opacity: 1;
+}
+
+.extracted-40 {
+  --extracted-r6o4lv: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32));
+  --framer-paragraph-spacing: 0px;
+  transform: none;
+  opacity: 1;
+}
+
+.extracted-41 {
+  --font-selector:RlM7TW9udHNlcnJhdC1ib2xk;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-size:20px;
+  --framer-font-weight:700;
+  --framer-letter-spacing:-0.02em;
+  --framer-text-color:var(--extracted-r6o4lv, var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32)));
+}
+
+.extracted-42 {
+  --font-selector:RlM7TW9udHNlcnJhdC1tZWRpdW0=;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-size:18px;
+  --framer-font-weight:500;
+  --framer-text-color:var(--extracted-r6o4lv, var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32)));
+}
+
+.extracted-43 {
+  --extracted-r6o4lv: var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62));
+  --framer-paragraph-spacing: 0px;
+  transform: none;
+  opacity: 1;
+}
+
+.extracted-44 {
+  --font-selector:RlM7TW9udHNlcnJhdC1tZWRpdW0=;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-size:18px;
+  --framer-font-weight:500;
+  --framer-text-color:var(--extracted-r6o4lv, var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)));
+}
+
+.extracted-45 {
+  image-rendering: pixelated;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.extracted-46 {
+  --font-selector:R0Y7TW9udHNlcnJhdC03MDA=;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-size:28px;
+  --framer-font-weight:700;
+  --framer-letter-spacing:-0.02em;
+  --framer-text-alignment:center;
+  --framer-text-color:var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, rgb(193, 43, 32));
+  --framer-text-transform:uppercase;
+}
+
+.extracted-47 {
+  height:auto;
+  aspect-ratio:1.010498687664042;
+}
+
+.extracted-48 {
+  image-rendering:pixelated;
+  flex-shrink:0;
+  fill:rgba(0,0,0,1);
+  color:rgba(0,0,0,1);
+}
+
+.extracted-49 {
+  --font-selector:R0Y7TW9udHNlcnJhdC1yZWd1bGFy;
+  --framer-font-family:&quot;
+  Montserrat&quot;
+  , &quot;
+  Montserrat Placeholder&quot;
+  , sans-serif;
+  --framer-font-size:11px;
+  --framer-letter-spacing:0.01em;
+  --framer-line-height:15px;
+  --framer-text-color:var(--token-36747696-fd4a-419a-9931-2899770c8e42, rgb(227, 216, 200));
+}
+
+.extracted-50 {
+  transform:translateX(-50%);
+}
+

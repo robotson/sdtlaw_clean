@@ -1,0 +1,29 @@
+/**
+ * Utility Classes
+ * Responsive helpers, visibility toggles
+ */
+
+
+
+/* Responsive visibility helpers */
+.hidden-phone {
+  display: none;
+}
+
+@media (min-width: 810px) {
+  .hidden-phone {
+    display: initial;
+  }
+  .hidden-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hidden-tablet {
+    display: initial;
+  }
+  .hidden-desktop {
+    display: none;
+  }
+}
