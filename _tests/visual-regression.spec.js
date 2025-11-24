@@ -221,6 +221,31 @@ test.describe('Baseline Comparison', () => {
     expect(currentScreenshot).toMatchSnapshot('baseline-team.png');
   });
 
+  test('mobile menu matches baseline', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'phone', 'Phone only');
+
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const menuToggle = await findVisible(page, '.framer-1080cat');
+    if (menuToggle) {
+      await menuToggle.click();
+      await page.waitForTimeout(500);
+    }
+    const currentScreenshot = await page.screenshot();
+
+    await page.goto('/_baseline/');
+    await page.waitForLoadState('networkidle');
+
+    const baselineMenuToggle = await findVisible(page, '.framer-1080cat');
+    if (baselineMenuToggle) {
+      await baselineMenuToggle.click();
+      await page.waitForTimeout(500);
+    }
+
+    expect(currentScreenshot).toMatchSnapshot('baseline-menu-open.png');
+  });
+
   for (const attorney of attorneys) {
     test(`${attorney.name} bio matches baseline`, async ({ page }) => {
       await page.goto('/');

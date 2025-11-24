@@ -308,6 +308,27 @@
 }
 
 /* ==========================================================================
+   MOBILE MENU (Phone only)
+   ========================================================================== */
+
+.sdt-mobile-menu {
+  background-color: var(--color-red);
+}
+
+.sdt-mobile-menu__link-text {
+  --extracted-r6o4lv: var(--color-bg-primary);
+  --framer-paragraph-spacing: 0px;
+}
+
+.sdt-mobile-menu__link-text p {
+  --font-selector: RlM7TW9udHNlcnJhdC1tZWRpdW0=;
+  --framer-font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --framer-font-size: 18px;
+  --framer-font-weight: 500;
+  --framer-text-color: var(--extracted-r6o4lv, var(--color-bg-primary));
+}
+
+/* ==========================================================================
    HERO SECTION
    ========================================================================== */
 
