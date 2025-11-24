@@ -230,19 +230,41 @@
   font-weight: 700;
   color: var(--color-red);
   letter-spacing: -0.02em;
-  /* Framer CSS vars inherited by child <p> elements */
-  --extracted-r6o4lv: var(--color-red);
-  --framer-paragraph-spacing: 0px;
+}
+
+.sdt-logo__title p {
+  font-family: var(--font-ui);
+  font-size: inherit;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-red);
+  margin: 0;
 }
 
 .sdt-logo__subtitle {
   font-family: var(--font-ui);
-  font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-red);
-  /* Framer CSS vars inherited by child <p> elements */
-  --extracted-r6o4lv: var(--color-red);
-  --framer-paragraph-spacing: 0px;
+}
+
+/* Tablet/Desktop get explicit font-size */
+@media (min-width: 810px) {
+  .sdt-logo__subtitle {
+    font-size: var(--text-base);
+  }
+}
+
+.sdt-logo__subtitle p {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-red);
+  margin: 0;
+}
+
+@media (min-width: 810px) {
+  .sdt-logo__subtitle p {
+    font-size: 18px;
+  }
 }
 
 /* Desktop Navigation */
@@ -270,10 +292,19 @@
   --esondr: var(--color-gold);
 }
 
-/* Nav link text containers (for Framer CSS var inheritance) */
+/* Nav link text containers */
 .sdt-nav__link-text {
+  /* Keeping Framer vars as fallback for now */
   --extracted-r6o4lv: var(--color-gold);
   --framer-paragraph-spacing: 0px;
+}
+
+.sdt-nav__link-text p {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-gold);
+  margin: 0;
 }
 
 /* ==========================================================================
