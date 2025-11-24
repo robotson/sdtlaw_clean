@@ -777,34 +777,74 @@
    FOOTER
    ========================================================================== */
 
-/* TEMPORARILY COMMENTED OUT - Phase 1: Dual-class approach
- * Will be uncommented in Phase 2 when migrating CSS
-.sdt-footer {
-  background-color: var(--color-bg-primary);
-  padding: var(--space-12) var(--space-6);
-  text-align: center;
+/* ==========================================================================
+   FOOTER - Extracted from inline styles
+   ========================================================================== */
+
+/* Logo SVG styling */
+.sdt-footer__logo-svg {
+  image-rendering: pixelated;
+  flex-shrink: 0;
 }
 
-.sdt-footer__logo {
-  margin-bottom: var(--space-6);
+/* Phone: Chocolate logo */
+@media (max-width: 809px) {
+  .sdt-footer__logo-svg {
+    fill: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, rgb(65, 33, 4));
+    color: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, rgb(65, 33, 4));
+  }
 }
 
-.sdt-footer__contact {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-chocolate);
-  line-height: 1.6;
+/* Tablet/Desktop: Black logo */
+@media (min-width: 810px) {
+  .sdt-footer__logo-svg {
+    fill: rgba(0, 0, 0, 1);
+    color: rgba(0, 0, 0, 1);
+  }
 }
 
-.sdt-footer__contact a {
-  color: var(--color-gold);
-  text-decoration: none;
+/* SVG container */
+.sdt-footer__logo-svg .svgContainer {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: inherit;
 }
 
-.sdt-footer__contact a:hover {
-  color: var(--color-gold-light);
+/* Container transforms */
+.sdt-footer__address,
+.sdt-footer__phone-fax,
+.sdt-footer__email {
+  transform: none;
 }
-*/
+
+/* Paragraph custom properties - Phone */
+@media (max-width: 809px) {
+  .sdt-footer__address p,
+  .sdt-footer__phone-fax p,
+  .sdt-footer__email p {
+    --font-selector: R0Y7TW9udHNlcnJhdC1yZWd1bGFy;
+    --framer-font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+    --framer-font-size: 13px;
+    --framer-letter-spacing: 0.01em;
+    --framer-line-height: 18px;
+    --framer-text-alignment: center;
+    --framer-text-color: var(--token-36747696-fd4a-419a-9931-2899770c8e42, rgb(227, 216, 200));
+  }
+}
+
+/* Paragraph custom properties - Tablet/Desktop */
+@media (min-width: 810px) {
+  .sdt-footer__address p,
+  .sdt-footer__phone-fax p,
+  .sdt-footer__email p {
+    --font-selector: R0Y7TW9udHNlcnJhdC1yZWd1bGFy;
+    --framer-font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+    --framer-font-size: 11px;
+    --framer-letter-spacing: 0.01em;
+    --framer-line-height: 15px;
+    --framer-text-color: var(--token-36747696-fd4a-419a-9931-2899770c8e42, rgb(227, 216, 200));
+  }
+}
 
 /* ==========================================================================
    UTILITIES
