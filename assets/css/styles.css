@@ -203,18 +203,62 @@
    ========================================================================== */
 
 .sdt-header {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-sticky);
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-ehclc9
+   * Original Framer CSS:
+   *   flex-flow: column; flex: none; place-content: center;
+   *   align-self: stretch; align-items: center; gap: 10px;
+   *   width: auto; height: min-content; min-height: 87px;
+   *   padding: 0; display: flex; position: relative; overflow: visible;
+   */
+  display: flex;
+  flex-direction: column;  /* flex-flow: column */
+  flex: none;
+  place-content: center;
+  align-self: stretch;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  height: min-content;
+  min-height: 87px;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+  /* Additional semantic styles */
   background-color: var(--color-bg-primary);
 }
 
 .sdt-header__inner {
+  /*
+   * Layout - replaces Framer's .framer-pqPzZ .framer-dad09o
+   * Original Framer CSS:
+   *   overflow: var(--overflow-clip-fallback, clip); z-index: 1;
+   *   flex-flow: row; flex: none; place-content: center space-between;
+   *   align-items: center; padding: 20px 32px;
+   *   display: flex; position: absolute; inset: 0;
+   */
+  overflow: var(--overflow-clip-fallback, clip);
+  z-index: 1;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;  /* flex-flow: row */
+  flex: none;
+  place-content: center space-between;
   align-items: center;
-  padding: var(--space-4) var(--space-6);
+  padding: 20px 32px;
+  position: absolute;
+  inset: 0;
+  /* Additional semantic styles */
   background-color: var(--color-bg-primary);
+}
+
+/* Phone header adjustments */
+@media (max-width: 809px) {
+  .sdt-header__inner {
+    padding: 16px;
+    /* Framer uses different padding/alignment for phone */
+    align-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 /* Logo */
