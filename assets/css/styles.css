@@ -229,6 +229,9 @@
   font-weight: 700;
   color: var(--color-red);
   letter-spacing: -0.02em;
+  /* Framer CSS vars inherited by child <p> elements */
+  --extracted-r6o4lv: var(--color-red);
+  --framer-paragraph-spacing: 0px;
 }
 
 .sdt-logo__subtitle {
@@ -236,6 +239,9 @@
   font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-red);
+  /* Framer CSS vars inherited by child <p> elements */
+  --extracted-r6o4lv: var(--color-red);
+  --framer-paragraph-spacing: 0px;
 }
 
 /* Desktop Navigation */
