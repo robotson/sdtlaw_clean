@@ -214,6 +214,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--space-4) var(--space-6);
+  background-color: var(--color-bg-primary);
 }
 
 /* Logo */
@@ -264,19 +265,16 @@
 }
 
 /* Mobile Menu Toggle */
-/* Note: sdt-menu-toggle styles are defined but NOT applied yet.
-   Framer's classes handle the hamburger icon display.
-   These semantic styles are placeholders for future use. */
-/*
 .sdt-menu-toggle {
-  width: 24px;
-  height: 24px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
+  /* Framer CSS var for icon color */
+  --esondr: var(--color-gold);
 }
-*/
+
+/* Nav link text containers (for Framer CSS var inheritance) */
+.sdt-nav__link-text {
+  --extracted-r6o4lv: var(--color-gold);
+  --framer-paragraph-spacing: 0px;
+}
 
 /* ==========================================================================
    HERO SECTION
