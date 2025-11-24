@@ -1,0 +1,37 @@
+/**
+ * CSS Custom Properties
+ * Design tokens extracted from Framer
+ */
+
+:root {
+  /* Colors */
+  --color-red-primary: rgb(193, 43, 32);
+  --color-gold-primary: rgb(126, 104, 62);
+  --color-chocolate: rgb(65, 33, 4);
+  --color-beige-bg: rgb(242, 240, 233);
+  --color-beige-light: rgb(227, 216, 200);
+
+  /* Typography */
+  --font-primary: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 64px;
+
+  /* Breakpoints */
+  --breakpoint-phone-max: 809.98px;
+  --breakpoint-tablet-min: 810px;
+  --breakpoint-tablet-max: 1199.98px;
+  --breakpoint-desktop-min: 1200px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}

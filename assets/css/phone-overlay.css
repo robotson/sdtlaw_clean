@@ -1,0 +1,294 @@
+/* Phone Bio Overlay Styles - extracted from Framer */
+/* These styles apply only to the phone bio overlay (< 810px) */
+
+@media (max-width: 809px) {
+  /* Portal container */
+  .bio-portal {
+    width: auto;
+    height: auto;
+  }
+
+  /* Dialog wrapper */
+  .bio-portal .framer-esofaf {
+    display: block;
+    position: relative;
+    width: 380px;
+    height: 852px;
+    overflow: clip;
+    background-color: transparent;
+  }
+
+  /* Main phone container */
+  .bio-portal .framer-185jkq1 {
+    display: block;
+    position: absolute;
+    inset: 0px 17px 19px 18px;
+    width: 345px;
+    height: 833px;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  /* Pop over container */
+  .bio-portal .framer-1udf3gh {
+    display: block;
+    position: absolute;
+    inset: 0px;
+    width: 345px;
+    height: 833px;
+    overflow: visible;
+  }
+
+  /* Rectangle 23 - beige background card */
+  .bio-portal .framer-nis8ht {
+    display: block;
+    position: absolute;
+    inset: 19px 1.5px 74px;
+    width: 342px;
+    height: 740px;
+    background-color: rgb(242, 240, 233);
+    border-radius: 24px;
+    overflow: visible;
+  }
+
+  /* Contact buttons container (at bottom) */
+  .bio-portal .framer-1utqvcz {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 604px 0px 0px;
+    width: 342px;
+    height: 136px;
+    gap: 11px;
+    padding: 16px;
+    overflow: clip;
+  }
+
+  /* Contact buttons wrapper */
+  .bio-portal .framer-mpug57 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 310px;
+    height: 95px;
+    gap: 10px;
+    overflow: clip;
+  }
+
+  /* Email/Phone button containers */
+  .bio-portal .framer-rjug5d-container,
+  .bio-portal .framer-h10esh-container {
+    display: block;
+    position: relative;
+    width: 310px;
+    height: 39px;
+  }
+
+  /* Contact button styling */
+  .bio-portal .framer-htz6z {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 310px;
+    height: 39px;
+    padding: 10px;
+    border-radius: 40px;
+    overflow: clip;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bio-portal .framer-1gcx4ct {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    gap: 10px;
+    padding: 0px 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bio-portal .framer-1v239di {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Contact button text - golden color (from Framer) */
+  .bio-portal .framer-htz6z a {
+    color: rgb(126, 104, 62) !important;
+    text-decoration: none;
+  }
+
+  .bio-portal .framer-htz6z p.framer-text {
+    color: rgb(126, 104, 62) !important;
+  }
+
+  /* Button hover - from Framer: light tan bg, lighter golden text */
+  .bio-portal .framer-htz6z {
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .bio-portal .framer-htz6z:hover {
+    background-color: rgb(219, 211, 197) !important;
+  }
+
+  .bio-portal .framer-htz6z:hover a,
+  .bio-portal .framer-htz6z:hover p.framer-text {
+    color: rgb(181, 158, 116) !important;
+  }
+
+  /* Bio page content area */
+  .bio-portal .framer-1tylomn {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 24px auto auto 50%;
+    transform: translateX(-50%);
+    width: 342px;
+    height: auto;
+    gap: 0;
+  }
+
+  /* Header */
+  .bio-portal .framer-q1pkkl {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 342px;
+    height: auto;
+    gap: 14px;
+    padding: 16px 16px 0px;
+    justify-content: space-between;
+  }
+
+  /* Header text container */
+  .bio-portal .framer-8w1a51 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 257px;
+    gap: 2px;
+    overflow: clip;
+  }
+
+  /* Name container */
+  .bio-portal .framer-1iwl8ez {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 257px;
+    height: 30px;
+  }
+
+  /* Title container */
+  .bio-portal .framer-1iuxll0 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 257px;
+    height: auto;
+  }
+
+  /* Close button */
+  .bio-portal .framer-lg96rc {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 39px;
+    height: 38px;
+    padding: 9px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bio-portal .framer-ppocil-container {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Close icon X */
+  .bio-portal .framer-uGpGz {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bio-portal .framer-fpfecg {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-left: -3px;
+    margin-top: -3px;
+  }
+
+  /* Divider */
+  .bio-portal .framer-1l9pg37 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 342px;
+    height: 23px;
+    gap: 14px;
+    padding: 10px 16px;
+    overflow: clip;
+  }
+
+  .bio-portal .framer-1oxt2pa {
+    display: block;
+    position: relative;
+    width: 310px;
+    height: 3px;
+    flex: 1;
+  }
+
+  .bio-portal .framer-1oxt2pa .svgContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Biography section */
+  .bio-portal .framer-181u6dr {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 342px;
+    height: 525px;
+    gap: 12px;
+    padding: 16px;
+    overflow: hidden;
+  }
+
+  /* Biography title */
+  .bio-portal .framer-mvaie3 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 307px;
+    height: 30px;
+  }
+
+  /* Biography text scroll container */
+  .bio-portal .framer-1t70tm6 {
+    display: block;
+    position: relative;
+    width: 298px;
+    height: 451px;
+    overflow: auto;
+  }
+
+  /* Biography text */
+  .bio-portal .framer-z3ffe3 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 298px;
+    padding: 0px;
+  }
+
+  .bio-portal .framer-z3ffe3 p {
+    margin: 0 0 1em 0;
+  }
+}
