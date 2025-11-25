@@ -13,6 +13,44 @@
  */
 
 /* ==========================================================================
+   GLOBAL HEADER CONTROL
+   Iterative migration: Move header from breakpoint containers to global
+   ========================================================================== */
+
+/* Global header container - initially hidden, will be shown iteratively */
+.sdt-header-global-container {
+  display: none; /* Hidden by default - will enable per breakpoint */
+  position: relative;
+}
+
+/* Fix spacing for global header's mobile menu */
+.sdt-header-global-container .sdt-mobile-menu {
+  place-content: center; /* Remove space-between to match in-container version */
+  min-height: 122px; /* Maintain minimum height */
+}
+
+/* Phone breakpoint */
+@media (max-width: 809px) {
+  .sdt-header-global-container {
+    display: block;
+  }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-header-global-container {
+    display: block;
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1200px) {
+  .sdt-header-global-container {
+    display: block;
+  }
+}
+
+/* ==========================================================================
    CSS CUSTOM PROPERTIES (Design Tokens)
    ========================================================================== */
 
@@ -380,8 +418,9 @@
 .sdt-nav {
   /*
    * Layout - replaces Framer's .framer-pqPzZ .framer-16gmx1t
+   * RESPONSIVE: Hidden on phone, shown on tablet/desktop
    */
-  display: flex;
+  display: none; /* Hidden by default (mobile-first) */
   flex-flow: row;
   flex: 1 0 0;
   place-content: center flex-end;
@@ -392,6 +431,13 @@
   padding: 0;
   position: relative;
   overflow: visible;
+}
+
+/* Show nav on tablet and desktop (>= 810px) */
+@media (min-width: 810px) {
+  .sdt-nav {
+    display: flex;
+  }
 }
 
 .sdt-nav__link {
@@ -427,13 +473,22 @@
 .sdt-menu-toggle {
   /*
    * Layout - replaces Framer's .framer-pqPzZ .framer-1080cat
+   * RESPONSIVE: Shown on phone, hidden on tablet/desktop
    */
+  display: block; /* Shown by default (mobile-first) */
   height: var(--framer-aspect-ratio-supported, 24px);
   flex: none;
   width: 24px;
   position: relative;
   /* Framer CSS var for icon color */
   --esondr: var(--color-gold);
+}
+
+/* Hide menu toggle on tablet and desktop (>= 810px) */
+@media (min-width: 810px) {
+  .sdt-menu-toggle {
+    display: none;
+  }
 }
 
 /* Nav link text - simplified inline span */
