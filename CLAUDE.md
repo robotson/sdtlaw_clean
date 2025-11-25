@@ -11,7 +11,7 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 ### Refactoring Progress
 - ✅ Header - extracted to semantic HTML/CSS, mobile-first responsive
 - ✅ Footer - extracted to semantic HTML/CSS, mobile-first responsive
-- 🔲 Hero section - still Framer markup with triplicated breakpoint containers
+- ✅ Hero section - consolidated to single global element with semantic CSS
 - 🔲 Team section - still Framer markup
 - 🔲 Firm section - still Framer markup
 

@@ -678,11 +678,20 @@
 
 /*
  * Hero section - full-width hero image
- * Replaces Framer's .framer-1it12dd (section container) and .framer-rzm4sv (image container)
- *
- * Current state: Phase 3 - Complete semantic CSS written.
- * Both Framer and semantic classes present; semantic CSS ready to take over.
+ * Consolidated from 3 breakpoint copies into single global element.
  */
+
+/* Global hero container - shown at all breakpoints */
+.sdt-hero-global-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Hide the hero copies inside breakpoint containers */
+.sdt-hero--breakpoint-copy {
+  display: none !important;
+}
 
 /* .sdt-hero - Section container (replaces .framer-qTkKF .framer-1it12dd)
  * Desktop (default): block layout, 90vh height
