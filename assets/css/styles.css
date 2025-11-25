@@ -680,35 +680,93 @@
  * Hero section - full-width hero image
  * Replaces Framer's .framer-1it12dd (section container) and .framer-rzm4sv (image container)
  *
- * Current state: Phase 2 complete (inline styles extracted).
- * Framer CSS still controls layout via .framer-* rules in index.html <style> blocks.
- *
- * To fully replace Framer classes, we'd need responsive rules:
- *
- * Desktop (.framer-1it12dd):
- *   max-width: 1200px; height: 90vh; overflow: clip; z-index: 0;
- *   flex: none; width: 100%; scroll-margin-top: 100px; position: relative;
- *
- * Desktop (.framer-rzm4sv):
- *   aspect-ratio: 1.48193; height: 810px; max-width: 100%; overflow: clip;
- *   flex: none; width: 1200px; position: absolute; top: -1px; left: 50%;
- *   transform: translate(-50%);
- *
- * Tablet: height: min-content; display: flex; .rzm4sv height: 547px, position: relative
- * Phone:  height: min-content; display: flex; .rzm4sv height: 263px, position: relative
- *
- * Due to complexity (different layout modes per breakpoint), keeping Framer classes
- * until full hero consolidation.
+ * Current state: Phase 3 - Complete semantic CSS written.
+ * Both Framer and semantic classes present; semantic CSS ready to take over.
  */
 
+/* .sdt-hero - Section container (replaces .framer-qTkKF .framer-1it12dd)
+ * Desktop (default): block layout, 90vh height
+ * Tablet/Phone: flex layout, min-content height
+ */
 .sdt-hero {
-  /* Framer's .framer-1it12dd handles layout currently - keeping minimal overrides */
+  /* Desktop (default) - matches Framer desktop-first */
+  max-width: 1200px;
+  height: 90vh;
+  overflow: clip;
+  z-index: 0;
+  flex: none;
   width: 100%;
+  scroll-margin-top: 100px;
   position: relative;
 }
 
+/* Tablet: Switch to flex layout */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-hero {
+    flex-flow: row;
+    place-content: center;
+    align-items: center;
+    gap: 10px;
+    height: min-content;
+    padding: 0;
+    display: flex;
+  }
+}
+
+/* Phone: Same flex layout as tablet */
+@media (max-width: 809px) {
+  .sdt-hero {
+    flex-flow: row;
+    place-content: center;
+    align-items: center;
+    gap: 10px;
+    height: min-content;
+    padding: 0;
+    display: flex;
+  }
+}
+
+/* .sdt-hero__image-container - Image wrapper (replaces .framer-qTkKF .framer-rzm4sv)
+ * Desktop (default): absolute positioned, centered
+ * Tablet/Phone: relative positioned
+ *
+ * Note: Uses --framer-aspect-ratio-supported custom property which is set to 'auto'
+ * when aspect-ratio is supported. Fallback heights are for older browsers.
+ */
 .sdt-hero__image-container {
-  /* Framer's .framer-rzm4sv handles this currently */
+  /* Desktop (default) */
+  aspect-ratio: 1.48193;
+  height: var(--framer-aspect-ratio-supported, 810px);
+  max-width: 100%;
+  overflow: clip;
+  flex: none;
+  width: 1200px;
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* Tablet: Reset absolute positioning */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-hero__image-container {
+    height: var(--framer-aspect-ratio-supported, 547px);
+    left: unset;
+    top: unset;
+    transform: unset;
+    position: relative;
+  }
+}
+
+/* Phone: Same as tablet but different height */
+@media (max-width: 809px) {
+  .sdt-hero__image-container {
+    height: var(--framer-aspect-ratio-supported, 263px);
+    left: unset;
+    top: unset;
+    transform: unset;
+    position: relative;
+  }
 }
 
 .sdt-hero__image-wrapper {
