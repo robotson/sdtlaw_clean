@@ -117,3 +117,4 @@ open index.html
 # Start local server (if needed for testing)
 npm run serve
 ```
+- my global todo is, if you are running into visual differences, actually compare what you can see vs what we know is good. also check if it's sub pixel differences, try looking at what side of the diff the pixels are biased on and see if you can nudge elements by sub pixel amounts to get them into place if you have to.

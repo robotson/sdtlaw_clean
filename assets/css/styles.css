@@ -20,13 +20,30 @@
 /* Global header container - initially hidden, will be shown iteratively */
 .sdt-header-global-container {
   display: none; /* Hidden by default - will enable per breakpoint */
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: var(--color-bg-primary);
 }
 
 /* Fix spacing for global header's mobile menu */
 .sdt-header-global-container .sdt-mobile-menu {
   place-content: center; /* Remove space-between to match in-container version */
   min-height: 122px; /* Maintain minimum height */
+}
+
+/* Hide mobile menu on tablet and desktop */
+@media (min-width: 810px) {
+  .sdt-header-global-container .sdt-mobile-menu {
+    display: none;
+  }
+
+  /* Add max-width constraint to center header nav and divider */
+  .sdt-header-global-container .sdt-header__inner,
+  .sdt-header-global-container .sdt-header-divider {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 
 /* Phone breakpoint */
