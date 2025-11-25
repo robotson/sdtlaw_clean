@@ -1039,3 +1039,65 @@
     padding: var(--space-10) var(--space-4);
   }
 }
+
+/* ==========================================================================
+   FOOTER - EXTRACTED FRAMER CSS (Rewritten with semantic selectors)
+   ========================================================================== */
+
+/* Footer text container styling (replaces [data-framer-component-type=RichTextContainer]) */
+.sdt-footer__address,
+.sdt-footer__phone-fax,
+.sdt-footer__email {
+  outline: none;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  display: flex;
+}
+
+/* Footer paragraph reset (replaces .framer-text margin/padding reset) */
+.sdt-footer p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer paragraph main styling (replaces .framer-text with CSS variables) */
+.sdt-footer p {
+  font-family: var(--framer-blockquote-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+  font-style: var(--framer-blockquote-font-style, var(--framer-font-style, normal));
+  font-weight: var(--framer-blockquote-font-weight, var(--framer-font-weight, 400));
+  color: var(--framer-blockquote-text-color, var(--framer-text-color, #000));
+  font-size: calc(var(--framer-blockquote-font-size, var(--framer-font-size, 16px)) * var(--framer-font-size-scale, 1));
+  letter-spacing: var(--framer-blockquote-letter-spacing, var(--framer-letter-spacing, 0));
+  text-transform: var(--framer-blockquote-text-transform, var(--framer-text-transform, none));
+  -webkit-text-decoration-line: var(--framer-blockquote-text-decoration, var(--framer-text-decoration, initial));
+  text-decoration-line: var(--framer-blockquote-text-decoration, var(--framer-text-decoration, initial));
+  -webkit-text-decoration-style: var(--framer-blockquote-text-decoration-style, var(--framer-text-decoration-style, initial));
+  text-decoration-style: var(--framer-blockquote-text-decoration-style, var(--framer-text-decoration-style, initial));
+  -webkit-text-decoration-color: var(--framer-blockquote-text-decoration-color, var(--framer-text-decoration-color, initial));
+  text-decoration-color: var(--framer-blockquote-text-decoration-color, var(--framer-text-decoration-color, initial));
+  text-decoration-thickness: var(--framer-blockquote-text-decoration-thickness, var(--framer-text-decoration-thickness, initial));
+  text-decoration-skip-ink: var(--framer-blockquote-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial));
+  text-underline-offset: var(--framer-blockquote-text-decoration-offset, var(--framer-text-decoration-offset, initial));
+  line-height: var(--framer-blockquote-line-height, var(--framer-line-height, 1.2em));
+  text-align: var(--framer-blockquote-text-alignment, var(--framer-text-alignment, start));
+  -webkit-text-stroke-width: var(--framer-text-stroke-width, initial);
+  -webkit-text-stroke-color: var(--framer-text-stroke-color, initial);
+  -moz-font-feature-settings: var(--framer-font-open-type-features, initial);
+  -webkit-font-feature-settings: var(--framer-font-open-type-features, initial);
+  font-feature-settings: var(--framer-font-open-type-features, initial);
+  font-variation-settings: var(--framer-font-variation-axes, normal);
+  text-wrap: var(--framer-text-wrap-override, var(--framer-text-wrap));
+}
+
+/* Footer paragraph background styling (replaces .framer-text background properties) */
+.sdt-footer p {
+  background-color: var(--framer-blockquote-text-background-color, var(--framer-text-background-color, initial));
+  border-radius: var(--framer-blockquote-text-background-radius, var(--framer-text-background-radius, initial));
+  padding: var(--framer-blockquote-text-background-padding, var(--framer-text-background-padding, initial));
+}
+
+/* Footer SVG styling (replaces .svgContainer svg) */
+.sdt-footer__logo svg {
+  display: block;
+}
