@@ -29,7 +29,7 @@
 /* Fix spacing for global header's mobile menu */
 .sdt-header-global-container .sdt-mobile-menu {
   place-content: center; /* Remove space-between to match in-container version */
-  min-height: 122px; /* Maintain minimum height */
+  display: none; /* Hidden by default - shown by JavaScript when hamburger is clicked */
 }
 
 /* Hide mobile menu on tablet and desktop */
@@ -676,12 +676,39 @@
    HERO SECTION
    ========================================================================== */
 
+/*
+ * Hero section - full-width hero image
+ * Replaces Framer's .framer-1it12dd (section container) and .framer-rzm4sv (image container)
+ *
+ * Current state: Semantic classes added alongside Framer classes.
+ * Framer CSS still controls layout via .framer-* rules in index.html <style> blocks.
+ */
+
 .sdt-hero {
+  /* Framer's .framer-1it12dd handles layout currently - keeping minimal overrides */
   width: 100%;
   position: relative;
 }
 
+.sdt-hero__image-container {
+  /* Framer's .framer-rzm4sv handles this currently */
+}
+
+.sdt-hero__image-wrapper {
+  /*
+   * Currently inline: position:absolute; border-radius:inherit; top:0; right:0; bottom:0; left:0
+   * Will move here when removing inline styles
+   */
+}
+
 .sdt-hero__image {
+  /*
+   * Currently inline: display:block; width:100%; height:100%;
+   *                   border-radius:inherit; object-position:center; object-fit:cover
+   *
+   * These rules from previous work - keeping but noting they may be
+   * overridden by inline styles until we migrate
+   */
   width: 100%;
   height: auto;
   display: block;

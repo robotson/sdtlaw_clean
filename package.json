@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
+    "test": "npx playwright test _tests/current-site.spec.js _tests/baseline.spec.js",
     "test:ui": "npx playwright test --ui",
     "test:phone": "npx playwright test --project=phone",
     "test:tablet": "npx playwright test --project=tablet",
     "test:desktop": "npx playwright test --project=desktop",
-    "test:update": "npx playwright test --update-snapshots",
+    "test:current": "npx playwright test _tests/current-site.spec.js",
+    "test:baseline": "npx playwright test _tests/baseline.spec.js",
+    "test:update": "npx playwright test _tests/current-site.spec.js --update-snapshots",
+    "test:update-baseline": "npx playwright test '_tests/baseline.spec.js' --grep 'Baseline Snapshots' --update-snapshots",
     "test:report": "npx playwright show-report _tests/report",
     "serve": "npx serve . -l 9753"
   },

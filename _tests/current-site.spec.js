@@ -2,15 +2,10 @@
 const { test, expect } = require('@playwright/test');
 
 /**
- * Visual regression tests for SDT Law site
+ * Current site tests - captures the state of the working index.html
  *
- * Tests both current and baseline versions across all breakpoints
- * States tested:
- *   - Hero (page load)
- *   - Team section
- *   - Footer section
- *   - Menu open (phone only)
- *   - Each attorney bio overlay (Tammy, Heidi, Phyllis)
+ * These snapshots represent the "current" state and can be updated
+ * freely during development with: npm run test:update-current
  */
 
 // Attorney data for bio overlay tests
@@ -22,7 +17,6 @@ const attorneys = [
 
 /**
  * Helper: Find and return the first visible element matching selector
- * Needed because the site has duplicate elements for each breakpoint
  */
 async function findVisible(page, selector) {
   const elements = page.locator(selector);
@@ -46,7 +40,6 @@ async function scrollToTeam(page) {
     await page.waitForTimeout(500);
     return true;
   }
-  // Fallback: use JS scroll
   await page.evaluate(() => {
     const teams = document.querySelectorAll('#team');
     for (const team of teams) {
@@ -70,7 +63,6 @@ async function scrollToFooter(page) {
     await page.waitForTimeout(500);
     return true;
   }
-  // Fallback: scroll to bottom
   await page.evaluate(() => {
     window.scrollTo(0, document.body.scrollHeight);
   });
@@ -86,7 +78,6 @@ async function openBioOverlay(page, attorneyId) {
   const card = await findVisible(page, cardSelector);
   if (card) {
     await card.click();
-    // Wait for animation (opacity transition is 300ms, plus content animation 500ms)
     await page.waitForTimeout(1000);
     return true;
   }
@@ -94,10 +85,9 @@ async function openBioOverlay(page, attorneyId) {
 }
 
 /**
- * Helper: Close the bio overlay (handles different mechanisms per breakpoint)
+ * Helper: Close the bio overlay
  */
 async function closeBioOverlay(page) {
-  // Try close button first (phone layout has X button)
   const closeBtn = page.locator('.bio-panel__close');
   if (await closeBtn.isVisible()) {
     await closeBtn.click();
@@ -105,7 +95,6 @@ async function closeBioOverlay(page) {
     return;
   }
 
-  // Try backdrop click (tablet/desktop)
   const backdrop = page.locator('.bio-portal__backdrop');
   if (await backdrop.isVisible()) {
     await backdrop.click();
@@ -113,17 +102,15 @@ async function closeBioOverlay(page) {
     return;
   }
 
-  // Fallback: press Escape
   await page.keyboard.press('Escape');
   await page.waitForTimeout(500);
 }
 
-// Test current version
-test.describe('Current Site', () => {
+test.describe('Current Site Snapshots', () => {
 
   test.describe('Page States', () => {
 
-    test('hero section on load', async ({ page }) => {
+    test('hero section', async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('networkidle');
       await page.waitForTimeout(500);
@@ -136,7 +123,6 @@ test.describe('Current Site', () => {
     test('team section', async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('networkidle');
-
       await scrollToTeam(page);
 
       await expect(page).toHaveScreenshot('current-team.png', {
@@ -147,7 +133,6 @@ test.describe('Current Site', () => {
     test('footer section', async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('networkidle');
-
       await scrollToFooter(page);
 
       await expect(page).toHaveScreenshot('current-footer.png', {
@@ -161,155 +146,43 @@ test.describe('Current Site', () => {
       test(`${attorney.name} bio overlay`, async ({ page }) => {
         await page.goto('/');
         await page.waitForLoadState('networkidle');
-
         await scrollToTeam(page);
         await openBioOverlay(page, attorney.id);
 
-        // Wait for overlay to be attached and have opacity transition complete
         await expect(page.locator('.bio-portal--visible')).toBeAttached();
 
         await expect(page).toHaveScreenshot(`current-bio-${attorney.name.toLowerCase()}.png`, {
           fullPage: false,
         });
 
-        // Close overlay
         await closeBioOverlay(page);
       });
     }
   });
-});
 
-// Phone-only tests (hamburger menu)
-test.describe('Phone Menu', () => {
-  test.beforeEach(async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name !== 'phone', 'Phone only');
-  });
+  test.describe('Phone Menu', () => {
+    test.beforeEach(async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name !== 'phone', 'Phone only');
+    });
 
-  test('hamburger menu open', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
-    if (menuToggle) {
-      await menuToggle.click();
-      await page.waitForTimeout(500);
-
-      await expect(page).toHaveScreenshot('current-menu-open.png', {
-        fullPage: false,
-      });
-    }
-  });
-
-  test('anchor navigation from menu', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
-    if (menuToggle) {
-      await menuToggle.click();
-      await page.waitForTimeout(400);
-
-      const teamLink = await findVisible(page, '.framer-lxsbpu a[href="#team"]');
-      if (teamLink) {
-        await teamLink.click();
-        await page.waitForTimeout(800);
-
-        // Verify scroll happened (team section should be near top)
-        const scrollY = await page.evaluate(() => window.scrollY);
-        expect(scrollY).toBeGreaterThan(100);
-      }
-    }
-  });
-});
-
-// Baseline comparison tests
-test.describe('Baseline Comparison', () => {
-
-  test('hero matches baseline', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(500);
-    const currentScreenshot = await page.screenshot();
-
-    await page.goto('/_baseline/');
-    await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(500);
-
-    expect(currentScreenshot).toMatchSnapshot('baseline-hero.png');
-  });
-
-  test('team section matches baseline', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-    await scrollToTeam(page);
-    const currentScreenshot = await page.screenshot();
-
-    await page.goto('/_baseline/');
-    await page.waitForLoadState('networkidle');
-    await scrollToTeam(page);
-
-    expect(currentScreenshot).toMatchSnapshot('baseline-team.png');
-  });
-
-  test('footer matches baseline', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-    await scrollToFooter(page);
-    const currentScreenshot = await page.screenshot();
-
-    await page.goto('/_baseline/');
-    await page.waitForLoadState('networkidle');
-    await scrollToFooter(page);
-
-    expect(currentScreenshot).toMatchSnapshot('baseline-footer.png');
-  });
-
-  test('mobile menu matches baseline', async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name !== 'phone', 'Phone only');
-
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
-    if (menuToggle) {
-      await menuToggle.click();
-      await page.waitForTimeout(500);
-    }
-    const currentScreenshot = await page.screenshot();
-
-    await page.goto('/_baseline/');
-    await page.waitForLoadState('networkidle');
-
-    const baselineMenuToggle = await findVisible(page, '.sdt-menu-toggle');
-    if (baselineMenuToggle) {
-      await baselineMenuToggle.click();
-      await page.waitForTimeout(500);
-    }
-
-    expect(currentScreenshot).toMatchSnapshot('baseline-menu-open.png');
-  });
-
-  for (const attorney of attorneys) {
-    test(`${attorney.name} bio matches baseline`, async ({ page }) => {
+    test('hamburger menu open', async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('networkidle');
-      await scrollToTeam(page);
-      await openBioOverlay(page, attorney.id);
-      const currentScreenshot = await page.screenshot();
 
-      await closeBioOverlay(page);
+      const menuToggle = await findVisible(page, '.sdt-menu-toggle');
+      if (menuToggle) {
+        await menuToggle.click();
+        await page.waitForTimeout(500);
 
-      await page.goto('/_baseline/');
-      await page.waitForLoadState('networkidle');
-      await scrollToTeam(page);
-      await openBioOverlay(page, attorney.id);
-
-      expect(currentScreenshot).toMatchSnapshot(`baseline-bio-${attorney.name.toLowerCase()}.png`);
+        await expect(page).toHaveScreenshot('current-menu-open.png', {
+          fullPage: false,
+        });
+      }
     });
-  }
+  });
 });
 
-// Functional tests (not just visual)
+// Functional tests (not visual)
 test.describe('Functional Checks', () => {
 
   test('all anchor links navigate correctly', async ({ page }) => {
@@ -324,7 +197,6 @@ test.describe('Functional Checks', () => {
         await link.click();
         await page.waitForTimeout(500);
 
-        // Verify we scrolled
         const scrollY = await page.evaluate(() => window.scrollY);
         expect(scrollY).toBeGreaterThan(50);
       }
@@ -336,7 +208,7 @@ test.describe('Functional Checks', () => {
     await page.waitForLoadState('networkidle');
 
     await scrollToTeam(page);
-    await openBioOverlay(page, '1kq6r0t'); // Tammy
+    await openBioOverlay(page, '1kq6r0t');
 
     await expect(page.locator('.bio-portal--visible')).toBeAttached();
 
@@ -350,7 +222,7 @@ test.describe('Functional Checks', () => {
     await page.waitForLoadState('networkidle');
 
     await scrollToTeam(page);
-    await openBioOverlay(page, '1kq6r0t'); // Tammy
+    await openBioOverlay(page, '1kq6r0t');
 
     await expect(page.locator('.bio-portal--visible')).toBeAttached();
 
@@ -358,5 +230,27 @@ test.describe('Functional Checks', () => {
     await page.waitForTimeout(400);
 
     await expect(page.locator('.bio-portal--visible')).not.toBeAttached();
+  });
+
+  test('anchor navigation from phone menu', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'phone', 'Phone only');
+
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
+    if (menuToggle) {
+      await menuToggle.click();
+      await page.waitForTimeout(400);
+
+      const teamLink = await findVisible(page, '.framer-lxsbpu a[href="#team"]');
+      if (teamLink) {
+        await teamLink.click();
+        await page.waitForTimeout(800);
+
+        const scrollY = await page.evaluate(() => window.scrollY);
+        expect(scrollY).toBeGreaterThan(100);
+      }
+    }
   });
 });
