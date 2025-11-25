@@ -846,6 +846,138 @@
   }
 }
 
+/* Footer layout - Base (Tablet & Desktop >= 810px) */
+@media (min-width: 810px) {
+  .sdt-footer {
+    background-color: var(--token-6111f896-1f09-4da9-bcf3-1c68cd3b13cf, #251201);
+    flex-flow: row;
+    flex: none;
+    place-content: center space-between;
+    align-items: center;
+    width: 100%;
+    height: min-content;
+    padding: 32px;
+    display: flex;
+    position: relative;
+    overflow: visible;
+  }
+
+  .sdt-footer__logo {
+    height: 21px;
+    overflow: var(--overflow-clip-fallback, clip);
+    flex: none;
+    width: 146px;
+    position: relative;
+  }
+
+  .sdt-footer__logo-svg {
+    flex: none;
+    width: 145px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .sdt-footer__contact {
+    background-color: #251201;
+    flex-flow: row;
+    flex: 1 0 0;
+    place-content: flex-start flex-end;
+    align-items: flex-start;
+    gap: 52px;
+    width: 1px;
+    height: min-content;
+    padding: 0;
+    display: flex;
+    position: relative;
+    overflow: visible;
+  }
+
+  .sdt-footer__address,
+  .sdt-footer__phone-fax,
+  .sdt-footer__email {
+    --framer-paragraph-spacing: 0px;
+    white-space: pre;
+    flex: none;
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+}
+
+/* Footer layout - Desktop (>= 1200px) - larger gap */
+@media (min-width: 1200px) {
+  .sdt-footer__contact {
+    gap: 100px;
+  }
+}
+
+/* Footer layout - Phone (< 810px) */
+@media (max-width: 809px) {
+  .sdt-footer {
+    background-color: var(--token-6111f896-1f09-4da9-bcf3-1c68cd3b13cf, #251201);
+    flex-flow: column;
+    flex: none;
+    place-content: center space-between;
+    align-items: center;
+    width: 100%;
+    height: min-content;
+    padding: 32px;
+    display: flex;
+    position: relative;
+    overflow: visible;
+    flex-direction: column;
+  }
+
+  .sdt-footer__logo {
+    flex-flow: column;
+    place-content: center;
+    align-items: center;
+    gap: 0;
+    width: min-content;
+    height: min-content;
+    padding: 28px;
+    display: flex;
+  }
+
+  .sdt-footer__logo-svg {
+    bottom: unset;
+    height: 21px;
+    right: unset;
+    top: unset;
+    position: relative;
+    flex: none;
+    width: 145px;
+  }
+
+  .sdt-footer__contact {
+    background-color: var(--token-6111f896-1f09-4da9-bcf3-1c68cd3b13cf, #251201);
+    flex-direction: column;
+    flex: none;
+    place-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    min-width: 390px;
+    padding: 0 0 24px;
+    display: flex;
+    position: relative;
+    overflow: visible;
+  }
+
+  .sdt-footer__address,
+  .sdt-footer__phone-fax,
+  .sdt-footer__email {
+    --framer-paragraph-spacing: 0px;
+    white-space: pre;
+    flex: none;
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+}
+
 /* ==========================================================================
    UTILITIES
    ========================================================================== */

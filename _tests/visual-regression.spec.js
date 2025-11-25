@@ -64,7 +64,7 @@ async function scrollToTeam(page) {
  * Helper: Scroll to the footer
  */
 async function scrollToFooter(page) {
-  const footer = await findVisible(page, '.framer-yqh5sq');
+  const footer = await findVisible(page, '.sdt-footer');
   if (footer) {
     await footer.scrollIntoViewIfNeeded();
     await page.waitForTimeout(500);
