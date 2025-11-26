@@ -202,6 +202,40 @@
   --framer-text-transform: uppercase;
 }
 
+/* Preset: grvcjq - Tagline (h2) italic
+ * Original: .framer-qE7ir .framer-styles-preset-grvcjq
+ * Used for: "Indians Serving Indians." tagline
+ * Semantic alias: .sdt-tagline
+ */
+.framer-styles-preset-grvcjq:not(.rich-text-wrapper),
+.framer-styles-preset-grvcjq.rich-text-wrapper h2,
+.sdt-tagline {
+  --framer-font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold-italic: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-italic: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 24px;
+  --framer-font-style: italic;
+  --framer-font-style-bold: italic;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 600;
+  --framer-font-weight-bold: 700;
+  --framer-font-weight-bold-italic: 700;
+  --framer-font-weight-italic: 600;
+  --framer-letter-spacing: -.02em;
+  --framer-line-height: 1.2em;
+  --framer-paragraph-spacing: 40px;
+  --framer-text-alignment: start;
+  --framer-text-color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, #c12b20);
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: none;
+}
+
 /* ==========================================================================
    TYPOGRAPHY - Semantic Classes
    ========================================================================== */
