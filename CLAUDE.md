@@ -9,11 +9,18 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 - **This repo**: Clean, deployable static site
 
 ### Refactoring Progress
-- ✅ Header - extracted to semantic HTML/CSS, mobile-first responsive
-- ✅ Footer - extracted to semantic HTML/CSS, mobile-first responsive
-- ✅ Hero section - consolidated to single global element with semantic CSS
+
+**Layout extraction complete:**
+- ✅ Header - consolidated to global element, semantic CSS
+- ✅ Footer - consolidated to global element, semantic CSS
+- ✅ Hero section - consolidated to global element, semantic CSS
+- ✅ Firm section - semantic layout CSS (still in breakpoint containers)
 - 🔲 Team section - still Framer markup
-- 🔲 Firm section - still Framer markup
+
+**Blocking issue for full consolidation:**
+- Framer text presets (`framer-styles-preset-*`) require parent class context (`.framer-Ay79T`, etc.)
+- Sections with text styling can't be extracted from breakpoint containers until typography is migrated
+- See "Typography System Migration" section below
 
 ## Rules
 
@@ -165,3 +172,68 @@ open index.html
 # Start local server (if needed for testing)
 npm run serve
 ```
+
+## Typography System Migration
+
+### The Problem
+
+Framer generates text styling through "style presets" that use CSS custom properties. These presets require parent class context to work:
+
+```css
+/* Example: This preset only works inside .framer-Ay79T */
+.framer-Ay79T .framer-styles-preset-2kmccc h1 {
+  --framer-font-family: "Montserrat", sans-serif;
+  --framer-font-size: 28px;
+  --framer-text-color: #c12b20;
+  /* ... many more properties */
+}
+```
+
+When we extract sections from breakpoint containers, they lose this parent context and text styling breaks.
+
+### Current Framer Typography Classes
+
+| Preset Class | Parent Required | Element | Used For |
+|-------------|-----------------|---------|----------|
+| `framer-styles-preset-2kmccc` | `.framer-Ay79T` | h1 | Section headings (tablet/desktop "our firm", "our team") |
+| `framer-styles-preset-1dbdxg9` | `.framer-rU5N4` | h1 | Section headings (phone variant) |
+| `framer-styles-preset-1gd00jq` | `.framer-ja2YZ` | p | Body text paragraphs |
+| `framer-styles-preset-grvcjq` | `.framer-qE7ir` | h2 | Tagline ("Indians Serving Indians") |
+| `framer-styles-preset-19zukr5` | `.framer-avUKP` | h5 | Bio panel headings |
+| `framer-styles-preset-gxwp0p` | `.framer-mfAtc` | h6 | Photo captions ("Star Quilt...") |
+| `framer-styles-preset-19qfgc8` | `.framer-yNZqP` | p | Bio panel body text |
+| `framer-styles-preset-5gdcdh` | `.framer-QhN6u` | a/span | Navigation links |
+| `framer-styles-preset-1ur8ep5` | `.framer-Yvx1F` | h3 | Attorney names (desktop) |
+| `framer-styles-preset-1054p22` | `.framer-8OqIg` | h3 | Attorney names (tablet/phone) |
+| `framer-styles-preset-tbuoeu` | `.framer-W8HVz` | h2 | Attorney names variant |
+| `framer-styles-preset-te7ga4` | `.framer-5k5uO` | h4 | Attorney titles (desktop) |
+| `framer-styles-preset-1cqgywt` | `.framer-fmga6` | h4 | Attorney titles (tablet/phone) |
+
+### Migration Strategy Options
+
+**Option A: Replace presets with semantic classes**
+1. Audit all `framer-styles-preset-*` usage
+2. Create semantic typography classes (`.sdt-heading-section`, `.sdt-body-text`, etc.)
+3. Write CSS that doesn't depend on parent context
+4. Replace preset classes in HTML with semantic classes
+5. Then extract sections from breakpoint containers
+
+**Option B: Hoist preset styles to global scope**
+1. Copy preset CSS rules and remove parent selector requirement
+2. Add to `styles.css` without `.framer-Ay79T` parent
+3. Preset classes continue to work outside breakpoint containers
+4. Less HTML changes, but keeps Framer naming
+
+**Option C: Hybrid approach**
+1. Create semantic typography system
+2. Map semantic classes to Framer CSS variables (keeps visual fidelity)
+3. Gradually replace in HTML as sections are extracted
+
+### Recommended Approach
+
+Option A (semantic classes) is cleanest long-term but most work.
+
+For incremental progress:
+1. Start with Option B to unblock section extraction
+2. Gradually migrate to Option A as sections are refactored
+3. Eventually remove all `framer-styles-preset-*` classes
