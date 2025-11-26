@@ -22,8 +22,13 @@ module.exports = defineConfig({
 
   // Reporter to use
   reporter: [
-    ['html', { outputFolder: '_tests/report', open: 'never' }],
-    ['list']
+    ['html', { 
+      outputFolder: '_tests/report', 
+      open: 'never',
+      host: 'localhost'
+    }],
+    ['list'],
+    ['json', { outputFile: '_tests/report/results.json' }]
   ],
 
   // Shared settings for all projects

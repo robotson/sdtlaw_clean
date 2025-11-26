@@ -5372,7 +5372,16 @@
           <span class="sdt-logo__title">Swanson, Drobnick &amp; Tousey P.C.</span>
           <span class="sdt-logo__subtitle">Attorneys at Law</span>
         </a>
-        <div class="sdt-menu-toggle"></div>
+        <button class="sdt-menu-toggle" aria-label="Open menu">
+          <!-- Hamburger icon (shown when menu closed) -->
+          <svg class="sdt-menu-toggle__icon sdt-menu-toggle__icon--hamburger" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" fill="currentColor"/>
+          </svg>
+          <!-- Close X icon (shown when menu open) -->
+          <svg class="sdt-menu-toggle__icon sdt-menu-toggle__icon--close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M18.3 5.71a1 1 0 0 0-1.42 0L12 10.59 7.12 5.71a1 1 0 1 0-1.42 1.42L10.59 12l-4.89 4.88a1 1 0 1 0 1.42 1.42L12 13.41l4.88 4.89a1 1 0 0 0 1.42-1.42L13.41 12l4.89-4.88a1 1 0 0 0 0-1.41z" fill="currentColor"/>
+          </svg>
+        </button>
         <div class="sdt-nav" data-framer-name="Links">
           <a class="sdt-nav__link" data-framer-name="Our Firm" href="#firm">
             <span class="sdt-nav__link-text">Our Firm</span>
@@ -5419,6 +5428,35 @@
     </div>
   </div>
 
+  <!-- Global Firm Section (extracted from breakpoint containers) -->
+  <div class="sdt-firm sdt-firm--global" id="firm">
+    <div class="sdt-firm__content">
+      <div class="sdt-firm__title-row">
+        <!-- Phone heading (max-width: 809px) -->
+        <div class="sdt-firm__heading-container sdt-firm__heading-container--phone" data-framer-component-type="RichTextContainer">
+          <h1 class="framer-text sdt-section-heading--phone sdt-firm__heading" data-styles-preset="VmOPAhkf_">our firm</h1>
+        </div>
+        <!-- Tablet/Desktop heading (min-width: 810px) -->
+        <div class="sdt-firm__heading-container sdt-firm__heading-container--desktop" data-framer-component-type="RichTextContainer">
+          <h1 class="framer-text sdt-section-heading sdt-firm__heading" data-styles-preset="F4WpKJnJ8">our firm</h1>
+        </div>
+        <svg class="sdt-firm__line" viewBox="0 0 599 4" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
+        </svg>
+      </div>
+      <div class="sdt-firm__text">
+        <div class="sdt-firm__description" data-framer-component-type="RichTextContainer">
+          <p class="framer-text sdt-body-text" data-styles-preset="aYErQCJLs">Swanson, Drobnick &amp; Tousey P.C. was founded by three Indian women each with a different area of legal expertise and career experience. The firm was envisioned by its founding members while they worked together at a non-profit legal services organization.</p>
+          <p class="framer-text sdt-body-text" data-styles-preset="aYErQCJLs">Together we have over 90 years of combined experience. As a general practice law firm we have represented individuals—Indians and Tribes—in a wide variety of legal matters.</p>
+          <p class="framer-text sdt-body-text" data-styles-preset="aYErQCJLs">We have been privileged to serve the Indian community for over 20 years.</p>
+        </div>
+        <div class="sdt-firm__tagline" data-framer-component-type="RichTextContainer">
+          <h2 class="framer-text sdt-tagline sdt-firm__tagline-text" data-styles-preset="rcsX1KEWr">Indians Serving Indians.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Phone variant (max-width: 809px) -->
   <div class="breakpoint-phone">
 
@@ -5447,11 +5485,9 @@
                   <h1 class="framer-text sdt-section-heading--phone sdt-firm__heading" data-styles-preset="VmOPAhkf_">our firm</h1>
                 </div>
               </div>
-              <div class="sdt-firm__line" aria-hidden="true">
-                <div class="sdt-firm__line-svg"><svg class="extracted-15" viewBox="0 0 599 4" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="#svg1132146038_202"></use>
-                  </svg></div>
-              </div>
+              <svg class="sdt-firm__line" viewBox="0 0 599 4" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
+              </svg>
             </div>
             <div class="sdt-firm__text">
               <div class="sdt-firm__description" data-framer-component-type="RichTextContainer">
@@ -5784,11 +5820,9 @@
                   <h1 class="framer-text sdt-section-heading sdt-firm__heading" data-styles-preset="F4WpKJnJ8">our firm</h1>
                 </div>
               </div>
-              <div class="sdt-firm__line" aria-hidden="true">
-                <div class="sdt-firm__line-svg"><svg class="extracted-15" viewBox="0 0 599 4" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="#svg1132146038_202"></use>
-                  </svg></div>
-              </div>
+              <svg class="sdt-firm__line" viewBox="0 0 599 4" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
+              </svg>
             </div>
             <div class="sdt-firm__text">
               <div class="sdt-firm__description" data-framer-component-type="RichTextContainer">
@@ -5810,7 +5844,7 @@
             <div class="framer-1jg5cl6" data-framer-name="Title">
               <div data-framer-component-type="SVG" data-framer-name="Line 6" parentsize="0" _constraints="[object Object]" rotation="0" shadows="" class="framer-a49rrp hidden-1siuntv" aria-hidden="true" style="image-rendering:pixelated;flex-shrink:0;fill:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */;color:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */">
                 <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit"><svg class="extracted-15" viewBox="0 0 599 4" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="#svg1132146038_202"></use>
+                    <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
                   </svg></div>
               </div>
               <div class="ssr-variant hidden-1siuntv">
@@ -5820,7 +5854,7 @@
               </div>
               <div data-framer-component-type="SVG" data-framer-name="Line 6" parentsize="0" _constraints="[object Object]" rotation="0" shadows="" class="framer-16m2jm3" aria-hidden="true" style="image-rendering:pixelated;flex-shrink:0;fill:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */;color:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */">
                 <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit"><svg class="extracted-15" viewBox="0 0 599 4" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="#svg1132146038_202"></use>
+                    <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
                   </svg></div>
               </div>
             </div>
@@ -6117,11 +6151,9 @@
                   <h1 class="framer-text sdt-section-heading sdt-firm__heading" data-styles-preset="F4WpKJnJ8">our firm</h1>
                 </div>
               </div>
-              <div class="sdt-firm__line" aria-hidden="true">
-                <div class="sdt-firm__line-svg"><svg class="extracted-15" viewBox="0 0 599 4" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="#svg1132146038_202"></use>
-                  </svg></div>
-              </div>
+              <svg class="sdt-firm__line" viewBox="0 0 599 4" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
+              </svg>
             </div>
             <div class="sdt-firm__text">
               <div class="sdt-firm__description" data-framer-component-type="RichTextContainer">
@@ -6143,7 +6175,7 @@
             <div class="framer-1jg5cl6" data-framer-name="Title">
               <div data-framer-component-type="SVG" data-framer-name="Line 6" parentsize="0" _constraints="[object Object]" rotation="0" shadows="" class="framer-a49rrp hidden-1siuntv" aria-hidden="true" style="image-rendering:pixelated;flex-shrink:0;fill:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */;color:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */">
                 <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit"><svg class="extracted-15" viewBox="0 0 599 4" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="#svg1132146038_202"></use>
+                    <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
                   </svg></div>
               </div>
               <div class="ssr-variant hidden-1siuntv">
@@ -6153,7 +6185,7 @@
               </div>
               <div data-framer-component-type="SVG" data-framer-name="Line 6" parentsize="0" _constraints="[object Object]" rotation="0" shadows="" class="framer-16m2jm3" aria-hidden="true" style="image-rendering:pixelated;flex-shrink:0;fill:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */;color:var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) /* {&quot;name&quot;:&quot;Gold 100&quot;} */">
                 <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit"><svg class="extracted-15" viewBox="0 0 599 4" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="#svg1132146038_202"></use>
+                    <line x1="0.000389434" y1="1.21478" x2="597" y2="0.249977" stroke="#412104" stroke-width="0.5"></line>
                   </svg></div>
               </div>
             </div>

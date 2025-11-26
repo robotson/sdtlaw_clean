@@ -237,3 +237,49 @@ For incremental progress:
 1. Start with Option B to unblock section extraction
 2. Gradually migrate to Option A as sections are refactored
 3. Eventually remove all `framer-styles-preset-*` classes
+
+## Post-Mortems & Lessons Learned
+
+### 2024-11-25: Failed Typography Hoisting + Firm Extraction
+
+**What was attempted:**
+1. Hoisted 4 Framer typography presets to global scope in `styles.css` (removing parent class dependencies)
+2. Added global Firm container to HTML (before breakpoint containers)
+3. Added CSS to hide breakpoint Firm copies and show global version
+4. Fixed missing hamburger icon in global header (added CSS mask)
+
+**What went wrong:**
+- Phone tests failed (3 failures) after changes
+- Visual diff showed all content shifted vertically
+- The global Firm section positioning differed from the breakpoint-container version
+- Typography preset hoisting may have had subtle cascade/specificity issues
+
+**Why tests initially seemed to pass after hoisting alone:**
+- We ran tests after hoisting typography but BEFORE extracting Firm to global
+- The hoisted presets were being used by elements still inside breakpoint containers
+- The real breakage came when Firm moved outside those containers
+
+**Key learnings:**
+
+1. **Test after EVERY atomic change** - Don't batch "hoist typography" + "extract to global container". These are separate changes that should be tested independently.
+
+2. **Global extraction is fragile** - Moving sections out of breakpoint containers changes:
+   - Parent selector context (breaks Framer preset selectors)
+   - Document flow and stacking
+   - Inherited styles from breakpoint wrapper elements
+
+3. **The hamburger icon gotcha** - The global header's `.sdt-menu-toggle` was an empty div. Framer's hamburger icon comes from CSS mask on `.framer-5AVC2` class. When we use semantic classes, we need to include the icon styling explicitly.
+
+4. **Chrome vs Chromium rendering** - Playwright uses Chromium, which renders slightly differently than Chrome. Tests can pass in Chromium while visual differences exist in Chrome. Manual QA in actual browsers is still necessary.
+
+5. **Don't update snapshots to make tests pass** - That's "reward hacking". If tests fail, either fix the code or understand why the visual difference is acceptable.
+
+**What to do differently next time:**
+
+1. **One preset at a time** - Hoist a SINGLE typography preset, test, commit. Then the next one. Don't batch 4 presets together.
+2. **Don't combine hoisting with extraction** - Hoisting typography and extracting to global container are separate tasks. Do one, verify, commit. Then the other.
+3. When hoisting typography presets, verify the exact same CSS properties are being set (use browser DevTools computed styles comparison)
+4. For Firm section specifically: the breakpoint copies have complex Framer layout classes that may be providing spacing/layout. Need to audit those before extraction.
+5. Consider keeping Firm section in breakpoint containers until ALL Framer dependencies are removed (typography, layout, spacing)
+
+**Current state:** Changes reverted. Tests pass (67 passed, 8 skipped). Typography system migration strategy documented but not implemented.

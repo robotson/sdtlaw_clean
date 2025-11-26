@@ -88,6 +88,25 @@ async function openBioOverlay(page, attorneyId) {
   return false;
 }
 
+/**
+ * Helper: Navigate to the firm section by clicking the "Our Firm" link
+ */
+async function navigateToFirm(page) {
+  const firmLink = await findVisible(page, 'a[href="#firm"]');
+  if (firmLink) {
+    await firmLink.click();
+    await page.waitForTimeout(800); // Wait for smooth scroll animation
+    // Ensure we're actually at the firm section
+    const firmSection = await findVisible(page, '#firm');
+    if (firmSection) {
+      await firmSection.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(500);
+    }
+    return true;
+  }
+  return false;
+}
+
 test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
 
   test.describe('Page States', () => {
@@ -117,6 +136,18 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
       await scrollToFooter(page);
 
       await expect(page).toHaveScreenshot('baseline-footer.png', { fullPage: false });
+    });
+
+    test('firm section via navigation', async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name === 'phone', 'Desktop and tablet only');
+      
+      await page.goto('/_baseline/');
+      await page.waitForLoadState('networkidle');
+      await page.waitForFunction(() => document.fonts.ready);
+      await page.waitForTimeout(500);
+      await navigateToFirm(page);
+
+      await expect(page).toHaveScreenshot('baseline-firm-navigation.png', { fullPage: false });
     });
   });
 
@@ -187,6 +218,18 @@ test.describe('Current vs Baseline Comparison', () => {
     await scrollToFooter(page);
 
     await expect(page).toHaveScreenshot('baseline-footer.png', { fullPage: false });
+  });
+
+  test('firm section via navigation matches baseline', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === 'phone', 'Desktop and tablet only');
+    
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+    await page.waitForFunction(() => document.fonts.ready);
+    await page.waitForTimeout(500);
+    await navigateToFirm(page);
+
+    await expect(page).toHaveScreenshot('baseline-firm-navigation.png', { fullPage: false });
   });
 
   test('mobile menu matches baseline', async ({ page }, testInfo) => {
