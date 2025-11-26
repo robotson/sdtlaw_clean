@@ -688,11 +688,6 @@
   width: 100%;
 }
 
-/* Hide the hero copies inside breakpoint containers */
-.sdt-hero--breakpoint-copy {
-  display: none !important;
-}
-
 /* .sdt-hero - Section container (replaces .framer-qTkKF .framer-1it12dd)
  * Desktop (default): block layout, 90vh height
  * Tablet/Phone: flex layout, min-content height
