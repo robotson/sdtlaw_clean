@@ -794,6 +794,226 @@
 }
 
 /* ==========================================================================
+   FIRM SECTION
+   ========================================================================== */
+
+/*
+ * Firm section - "Our Firm" text content section
+ * Consolidated from 3 breakpoint copies into single global element.
+ *
+ * Framer class mapping:
+ * - .framer-cs5ilz → .sdt-firm
+ * - .framer-dmkocz → .sdt-firm__content
+ * - .framer-10j7ie4 → .sdt-firm__title-row
+ * - .framer-1wumfrd → .sdt-firm__heading-container
+ * - .framer-w8nyw → .sdt-firm__line
+ * - .framer-665ri7 → .sdt-firm__text
+ * - .framer-w7llkz → .sdt-firm__description
+ * - .framer-19ylmsq → .sdt-firm__tagline
+ */
+
+/* .sdt-firm - Section container (replaces .framer-qTkKF .framer-cs5ilz)
+ * Desktop (default): 100vh height, flex centered
+ * Tablet: min-content height, padded
+ * Phone: min-content height, smaller padding, column layout
+ */
+.sdt-firm {
+  /* Desktop (default) */
+  background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, #f2f0e9);
+  height: 100vh;
+  overflow: var(--overflow-clip-fallback, clip);
+  z-index: 1;
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  scroll-margin-top: 80px;
+  display: flex;
+  position: relative;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-firm {
+    height: min-content;
+    padding: 72px 42px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-firm {
+    flex-direction: column;
+    height: min-content;
+    padding: 16px;
+    scroll-margin-top: 180px;
+  }
+}
+
+/* .sdt-firm__content - Text lockup container (replaces .framer-qTkKF .framer-dmkocz) */
+.sdt-firm__content {
+  /* Desktop (default) */
+  flex-flow: column;
+  flex: 1 0 0;
+  place-content: flex-start;
+  align-items: flex-start;
+  gap: 2px;
+  width: 1px;
+  max-width: 904px;
+  height: min-content;
+  padding: 24px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-firm__content {
+    flex: none;
+    gap: 0;
+    width: 100%;
+    padding: 32px;
+  }
+}
+
+/* .sdt-firm__title-row - Title row with heading + line (replaces .framer-qTkKF .framer-10j7ie4) */
+.sdt-firm__title-row {
+  /* Desktop (default) */
+  flex-flow: row;
+  flex: none;
+  place-content: center flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: min-content;
+  padding: 0 42px 42px 0;
+  display: flex;
+  position: relative;
+  overflow: visible;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-firm__title-row {
+    gap: 16px;
+    padding: 0 0 42px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-firm__title-row {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 0 42px;
+  }
+}
+
+/* .sdt-firm__heading-container - Heading wrapper (replaces .framer-qTkKF .framer-1wumfrd) */
+.sdt-firm__heading-container {
+  --framer-paragraph-spacing: 0px;
+  white-space: pre;
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+  /* Extracted inline style */
+  transform: none;
+}
+
+/* .sdt-firm__heading - H1 heading text */
+.sdt-firm__heading {
+  /* Inherits from framer-styles-preset classes */
+  margin: 0;
+}
+
+/* .sdt-firm__line - Gold divider line SVG (replaces .framer-qTkKF .framer-w8nyw) */
+.sdt-firm__line {
+  /* Desktop (default) */
+  flex: 1 0 0;
+  width: 1px;
+  height: 4px;
+  position: relative;
+  /* Extracted inline styles */
+  image-rendering: pixelated;
+  flex-shrink: 0;
+  fill: var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62));
+  color: var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62));
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-firm__line {
+    z-index: 1;
+    flex: none;
+    width: 294px;
+    height: 5px;
+  }
+}
+
+/* .sdt-firm__line-svg - SVG container inside line */
+.sdt-firm__line-svg {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: inherit;
+}
+
+/* .sdt-firm__text - Text content container (replaces .framer-qTkKF .framer-665ri7) */
+.sdt-firm__text {
+  height: min-content;
+  overflow: var(--overflow-clip-fallback, clip);
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+/* .sdt-firm__description - Paragraph text container (replaces .framer-qTkKF .framer-w7llkz) */
+.sdt-firm__description {
+  --framer-paragraph-spacing: 0px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-wrap: break-word;
+  flex: none;
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* Extracted inline style */
+  transform: none;
+}
+
+/* .sdt-firm__tagline - Tagline container (replaces .framer-qTkKF .framer-19ylmsq) */
+.sdt-firm__tagline {
+  --framer-link-text-color: #09f;
+  --framer-link-text-decoration: underline;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-wrap: break-word;
+  flex: none;
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* Extracted inline style */
+  transform: none;
+}
+
+/* .sdt-firm__tagline-text - H2 tagline text */
+.sdt-firm__tagline-text {
+  /* Inherits from framer-styles-preset classes */
+  margin: 0;
+}
+
+
+/* ==========================================================================
    CONTENT SECTIONS
    ========================================================================== */
 
