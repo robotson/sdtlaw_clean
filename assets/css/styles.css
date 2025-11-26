@@ -236,6 +236,48 @@
   --framer-text-transform: none;
 }
 
+/* Preset: 1dbdxg9 - Section heading (h1) phone variant
+ * Original: .framer-rU5N4 .framer-styles-preset-1dbdxg9
+ * Used for: "our firm", "our team" headings (phone breakpoint container)
+ * Semantic alias: .sdt-section-heading--phone
+ */
+.framer-styles-preset-1dbdxg9:not(.rich-text-wrapper),
+.framer-styles-preset-1dbdxg9.rich-text-wrapper h1,
+.sdt-section-heading--phone {
+  --framer-font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --framer-font-family-bold: "Montserrat", sans-serif;
+  --framer-font-family-bold-italic: "Montserrat", sans-serif;
+  --framer-font-family-italic: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 34px;
+  --framer-font-style: normal;
+  --framer-font-style-bold: normal;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 700;
+  --framer-font-weight-bold: 900;
+  --framer-font-weight-bold-italic: 900;
+  --framer-font-weight-italic: 700;
+  --framer-letter-spacing: -.02em;
+  --framer-line-height: 1.2em;
+  --framer-paragraph-spacing: 0px;
+  --framer-text-alignment: left;
+  --framer-text-color: #c12b20;
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: uppercase;
+}
+
+@media (max-width: 809px) {
+  .framer-styles-preset-1dbdxg9:not(.rich-text-wrapper),
+  .framer-styles-preset-1dbdxg9.rich-text-wrapper h1,
+  .sdt-section-heading--phone {
+    --framer-font-size: 22px;
+  }
+}
+
 /* ==========================================================================
    TYPOGRAPHY - Semantic Classes
    ========================================================================== */
