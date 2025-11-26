@@ -171,9 +171,11 @@
 /* Preset: 2kmccc - Section heading (h1) centered
  * Original: .framer-Ay79T .framer-styles-preset-2kmccc
  * Used for: "our firm", "our team" section headings (tablet/desktop)
+ * Semantic alias: .sdt-section-heading
  */
 .framer-styles-preset-2kmccc:not(.rich-text-wrapper),
-.framer-styles-preset-2kmccc.rich-text-wrapper h1 {
+.framer-styles-preset-2kmccc.rich-text-wrapper h1,
+.sdt-section-heading {
   --framer-font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
   --framer-font-family-bold: "Montserrat", sans-serif;
   --framer-font-family-bold-italic: "Montserrat", sans-serif;
