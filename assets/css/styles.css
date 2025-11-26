@@ -160,7 +160,48 @@
 }
 
 /* ==========================================================================
-   TYPOGRAPHY
+   TYPOGRAPHY - Hoisted Framer Presets
+   ========================================================================== */
+
+/*
+ * Hoisted from Framer's inline CSS to work outside breakpoint containers.
+ * Original required parent context (e.g., .framer-Ay79T).
+ */
+
+/* Preset: 2kmccc - Section heading (h1) centered
+ * Original: .framer-Ay79T .framer-styles-preset-2kmccc
+ * Used for: "our firm", "our team" section headings (tablet/desktop)
+ */
+.framer-styles-preset-2kmccc:not(.rich-text-wrapper),
+.framer-styles-preset-2kmccc.rich-text-wrapper h1 {
+  --framer-font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --framer-font-family-bold: "Montserrat", sans-serif;
+  --framer-font-family-bold-italic: "Montserrat", sans-serif;
+  --framer-font-family-italic: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 28px;
+  --framer-font-style: normal;
+  --framer-font-style-bold: normal;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 700;
+  --framer-font-weight-bold: 900;
+  --framer-font-weight-bold-italic: 900;
+  --framer-font-weight-italic: 700;
+  --framer-letter-spacing: -.02em;
+  --framer-line-height: 1.2em;
+  --framer-paragraph-spacing: 0px;
+  --framer-text-alignment: center;
+  --framer-text-color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, #c12b20);
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: uppercase;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY - Semantic Classes
    ========================================================================== */
 
 /* Headings */
