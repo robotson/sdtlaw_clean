@@ -1187,6 +1187,24 @@
   }
 }
 
+/* .sdt-team__line - Team section divider line SVG (simplified) */
+.sdt-team__line {
+  /* Desktop (default) */
+  flex: none;
+  width: 341px;
+  height: 4px;
+  flex-shrink: 0;
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-team__line {
+    width: 294px;
+  }
+}
+
 /* .sdt-firm__text - Text content container (replaces .framer-qTkKF .framer-665ri7) */
 .sdt-firm__text {
   height: min-content;
