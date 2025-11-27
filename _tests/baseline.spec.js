@@ -149,6 +149,72 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
 
       await expect(page).toHaveScreenshot('baseline-firm-navigation.png', { fullPage: false });
     });
+
+    test('firm section via phone menu navigation', async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name !== 'phone', 'Phone only');
+      
+      await page.goto('/_baseline/');
+      await page.waitForLoadState('networkidle');
+      await page.waitForFunction(() => document.fonts.ready);
+
+      // Open mobile menu
+      const menuToggle = await findVisible(page, '.sdt-menu-toggle, .framer-1080cat');
+      if (menuToggle) {
+        await menuToggle.click();
+        
+        // Wait for menu to be visible
+        try {
+          const menuOverlay = page.locator('.framer-lxsbpu, .sdt-mobile-menu, [data-framer-name="Menu"]').first();
+          await menuOverlay.waitFor({ state: 'visible', timeout: 2000 });
+        } catch (e) {
+          // If menu selector doesn't work, wait for JS to execute
+        }
+        await page.waitForTimeout(300);
+      }
+
+      // Click "Our Firm" link in mobile menu
+      // Baseline uses nested links: spans with data-nested-link="true" inside the menu
+      // The span has href="#firm" and data-nested-link="true"
+      let firmLink = await findVisible(page, '.framer-lxsbpu span[data-nested-link="true"][href="#firm"]');
+      if (!firmLink) {
+        // Fallback to regular anchor if nested link not found
+        firmLink = await findVisible(page, '.framer-lxsbpu a[href="#firm"]');
+      }
+      if (firmLink) {
+        await firmLink.click();
+        
+        // Wait for smooth scroll animation to complete
+        // Wait for scroll position to stabilize (smooth scroll can take 500-1000ms)
+        await page.waitForFunction(() => {
+          return new Promise((resolve) => {
+            let lastScrollY = window.scrollY;
+            let stableCount = 0;
+            const checkStable = () => {
+              const currentScrollY = window.scrollY;
+              if (currentScrollY === lastScrollY) {
+                stableCount++;
+                if (stableCount >= 3) {
+                  resolve(true);
+                  return;
+                }
+              } else {
+                stableCount = 0;
+                lastScrollY = currentScrollY;
+              }
+              requestAnimationFrame(checkStable);
+            };
+            checkStable();
+            // Timeout after 2 seconds
+            setTimeout(() => resolve(true), 2000);
+          });
+        }, { timeout: 3000 });
+        
+        // Additional small delay to ensure rendering is stable
+        await page.waitForTimeout(200);
+      }
+
+      await expect(page).toHaveScreenshot('baseline-firm-navigation-phone-menu.png', { fullPage: false });
+    });
   });
 
   test.describe('Bio Overlays', () => {
@@ -173,10 +239,31 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
       await page.waitForLoadState('networkidle');
       await page.waitForFunction(() => document.fonts.ready);
 
-      const menuToggle = await findVisible(page, '.sdt-menu-toggle');
+      // Baseline uses Framer classes: .framer-1080cat for toggle, .framer-lxsbpu for menu
+      const menuToggle = await findVisible(page, '.sdt-menu-toggle, .framer-1080cat');
       if (menuToggle) {
         await menuToggle.click();
+        
+        // Wait for menu to be visible - baseline uses .framer-lxsbpu
+        try {
+          const menuOverlay = page.locator('.framer-lxsbpu, .sdt-mobile-menu, [data-framer-name="Menu"]').first();
+          await menuOverlay.waitFor({ state: 'visible', timeout: 2000 });
+        } catch (e) {
+          // If menu selector doesn't work, wait for JS to execute
+        }
+        
+        // Wait for any animations to complete (baseline uses same 300ms animation)
         await page.waitForTimeout(500);
+        
+        // Verify menu is actually visible before screenshot
+        const menuVisible = await page.evaluate(() => {
+          const menu = document.querySelector('.framer-lxsbpu, .sdt-mobile-menu, [data-framer-name="Menu"]');
+          return menu && window.getComputedStyle(menu).display !== 'none';
+        });
+        
+        if (!menuVisible) {
+          console.warn('WARNING: Menu may not be visible in baseline - check if Framer JS loaded');
+        }
       }
 
       await expect(page).toHaveScreenshot('baseline-menu-open.png', { fullPage: false });
@@ -232,6 +319,77 @@ test.describe('Current vs Baseline Comparison', () => {
     await expect(page).toHaveScreenshot('baseline-firm-navigation.png', { fullPage: false });
   });
 
+  test('firm section via phone menu navigation matches baseline', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'phone', 'Phone only');
+    
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+    await page.waitForFunction(() => document.fonts.ready);
+
+    // Open mobile menu
+    const menuToggle = await findVisible(page, '.sdt-menu-toggle');
+    if (menuToggle) {
+      await menuToggle.click();
+      
+      // Wait for menu to be visible and animation to complete
+      const menuOverlay = page.locator('.sdt-mobile-menu');
+      await menuOverlay.waitFor({ state: 'visible' });
+      
+      // Wait for animation to complete
+      await page.waitForFunction(() => {
+        const menu = document.querySelector('.sdt-mobile-menu');
+        return menu && menu.classList.contains('is-open') && !menu.classList.contains('menu-opening');
+      }, { timeout: 1000 });
+      
+      await page.waitForTimeout(100);
+    }
+
+    // Click "Our Firm" link in mobile menu
+    const firmLink = await findVisible(page, '.sdt-mobile-menu a[href="#firm"]');
+    if (firmLink) {
+      await firmLink.click();
+      
+      // Wait for smooth scroll animation to complete
+      // Wait for scroll position to stabilize (smooth scroll can take 500-1000ms)
+      await page.waitForFunction(() => {
+        return new Promise((resolve) => {
+          let lastScrollY = window.scrollY;
+          let stableCount = 0;
+          const checkStable = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY === lastScrollY) {
+              stableCount++;
+              if (stableCount >= 3) {
+                resolve(true);
+                return;
+              }
+            } else {
+              stableCount = 0;
+              lastScrollY = currentScrollY;
+            }
+            requestAnimationFrame(checkStable);
+          };
+          checkStable();
+          // Timeout after 2 seconds
+          setTimeout(() => resolve(true), 2000);
+        });
+      }, { timeout: 3000 });
+      
+      // Additional small delay to ensure rendering is stable
+      await page.waitForTimeout(200);
+    }
+
+    await expect(page).toHaveScreenshot('baseline-firm-navigation-phone-menu.png', { fullPage: false });
+  });
+
+  /**
+   * NOTE: This test will fail because we intentionally rewrote the mobile menu
+   * structure (removed Framer dependencies, simplified markup). The baseline
+   * snapshot is from the old Framer version, so visual differences are expected.
+   * 
+   * The test correctly captures the new menu state - the failure indicates
+   * the intentional structural changes we made.
+   */
   test('mobile menu matches baseline', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'phone', 'Phone only');
 
@@ -242,7 +400,19 @@ test.describe('Current vs Baseline Comparison', () => {
     const menuToggle = await findVisible(page, '.sdt-menu-toggle');
     if (menuToggle) {
       await menuToggle.click();
-      await page.waitForTimeout(500);
+      
+      // Wait for menu to be visible and animation to complete
+      const menuOverlay = page.locator('.sdt-mobile-menu');
+      await menuOverlay.waitFor({ state: 'visible' });
+      
+      // Wait for animation to complete (menu-opening class is removed after 300ms)
+      await page.waitForFunction(() => {
+        const menu = document.querySelector('.sdt-mobile-menu');
+        return menu && menu.classList.contains('is-open') && !menu.classList.contains('menu-opening');
+      }, { timeout: 1000 });
+      
+      // Additional small delay to ensure rendering is stable
+      await page.waitForTimeout(100);
     }
 
     await expect(page).toHaveScreenshot('baseline-menu-open.png', { fullPage: false });
