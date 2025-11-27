@@ -32,6 +32,10 @@
   display: none; /* Hidden by default - shown by JavaScript when hamburger is clicked */
 }
 
+.sdt-header-global-container .sdt-mobile-menu.is-open {
+  display: flex !important; /* Override when explicitly opened */
+}
+
 /* Hide mobile menu on tablet and desktop */
 @media (min-width: 810px) {
   .sdt-header-global-container .sdt-mobile-menu {
@@ -326,6 +330,22 @@
   .sdt-body-text {
     --framer-font-size: 16px;
   }
+}
+
+/* Preset: 5gdcdh - Navigation links
+ * Original: .framer-QhN6u .framer-styles-preset-5gdcdh
+ * Used for: Mobile menu navigation links
+ * Semantic alias: .sdt-nav-link-text
+ */
+.framer-styles-preset-5gdcdh:not(.rich-text-wrapper),
+.framer-styles-preset-5gdcdh.rich-text-wrapper a,
+.sdt-nav-link-text {
+  --framer-link-text-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, #f2f0e9);
+  /* Make it clickable */
+  cursor: pointer;
+  color: var(--color-bg-primary, #f2f0e9);
+  text-decoration: none;
+  display: inline;
 }
 
 /* ==========================================================================
@@ -748,16 +768,6 @@
    ========================================================================== */
 
 .sdt-mobile-menu {
-  /*
-   * Layout - replaces Framer's .framer-lxsbpu
-   * Original Framer CSS:
-   *   height: min-content; min-height: 122px;
-   *   overflow: clip; flex-flow: column; flex: none;
-   *   place-content: center space-between; align-self: stretch;
-   *   align-items: center; width: auto; padding: 24px 24px 32px;
-   * Phone variant:
-   *   align-self: unset; min-height: unset; order: 2; width: 100%;
-   */
   display: flex;
   flex-direction: column;
   flex: none;
@@ -767,7 +777,7 @@
   height: min-content;
   min-height: 122px;
   width: auto;
-  padding: 24px 24px 32px;
+  padding: 25px 24px 30px;
   overflow: var(--overflow-clip-fallback, clip);
   position: relative;
   /* Semantic styles */
@@ -784,64 +794,50 @@
   }
 }
 
-.sdt-mobile-menu__links {
-  /*
-   * Layout - replaces Framer's .framer-fe8lfz .framer-bb2skg
-   * Original Framer CSS:
-   *   height: min-content; overflow: clip; z-index: 1;
-   *   flex-flow: row; flex: none; place-content: center;
-   *   align-items: center; gap: 22px; width: min-content;
-   *   padding: 0; text-decoration: none;
-   * Phone variant:
-   *   flex-direction: column;
-   */
-  display: flex;
-  flex-flow: row;
-  flex: none;
-  place-content: center;
-  align-items: center;
-  gap: 22px;
-  height: min-content;
-  width: min-content;
-  padding: 0;
-  overflow: var(--overflow-clip-fallback, clip);
-  z-index: 1;
-  position: relative;
-  text-decoration: none;
+/* Mobile menu opening animation */
+.sdt-mobile-menu.menu-opening {
+  animation: menuSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Phone mobile menu links - column layout */
-@media (max-width: 809px) {
-  .sdt-mobile-menu__links {
-    flex-direction: column;
+@keyframes menuSlideDown {
+  from {
+    transform: scaleY(0.8) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
   }
 }
 
-.sdt-mobile-menu__link-text {
-  /*
-   * Layout - replaces Framer's .framer-1nrirgj .framer-s1s7y5
-   * Original Framer CSS:
-   *   white-space: pre; z-index: 1; flex: none;
-   *   width: auto; height: auto; position: relative;
-   */
+.sdt-mobile-menu__link {
   display: block;
-  white-space: pre;
   flex: none;
   width: auto;
   height: auto;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
   z-index: 1;
   position: relative;
-  /* Framer vars */
-  --extracted-r6o4lv: var(--color-bg-primary);
-  --framer-paragraph-spacing: 0px;
+  white-space: pre;
+  /* Typography */
+  font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f2f0e9;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 22px;
 }
 
-.sdt-mobile-menu__link-text p {
-  --font-selector: RlM7TW9udHNlcnJhdC1tZWRpdW0=;
-  --framer-font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
-  --framer-font-size: 18px;
-  --framer-font-weight: 500;
-  --framer-text-color: var(--extracted-r6o4lv, var(--color-bg-primary));
+.sdt-mobile-menu__link:last-child {
+  margin-bottom: 0;
+}
+
+.sdt-mobile-menu__link:hover {
+  color: #f2f0e9;
+  opacity: 0.9;
 }
 
 /* Header Divider */
@@ -878,11 +874,13 @@
 
 .sdt-header-divider__graphic {
   /*
-   * SVG graphic sizing
+   * SVG graphic - simplified inline SVG
    */
-  width: 1220px;
+  width: 100%;
   height: 2px;
-  position: relative;
+  display: block;
+  image-rendering: pixelated;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
