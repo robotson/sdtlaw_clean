@@ -1329,6 +1329,290 @@
 }
 
 /* ==========================================================================
+   GIFT SECTION (Star Quilt)
+   ========================================================================== */
+
+/*
+ * Gift section - Star Quilt section
+ * Currently inside team section container, will be extracted to global
+ * Following strangler fig pattern: semantic classes alongside Framer classes
+ */
+
+/* .sdt-gift - Section container (replaces .framer-14g9ucr)
+ * Desktop (default): 90vh height, flex row, centered
+ * Tablet: min-content height, gap 42px, padding 42px
+ * Phone: min-content height, flex column, padding 24px
+ */
+.sdt-gift {
+  /* Desktop (default) */
+  height: 90vh;
+  overflow: var(--overflow-clip-fallback, clip);
+  background-color: var(--color-bg-primary, #f2f0e9);
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  position: relative;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-gift {
+    background-color: var(--color-bg-primary, #f2f0e9);
+    gap: 42px;
+    height: min-content;
+    padding: 42px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-gift {
+    background-color: var(--color-bg-primary, #f2f0e9);
+    flex-direction: column;
+    justify-content: flex-start;
+    height: min-content;
+    padding: 24px 24px 0;
+  }
+}
+
+/* .sdt-gift__container - Layout container (replaces .framer-1lck470)
+ * Desktop (default): grid layout, 717px height, 1136px width
+ * Tablet: flex layout, 751px width, 429px height
+ * Phone: flex column, 100% width, 453px height
+ */
+.sdt-gift__container {
+  /* Desktop (default) */
+  height: 717px;
+  overflow: var(--overflow-clip-fallback, clip);
+  flex: none;
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  justify-content: center;
+  gap: 10px 88px;
+  width: 1136px;
+  padding: 116px 0;
+  display: grid;
+  position: relative;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-gift__container {
+    width: 751px;
+    height: 429px;
+    padding: 116px 0 116px 24px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-gift__container {
+    flex-flow: column;
+    place-content: center flex-start;
+    align-items: center;
+    width: 100%;
+    height: 453px;
+    padding: 14px 0 0;
+    display: flex;
+  }
+}
+
+/* .sdt-gift__content - Content wrapper (replaces .framer-1ckblg)
+ * Desktop (default): absolute positioned, bottom 316px, left 134px, right 746px
+ * Tablet: absolute positioned, order 1, bottom 171px, left 0, right 515px
+ * Phone: absolute positioned, order 1, gap 2px, bottom 50px, left 0, right 0
+ */
+.sdt-gift__content {
+  /* Desktop (default) */
+  height: min-content;
+  overflow: var(--overflow-clip-fallback, clip);
+  z-index: 1;
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  bottom: 316px;
+  left: 134px;
+  right: 746px;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-gift__content {
+    order: 1;
+    bottom: 171px;
+    left: 0;
+    right: 515px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-gift__content {
+    order: 1;
+    gap: 2px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+  }
+}
+
+/* .sdt-gift__ornament-wrapper - Ornament/divider wrapper (replaces .framer-xe40vr)
+ * Desktop (default): flex row, centered, 100% width
+ * Tablet: (inherits desktop)
+ * Phone: flex column, gap 6px, padding 29px
+ */
+.sdt-gift__ornament-wrapper {
+  /* Desktop (default) */
+  height: min-content;
+  min-height: 1px;
+  overflow: var(--overflow-clip-fallback, clip);
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-gift__ornament-wrapper {
+    min-height: unset;
+    flex-direction: column;
+    gap: 6px;
+    padding: 29px;
+  }
+}
+
+/* .sdt-gift__ornament - Ornament SVG (replaces .framer-xua7vr)
+ * Desktop (default): 294px width, 1px height
+ * Tablet: (inherits desktop)
+ * Phone: (inherits desktop)
+ */
+.sdt-gift__ornament {
+  width: 294px;
+  height: 1px;
+  position: relative;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+/* .sdt-gift__text - Text container (replaces .framer-3cuwvs)
+ * Desktop (default): 256px width, 75px height
+ * Tablet: 236px width
+ * Phone: auto width/height, white-space pre
+ */
+.sdt-gift__text {
+  /* Desktop (default) */
+  --framer-link-text-color: #09f;
+  --framer-link-text-decoration: underline;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-wrap: break-word;
+  z-index: 1;
+  flex: none;
+  width: 256px;
+  height: 75px;
+  position: relative;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-gift__text {
+    width: 236px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-gift__text {
+    white-space: pre;
+    width: auto;
+    height: auto;
+  }
+}
+
+/* .sdt-gift__image - Image container (replaces .framer-1n3d6h9)
+ * Desktop (default): absolute positioned, bottom 98px, left 452px, right 140px
+ * Tablet: absolute positioned, order 0, bottom 24px, left 316px, right 37px
+ * Phone: absolute positioned, order 0, 256px height, centered horizontally, top 33%, transform translate(-50%, -50%)
+ */
+.sdt-gift__image {
+  /* Desktop (default) */
+  height: auto;
+  overflow: var(--overflow-clip-fallback, clip);
+  z-index: 1;
+  flex: none;
+  position: absolute;
+  bottom: 98px;
+  left: 452px;
+  right: 140px;
+  width: auto;
+  aspect-ratio: 1.010498687664042;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-gift__image {
+    order: 0;
+    bottom: 24px;
+    left: 316px;
+    right: 37px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-gift__image {
+    bottom: unset;
+    height: 256px;
+    left: 50%;
+    right: unset;
+    order: 0;
+    width: auto;
+    top: 33%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* .sdt-gift__image-wrapper - Image wrapper (replaces inline div)
+ */
+.sdt-gift__image-wrapper {
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* .sdt-gift__image-img - Image element (replaces inline img)
+ */
+.sdt-gift__image-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: center;
+  object-fit: cover;
+}
+
+/* ==========================================================================
    ATTORNEY CARDS
    ========================================================================== */
 
