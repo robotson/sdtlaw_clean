@@ -5357,7 +5357,6 @@
   <link rel="stylesheet" href="./assets/css/framer-overlay.css">
   <link rel="stylesheet" href="./assets/css/phone-overlay.css">
   <link rel="stylesheet" href="assets/css/extracted-inline.css">
-  <link rel="stylesheet" href="./extracted/responsive-variants.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <!-- Semantic styles - loaded last to allow gradual override of Framer styles -->
   <link rel="stylesheet" href="./assets/css/styles.css">
@@ -5366,9 +5365,9 @@
 <body>
   <!-- Global Header (shared across all breakpoints) -->
   <div class="sdt-header-global-container">
-    <div class="sdt-header" data-framer-name="Header">
-      <div class="sdt-header__inner" data-framer-name="Container">
-        <a class="sdt-logo" data-framer-name="SD&T" href="#hero">
+    <div class="sdt-header">
+      <div class="sdt-header__inner">
+        <a class="sdt-logo" href="#hero">
           <span class="sdt-logo__title">Swanson, Drobnick &amp; Tousey P.C.</span>
           <span class="sdt-logo__subtitle">Attorneys at Law</span>
         </a>
@@ -5382,31 +5381,21 @@
             <path d="M18.3 5.71a1 1 0 0 0-1.42 0L12 10.59 7.12 5.71a1 1 0 1 0-1.42 1.42L10.59 12l-4.89 4.88a1 1 0 1 0 1.42 1.42L12 13.41l4.88 4.89a1 1 0 0 0 1.42-1.42L13.41 12l4.89-4.88a1 1 0 0 0 0-1.41z" fill="currentColor"/>
           </svg>
         </button>
-        <div class="sdt-nav" data-framer-name="Links">
-          <a class="sdt-nav__link" data-framer-name="Our Firm" href="#firm">
+        <div class="sdt-nav">
+          <a class="sdt-nav__link" href="#firm">
             <span class="sdt-nav__link-text">Our Firm</span>
           </a>
-          <a class="sdt-nav__link" data-framer-name="Our Team" href="#team">
+          <a class="sdt-nav__link" href="#team">
             <span class="sdt-nav__link-text">Our Team</span>
           </a>
         </div>
       </div>
     </div>
-    <div class="sdt-mobile-menu" data-framer-name="Links">
-      <a class="sdt-mobile-menu__links" data-framer-name="Links" href="#firm">
-        <div class="sdt-mobile-menu__link-text" data-framer-name="Our Team" data-framer-component-type="RichTextContainer">
-          <p class="framer-text">
-            <span class="framer-text framer-styles-preset-5gdcdh" data-styles-preset="ci_1mdN83" href="#firm" data-nested-link="true" role="link" tabindex="0" data-hydrated="true">Our Firm</span>
-          </p>
-        </div>
-        <div class="sdt-mobile-menu__link-text" data-framer-name="Our Team" data-framer-component-type="RichTextContainer">
-          <p class="framer-text">
-            <span class="framer-text framer-styles-preset-5gdcdh" data-styles-preset="ci_1mdN83" href="#team" data-nested-link="true" role="link" tabindex="0" data-hydrated="true">Our Team</span>
-          </p>
-        </div>
-      </a>
+    <div class="sdt-mobile-menu">
+      <a class="sdt-mobile-menu__link" href="#firm">Our Firm</a>
+      <a class="sdt-mobile-menu__link" href="#team">Our Team</a>
     </div>
-    <div class="sdt-header-divider" data-framer-name="Divider">
+    <div class="sdt-header-divider">
       <div data-framer-component-type="SVG" parentsize="0" _constraints="[object Object]" rotation="0" shadows="" class="sdt-header-divider__graphic" aria-hidden="true" style="image-rendering: pixelated; flex-shrink: 0;">
         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
           <svg class="extracted-15" preserveAspectRatio="none" width="100%" height="100%">
