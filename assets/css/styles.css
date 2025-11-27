@@ -1342,12 +1342,14 @@
  * Desktop (default): 90vh height, flex row, centered
  * Tablet: min-content height, gap 42px, padding 42px
  * Phone: min-content height, flex column, padding 24px
+ * 
+ * NOTE: These styles duplicate the Framer styles exactly
  */
 .sdt-gift {
   /* Desktop (default) */
   height: 90vh;
   overflow: var(--overflow-clip-fallback, clip);
-  background-color: var(--color-bg-primary, #f2f0e9);
+  background-color: #f2f0e9;
   flex-flow: row;
   flex: none;
   place-content: center;
@@ -1362,7 +1364,7 @@
 /* Tablet */
 @media (min-width: 810px) and (max-width: 1199px) {
   .sdt-gift {
-    background-color: var(--color-bg-primary, #f2f0e9);
+    background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, #f2f0e9);
     gap: 42px;
     height: min-content;
     padding: 42px;
@@ -1372,7 +1374,7 @@
 /* Phone */
 @media (max-width: 809px) {
   .sdt-gift {
-    background-color: var(--color-bg-primary, #f2f0e9);
+    background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, #f2f0e9);
     flex-direction: column;
     justify-content: flex-start;
     height: min-content;
@@ -1407,6 +1409,7 @@
     width: 751px;
     height: 429px;
     padding: 116px 0 116px 24px;
+    /* Note: display: grid and grid properties from desktop are still active */
   }
 }
 
@@ -1467,11 +1470,7 @@
   }
 }
 
-/* .sdt-gift__ornament-wrapper - Ornament/divider wrapper (replaces .framer-xe40vr)
- * Desktop (default): flex row, centered, 100% width
- * Tablet: (inherits desktop)
- * Phone: flex column, gap 6px, padding 29px
- */
+/* .sdt-gift__ornament-wrapper - Ornament/divider wrapper (replaces .framer-xe40vr) */
 .sdt-gift__ornament-wrapper {
   /* Desktop (default) */
   height: min-content;
@@ -1498,11 +1497,7 @@
   }
 }
 
-/* .sdt-gift__ornament - Ornament SVG (replaces .framer-xua7vr)
- * Desktop (default): 294px width, 1px height
- * Tablet: (inherits desktop)
- * Phone: (inherits desktop)
- */
+/* .sdt-gift__ornament - Ornament SVG (replaces .framer-xua7vr) */
 .sdt-gift__ornament {
   width: 294px;
   height: 1px;
@@ -1511,11 +1506,7 @@
   flex-shrink: 0;
 }
 
-/* .sdt-gift__text - Text container (replaces .framer-3cuwvs)
- * Desktop (default): 256px width, 75px height
- * Tablet: 236px width
- * Phone: auto width/height, white-space pre
- */
+/* .sdt-gift__text - Text container (replaces .framer-3cuwvs) */
 .sdt-gift__text {
   /* Desktop (default) */
   --framer-link-text-color: #09f;
@@ -1546,11 +1537,7 @@
   }
 }
 
-/* .sdt-gift__image - Image container (replaces .framer-1n3d6h9)
- * Desktop (default): absolute positioned, bottom 98px, left 452px, right 140px
- * Tablet: absolute positioned, order 0, bottom 24px, left 316px, right 37px
- * Phone: absolute positioned, order 0, 256px height, centered horizontally, top 33%, transform translate(-50%, -50%)
- */
+/* .sdt-gift__image - Image container (replaces .framer-1n3d6h9) */
 .sdt-gift__image {
   /* Desktop (default) */
   height: auto;
@@ -1590,8 +1577,7 @@
   }
 }
 
-/* .sdt-gift__image-wrapper - Image wrapper (replaces inline div)
- */
+/* .sdt-gift__image-wrapper - Image wrapper (replaces inline div) */
 .sdt-gift__image-wrapper {
   position: absolute;
   border-radius: inherit;
@@ -1601,8 +1587,7 @@
   left: 0;
 }
 
-/* .sdt-gift__image-img - Image element (replaces inline img)
- */
+/* .sdt-gift__image-img - Image element (replaces inline img) */
 .sdt-gift__image-img {
   display: block;
   width: 100%;
