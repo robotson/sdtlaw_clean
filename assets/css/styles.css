@@ -1071,6 +1071,76 @@
   display: none !important;
 }
 
+/* Hide breakpoint copies of Gift - only show global version */
+.breakpoint-phone .sdt-gift,
+.breakpoint-tablet .sdt-gift,
+.breakpoint-desktop .sdt-gift {
+  display: none !important;
+}
+
+/* Global Gift Section - Responsive visibility for breakpoint variants */
+/* Hide all variants by default */
+.sdt-gift--global .ssr-variant {
+  display: none !important;
+}
+
+/* Phone: Show phone variants (hidden-1xilv83 hidden-72rtr7 means visible on phone only) */
+@media (max-width: 809px) {
+  .sdt-gift--global .ssr-variant.hidden-1xilv83.hidden-72rtr7 {
+    display: block !important;
+  }
+}
+
+/* Tablet: Show tablet variants (hidden-1siuntv means visible on tablet and desktop) */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-gift--global .ssr-variant.hidden-1siuntv {
+    display: block !important;
+  }
+  /* Hide desktop-only variants on tablet */
+  .sdt-gift--global .ssr-variant.hidden-1siuntv.hidden-1xilv83 {
+    display: none !important;
+  }
+}
+
+/* Desktop: Show desktop variants (hidden-1siuntv means visible on tablet and desktop) */
+@media (min-width: 1200px) {
+  .sdt-gift--global .ssr-variant.hidden-1siuntv {
+    display: block !important;
+  }
+  /* Show desktop-only variants */
+  .sdt-gift--global .ssr-variant.hidden-1siuntv.hidden-1xilv83 {
+    display: block !important;
+  }
+}
+
+/* Gift section typography - ensure styles apply */
+.sdt-gift__text .framer-styles-preset-gxwp0p,
+.sdt-gift--global .framer-styles-preset-gxwp0p {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  /* Desktop (default): 22px */
+  font-size: 22px;
+  line-height: 1.4em;
+  color: var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62));
+  margin: 0;
+  text-align: center;
+}
+
+/* Tablet: 18px */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-gift__text .framer-styles-preset-gxwp0p,
+  .sdt-gift--global .framer-styles-preset-gxwp0p {
+    font-size: 18px;
+  }
+}
+
+/* Phone: 16px */
+@media (max-width: 809px) {
+  .sdt-gift__text .framer-styles-preset-gxwp0p,
+  .sdt-gift--global .framer-styles-preset-gxwp0p {
+    font-size: 16px;
+  }
+}
+
 /* Responsive heading visibility for global Firm */
 .sdt-firm__heading-container--phone {
   display: none;
@@ -1559,7 +1629,7 @@
     bottom: 24px;
     left: 316px;
     right: 37px;
-    transform: translate(-50%, -50%);
+    /* Note: No transform on tablet - Framer doesn't use it */
   }
 }
 
