@@ -27,6 +27,11 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 - ✅ JS updated to use `.is-open` class instead of Framer classes
 - ✅ Removed all Framer class dependencies
 
+**Remaining Framer dependencies (long-term cleanup):**
+- 🔲 `assets/css/framer-ssr.css` - Still actively loaded and required for styling
+- 🔲 Font declarations in `<head>` - 14 font families loaded (only 2 used: EB Garamond, Montserrat)
+- 🔲 Team section still in breakpoint containers with Framer layout classes
+
 ## Rules
 
 ### Test Suite Must Always Pass
@@ -93,13 +98,14 @@ Desktop: min-width: 1200px
 sdtlaw_clean/
 ├── index.html          # Main site
 ├── assets/
-│   ├── css/            # Stylesheets
+│   ├── css/            # Stylesheets (includes framer-ssr.css - still required!)
 │   ├── js/             # site.js - interactions
 │   ├── images/         # Photos
 │   ├── svg/            # Icons and dividers
 │   ├── icons/          # Favicons
 │   └── fonts/          # Local fonts
 ├── _baseline/          # Frozen pristine copy for visual regression
+├── _scratch/           # Ephemeral debug scripts (gitignored)
 ├── _tests/             # Playwright visual regression tests
 ├── playwright.config.js
 ├── package.json
