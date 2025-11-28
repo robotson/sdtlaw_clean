@@ -356,6 +356,194 @@
   display: inline;
 }
 
+/* Preset: 1054p22 / tbuoeu - Attorney names (h3/h2) phone/tablet
+ * Original: .framer-8OqIg .framer-styles-preset-1054p22, .framer-W8HVz .framer-styles-preset-tbuoeu
+ * Used for: Attorney names on team cards (phone/tablet breakpoints)
+ * Semantic alias: .sdt-attorney-name--phone
+ */
+.framer-styles-preset-1054p22:not(.rich-text-wrapper),
+.framer-styles-preset-1054p22.rich-text-wrapper h3,
+.framer-styles-preset-tbuoeu:not(.rich-text-wrapper),
+.framer-styles-preset-tbuoeu.rich-text-wrapper h2,
+.sdt-attorney-name--phone {
+  --framer-font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold: "Inter", sans-serif;
+  --framer-font-family-bold-italic: "Inter", sans-serif;
+  --framer-font-family-italic: "Inter", "Inter Placeholder", sans-serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 18px;
+  --framer-font-style: normal;
+  --framer-font-style-bold: normal;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 500;
+  --framer-font-weight-bold: 900;
+  --framer-font-weight-bold-italic: 900;
+  --framer-font-weight-italic: 700;
+  --framer-letter-spacing: -.01em;
+  --framer-line-height: 1.3em;
+  --framer-paragraph-spacing: 40px;
+  --framer-text-alignment: start;
+  --framer-text-color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, #c12b20);
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: none;
+}
+
+/* Preset: 1ur8ep5 - Attorney names (h3) desktop
+ * Original: .framer-Yvx1F .framer-styles-preset-1ur8ep5
+ * Used for: Attorney names on team cards (desktop breakpoint)
+ * Semantic alias: .sdt-attorney-name
+ */
+.framer-styles-preset-1ur8ep5:not(.rich-text-wrapper),
+.framer-styles-preset-1ur8ep5.rich-text-wrapper h3,
+.sdt-attorney-name {
+  --framer-font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold: "Inter", sans-serif;
+  --framer-font-family-bold-italic: "Inter", sans-serif;
+  --framer-font-family-italic: "Inter", "Inter Placeholder", sans-serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 20px;
+  --framer-font-style: normal;
+  --framer-font-style-bold: normal;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 500;
+  --framer-font-weight-bold: 900;
+  --framer-font-weight-bold-italic: 900;
+  --framer-font-weight-italic: 700;
+  --framer-letter-spacing: 0em;
+  --framer-line-height: 1.3em;
+  --framer-paragraph-spacing: 40px;
+  --framer-text-alignment: start;
+  --framer-text-color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, #c12b20);
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: none;
+}
+
+/* Preset: 1cqgywt - Attorney titles (h4) phone/tablet
+ * Original: .framer-fmga6 .framer-styles-preset-1cqgywt
+ * Used for: Attorney titles on team cards (phone/tablet breakpoints)
+ * Semantic alias: .sdt-attorney-title--phone
+ */
+.framer-styles-preset-1cqgywt:not(.rich-text-wrapper),
+.framer-styles-preset-1cqgywt.rich-text-wrapper h4,
+.sdt-attorney-title--phone {
+  --framer-font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold: "Inter", sans-serif;
+  --framer-font-family-bold-italic: "Inter", sans-serif;
+  --framer-font-family-italic: "Inter", "Inter Placeholder", sans-serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 16px;
+  --framer-font-style: normal;
+  --framer-font-style-bold: normal;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 400;
+  --framer-font-weight-bold: 900;
+  --framer-font-weight-bold-italic: 900;
+  --framer-font-weight-italic: 700;
+  --framer-letter-spacing: 0em;
+  --framer-line-height: 1.2em;
+  --framer-paragraph-spacing: 40px;
+  --framer-text-alignment: center;
+  --framer-text-color: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, #412104);
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: none;
+}
+
+/* Preset: te7ga4 - Attorney titles (h4) desktop
+ * Original: .framer-5k5uO .framer-styles-preset-te7ga4
+ * Used for: Attorney titles on team cards (desktop breakpoint)
+ * Semantic alias: .sdt-attorney-title
+ */
+.framer-styles-preset-te7ga4:not(.rich-text-wrapper),
+.framer-styles-preset-te7ga4.rich-text-wrapper h4,
+.sdt-attorney-title {
+  --framer-font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold-italic: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-italic: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 18px;
+  --framer-font-style: normal;
+  --framer-font-style-bold: normal;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 400;
+  --framer-font-weight-bold: 700;
+  --framer-font-weight-bold-italic: 700;
+  --framer-font-weight-italic: 400;
+  --framer-letter-spacing: 0em;
+  --framer-line-height: 1.2em;
+  --framer-paragraph-spacing: 40px;
+  --framer-text-alignment: center;
+  --framer-text-color: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, #412104);
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: none;
+}
+
+/* Preset: 19zukr5 - Bio panel headings (h5)
+ * Original: .framer-avUKP .framer-styles-preset-19zukr5
+ * Used for: Bio overlay panel headings (attorney name, "Biography" label)
+ * Semantic alias: .sdt-bio-heading
+ */
+.framer-styles-preset-19zukr5:not(.rich-text-wrapper),
+.framer-styles-preset-19zukr5.rich-text-wrapper h5,
+.sdt-bio-heading {
+  --framer-font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-bold-italic: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-family-italic: "EB Garamond", "EB Garamond Placeholder", serif;
+  --framer-font-open-type-features: normal;
+  --framer-font-size: 28px;
+  --framer-font-style: normal;
+  --framer-font-style-bold: normal;
+  --framer-font-style-bold-italic: italic;
+  --framer-font-style-italic: italic;
+  --framer-font-variation-axes: normal;
+  --framer-font-weight: 500;
+  --framer-font-weight-bold: 700;
+  --framer-font-weight-bold-italic: 700;
+  --framer-font-weight-italic: 500;
+  --framer-letter-spacing: -.01em;
+  --framer-line-height: 1.25em;
+  --framer-paragraph-spacing: 0px;
+  --framer-text-alignment: start;
+  --framer-text-color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, #c12b20);
+  --framer-text-decoration: none;
+  --framer-text-stroke-color: initial;
+  --framer-text-stroke-width: initial;
+  --framer-text-transform: none;
+}
+
+@media (max-width: 1199px) and (min-width: 810px) {
+  .framer-styles-preset-19zukr5:not(.rich-text-wrapper),
+  .framer-styles-preset-19zukr5.rich-text-wrapper h5,
+  .sdt-bio-heading {
+    --framer-font-size: 19px;
+  }
+}
+
+@media (max-width: 809px) {
+  .framer-styles-preset-19zukr5:not(.rich-text-wrapper),
+  .framer-styles-preset-19zukr5.rich-text-wrapper h5,
+  .sdt-bio-heading {
+    --framer-font-size: 24px;
+  }
+}
+
 /* ==========================================================================
    TYPOGRAPHY - Semantic Classes
    ========================================================================== */
@@ -1072,12 +1260,7 @@
   }
 }
 
-/* Hide breakpoint copies of Firm - only show global version */
-.breakpoint-phone .sdt-firm,
-.breakpoint-tablet .sdt-firm,
-.breakpoint-desktop .sdt-firm {
-  display: none !important;
-}
+/* Firm breakpoint copies deleted - global .sdt-firm--global is the only version */
 
 /* Hide breakpoint copies of Gift - only show global version */
 .breakpoint-phone .sdt-gift,
@@ -1149,23 +1332,6 @@
   }
 }
 
-/* Responsive heading visibility for global Firm */
-.sdt-firm__heading-container--phone {
-  display: none;
-}
-.sdt-firm__heading-container--desktop {
-  display: block;
-}
-
-@media (max-width: 809px) {
-  .sdt-firm__heading-container--phone {
-    display: block;
-  }
-  .sdt-firm__heading-container--desktop {
-    display: none;
-  }
-}
-
 /* .sdt-firm__content - Text lockup container (replaces .framer-qTkKF .framer-dmkocz) */
 .sdt-firm__content {
   /* Desktop (default) */
@@ -1233,8 +1399,32 @@
   width: auto;
   height: auto;
   position: relative;
+  /* RichTextContainer flex properties (allows removal of data-framer-component-type attribute) */
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
   /* Extracted inline style */
   transform: none;
+}
+
+/* Responsive heading visibility for global Firm section
+ * Must come AFTER base .sdt-firm__heading-container to override display:flex */
+.sdt-firm__heading-container--phone {
+  display: none;
+}
+.sdt-firm__heading-container--desktop {
+  display: flex;
+}
+
+@media (max-width: 809px) {
+  .sdt-firm__heading-container--phone {
+    display: flex;
+  }
+  .sdt-firm__heading-container--desktop {
+    display: none;
+  }
 }
 
 /* .sdt-firm__heading - H1 heading text */
@@ -1281,6 +1471,10 @@
   .sdt-team__line {
     width: 294px;
   }
+  /* Hide left line on phone */
+  .sdt-team__line--left {
+    display: none;
+  }
 }
 
 /* .sdt-firm__text - Text content container (replaces .framer-qTkKF .framer-665ri7) */
@@ -1322,8 +1516,12 @@
   width: 100%;
   height: auto;
   position: relative;
+  /* RichTextContainer flex properties (allows removal of data-framer-component-type attribute) */
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
   gap: 1.7em;
   margin-bottom: 1.7em;
   /* Extracted inline style */
@@ -1360,6 +1558,12 @@
   width: 100%;
   height: auto;
   position: relative;
+  /* RichTextContainer flex properties (allows removal of data-framer-component-type attribute) */
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
   /* Extracted inline style */
   transform: none;
 }
@@ -2111,4 +2315,682 @@
 /* Footer SVG styling (replaces .svgContainer svg) */
 .sdt-footer__logo svg {
   display: block;
+}
+
+/* ==========================================================================
+   TEAM SECTION - Semantic Classes
+   Duplicates rules from framer-ssr.css for .framer-qTkKF .framer-* selectors
+   ========================================================================== */
+
+/* .sdt-team - Main team section container (replaces .framer-qTkKF .framer-1jtz9wa) */
+.sdt-team {
+  background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, #f2f0e9);
+  height: 100vh;
+  overflow: clip;
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding: 22px;
+  scroll-margin-top: 60px;
+  display: flex;
+  position: relative;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-team {
+    gap: 42px;
+    height: min-content;
+    padding: 87px 42px;
+    scroll-margin-top: 85px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-team {
+    height: min-content;
+    padding: 16px;
+    scroll-margin-top: 180px;
+  }
+}
+
+/* .sdt-team__header - Text lockup container (replaces .framer-qTkKF .framer-lfv6cn) */
+.sdt-team__header {
+  max-width: 846px;
+  height: min-content;
+  overflow: clip;
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0 0 32px;
+  display: flex;
+  position: relative;
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .sdt-team--global .sdt-team__header {
+    padding: 0 0 31px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-team__header {
+    padding: 0 24px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-team__header {
+    order: 0;
+    padding: 32px 0 16px;
+  }
+}
+
+/* .sdt-team__title-row - Title row with heading + line (replaces .framer-qTkKF .framer-1jg5cl6) */
+.sdt-team__title-row {
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  display: flex;
+  position: relative;
+  overflow: visible;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-team__title-row {
+    overflow: clip;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-team__title-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* .sdt-team__grid - Profiles grid container (replaces .framer-qTkKF .framer-1a4l8rq) */
+.sdt-team__grid {
+  max-width: 100%;
+  height: 375px;
+  overflow: clip;
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 26px;
+  width: 917px;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+/* Tablet */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-team__grid {
+    gap: 12px;
+    width: 100%;
+    height: 284px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809px) {
+  .sdt-team__grid {
+    height: min-content;
+    max-width: unset;
+    flex-direction: column;
+    order: 1;
+    gap: 22px;
+    width: min-content;
+    padding: 14px 14px 32px;
+  }
+}
+
+/* .sdt-team__card-container - Card wrapper (replaces .framer-qTkKF .framer-*-container) */
+.sdt-team__card-container {
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+/* .sdt-team__card - Attorney card (replaces .framer-ErKEJ.framer-74g9dq) */
+.sdt-team__card {
+  cursor: pointer;
+  height: min-content;
+  overflow: clip;
+  will-change: var(--framer-will-change-override, transform);
+  flex-flow: column;
+  place-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  width: min-content;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233));
+  border-radius: 4px;
+  opacity: 1;
+}
+
+/* Phone/Tablet small card variant (replaces .framer-ErKEJ.framer-v-gfdl0n etc) */
+.sdt-team__card--small {
+  gap: 5px;
+  width: 217px;
+  height: 272px;
+}
+
+/* Desktop large card variant (replaces .framer-ErKEJ.framer-v-74g9dq etc) */
+.sdt-team__card--large {
+  gap: 10px;
+  width: min-content;
+  height: min-content;
+}
+
+/* .sdt-team__photo - Photo container (replaces .framer-ErKEJ .framer-1t887dn) */
+.sdt-team__photo {
+  height: min-content;
+  overflow: clip;
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: min-content;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+/* Phone/Tablet photo size */
+.sdt-team__card--small .sdt-team__photo {
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 1px;
+  width: 198px;
+  height: 208px;
+}
+
+/* .sdt-team__photo-frame - Photo frame (replaces .framer-ErKEJ .framer-1c0iclv) */
+.sdt-team__photo-frame {
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 247px;
+  height: 236px;
+  padding: 0;
+  display: flex;
+  position: relative;
+  overflow: visible;
+}
+
+/* Phone/Tablet photo frame size */
+.sdt-team__card--small .sdt-team__photo-frame {
+  width: 198px;
+  height: 208px;
+}
+
+/* .sdt-team__photo-img - Photo image container (replaces .framer-ErKEJ .framer-19bch5h) */
+.sdt-team__photo-img {
+  height: 282px;
+  overflow: clip;
+  z-index: 1;
+  flex: none;
+  width: 258px;
+  position: absolute;
+  top: calc(54.661% - 141px);
+  left: calc(51.8219% - 129px);
+}
+
+/* Phone/Tablet photo img size */
+.sdt-team__card--small .sdt-team__photo-img {
+  width: 235px;
+  height: 253px;
+  left: calc(50.505% - 117.5px);
+  top: calc(51.6827% - 126.5px);
+}
+
+/* .sdt-team__info - Info row (replaces .framer-ErKEJ .framer-ancc5z) */
+.sdt-team__info {
+  height: min-content;
+  overflow: clip;
+  flex-flow: row;
+  flex: none;
+  place-content: flex-start space-between;
+  align-self: stretch;
+  align-items: flex-start;
+  width: auto;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+/* .sdt-team__name-block - Name and title block (replaces .framer-ErKEJ .framer-12k40x8) */
+.sdt-team__name-block {
+  flex-flow: column;
+  flex: none;
+  place-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  width: min-content;
+  max-width: 196px;
+  height: min-content;
+  padding: 0;
+  display: flex;
+  position: relative;
+  overflow: visible;
+}
+
+/* .sdt-team__name, .sdt-team__title - Text containers (replaces .framer-ErKEJ .framer-1bmsbvg/1pk6khb) */
+.sdt-team__name,
+.sdt-team__title-text {
+  white-space: pre;
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+/* .sdt-team__arrow-area - Arrow button area (replaces .framer-ErKEJ .framer-7d20zd) */
+.sdt-team__arrow-area {
+  flex-flow: row;
+  flex: none;
+  place-content: center flex-end;
+  align-items: center;
+  gap: 10px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
+  display: flex;
+  position: relative;
+  overflow: visible;
+}
+
+/* .sdt-team__arrow - Arrow icon container (replaces .framer-ErKEJ .framer-s7y4j1) */
+.sdt-team__arrow {
+  flex: none;
+  width: 47px;
+  height: 37px;
+  position: relative;
+  overflow: visible;
+}
+
+/* .sdt-team__arrow-svg - Arrow SVG (replaces .framer-ErKEJ .framer-mgdqzv) */
+.sdt-team__arrow-svg {
+  height: var(--framer-aspect-ratio-supported, 24px);
+  flex: none;
+  width: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* ==========================================================================
+   GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
+   ========================================================================== */
+
+/* Hide breakpoint copies of Team - only show global version */
+.breakpoint-phone .sdt-team,
+.breakpoint-tablet .sdt-team,
+.breakpoint-desktop .sdt-team {
+  display: none !important;
+}
+
+/* Global Team Section - Base styles (desktop defaults from framer-ssr.css) */
+.sdt-team--global {
+  background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, #f2f0e9);
+  height: 100vh;
+  overflow: clip;
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding: 22px;
+  scroll-margin-top: 60px;
+  display: flex;
+  position: relative;
+}
+
+.sdt-team--global .framer-lfv6cn {
+  max-width: 846px;
+  height: min-content;
+  overflow: clip;
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0 0 31px;
+  display: flex;
+  position: relative;
+}
+
+.sdt-team--global .framer-1jg5cl6 {
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  display: flex;
+  position: relative;
+  overflow: visible;
+}
+
+.sdt-team--global .framer-1a4l8rq {
+  max-width: 100%;
+  height: 375px;
+  overflow: clip;
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 26px;
+  width: 917px;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+.sdt-team--global .framer-1kq6r0t-container,
+.sdt-team--global .framer-a2aut-container,
+.sdt-team--global .framer-1175ksh-container {
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+/* Global Team - Heading elements (matches .framer-qTkKF .framer-1524npc) */
+.sdt-team--global .sdt-team__heading {
+  --framer-paragraph-spacing: 0px;
+  white-space: pre;
+  flex: none;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+/* Global Team - Heading visibility */
+/* Phone: Show phone heading, hide desktop heading */
+@media (max-width: 809px) {
+  .sdt-team--global .sdt-team__heading--phone {
+    display: flex;
+  }
+  .sdt-team--global .sdt-team__heading--desktop {
+    display: none;
+  }
+}
+
+/* Tablet and Desktop: Show desktop heading, hide phone heading */
+@media (min-width: 810px) {
+  .sdt-team--global .sdt-team__heading--desktop {
+    display: flex;
+  }
+  .sdt-team--global .sdt-team__heading--phone {
+    display: none;
+  }
+}
+
+/* Tablet overrides (810-1199px) */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .sdt-team--global {
+    gap: 42px;
+    height: min-content;
+    padding: 87px 42px;
+    scroll-margin-top: 85px;
+  }
+
+  .sdt-team--global .framer-lfv6cn {
+    padding: 0 24px;
+  }
+
+  .sdt-team--global .framer-1jg5cl6 {
+    overflow: clip;
+  }
+
+  .sdt-team--global .framer-1a4l8rq {
+    gap: 12px;
+    width: 100%;
+    height: 284px;
+  }
+
+  /* Tablet card sizes - same as phone (217x272) */
+  .sdt-team--global .sdt-team__card {
+    gap: 5px;
+    width: 217px;
+    height: 272px;
+  }
+
+  .sdt-team--global .framer-1t887dn {
+    width: 198px;
+    height: 208px;
+  }
+
+  .sdt-team--global .framer-1c0iclv {
+    height: 207px;
+    width: 214px;
+    overflow: clip;
+    z-index: 1;
+    align-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Tammy (TJS) */
+  .sdt-team--global .sdt-team__card--tjs .framer-19bch5h {
+    width: 235px;
+    height: 256px;
+    top: -10px;
+    left: -1.5px;
+  }
+
+  /* Heidi (HAD) */
+  .sdt-team--global .sdt-team__card--had .framer-19bch5h {
+    width: 213px;
+    height: 310px;
+    top: 0px;
+    left: -14.4844px;
+  }
+
+  /* Phyllis (POT) */
+  .sdt-team--global .sdt-team__card--pot .framer-19bch5h {
+    width: 250px;
+    height: 270px;
+    top: -5px;
+    left: -10px;
+  }
+}
+
+/* Phone overrides (max-width: 809px) */
+@media (max-width: 809px) {
+  .sdt-team--global {
+    height: min-content;
+    padding: 16px;
+    scroll-margin-top: 180px;
+  }
+
+  .sdt-team--global .framer-lfv6cn {
+    order: 0;
+    padding: 32px 0 16px;
+  }
+
+  .sdt-team--global .framer-1jg5cl6 {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sdt-team--global .framer-1a4l8rq {
+    height: min-content;
+    max-width: unset;
+    flex-direction: column;
+    order: 1;
+    gap: 22px;
+    width: min-content;
+    padding: 14px 14px 32px;
+  }
+
+  /* Phone card sizes - replicate framer-v-gfdl0n/wkog2c/14jqhap variants */
+  /* Common card dimensions for all */
+  .sdt-team--global .sdt-team__card {
+    gap: 5px;
+    width: 217px;
+    height: 272px;
+  }
+
+  .sdt-team--global .framer-1t887dn {
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 1px;
+    width: 198px;
+    height: 208px;
+  }
+
+  .sdt-team--global .framer-1c0iclv {
+    height: 207px;
+    overflow: clip;
+    width: unset;
+    z-index: 1;
+    align-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -16px;
+  }
+
+  .sdt-team--global .framer-ancc5z {
+    align-self: unset;
+    width: 100%;
+  }
+
+  .sdt-team--global .framer-mgdqzv {
+    height: var(--framer-aspect-ratio-supported, 22px);
+    width: 22px;
+  }
+
+  /* Tammy (TJS) - framer-v-gfdl0n equivalent */
+  .sdt-team--global .sdt-team__card--tjs .framer-19bch5h {
+    width: 235px;
+    height: 256px;
+    top: calc(57.0048% - 128px);
+    left: calc(54.2056% - 117.5px);
+  }
+
+  /* Heidi (HAD) - framer-v-wkog2c equivalent */
+  .sdt-team--global .sdt-team__card--had .framer-19bch5h {
+    width: 213px;
+    height: 310px;
+    top: calc(74.8792% - 155px);
+    left: calc(42.9907% - 106.5px);
+  }
+
+  /* Phyllis (POT) - framer-v-14jqhap equivalent */
+  .sdt-team--global .sdt-team__card--pot .framer-19bch5h {
+    width: 250px;
+    height: 270px;
+    top: calc(62.8019% - 135px);
+    left: calc(53.7383% - 125px);
+  }
+}
+
+/* Desktop card photo positioning - per attorney */
+@media (min-width: 1200px) {
+  /* Tammy (TJS) - baseline: top=-12px, left=-0.98px, 258x282 */
+  .sdt-team--global .sdt-team__card--tjs .framer-19bch5h {
+    width: 258px;
+    height: 282px;
+    top: -12px;
+    left: -0.984375px;
+  }
+
+  /* Heidi (HAD) - baseline: top=0px, left=-32.5px, 285x345 */
+  .sdt-team--global .sdt-team__card--had .framer-19bch5h {
+    width: 285px;
+    height: 345px;
+    top: 0px;
+    left: -32.5px;
+  }
+
+  /* Phyllis (POT) - baseline: top=0px, left=-0.98px, 258x283 */
+  .sdt-team--global .sdt-team__card--pot .framer-19bch5h {
+    width: 258px;
+    height: 283px;
+    top: 0px;
+    left: -0.984375px;
+  }
+}
+
+/* Global Team - Typography responsive rules */
+/* Phone/Tablet: Use phone typography preset styling */
+@media (max-width: 1199px) {
+  .sdt-team--global .sdt-team__name-text {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, #c12b20);
+    letter-spacing: -0.18px;
+    line-height: 1.3;
+    text-transform: none;
+  }
+
+  .sdt-team--global .sdt-team__title-text-inner {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, #412104);
+    letter-spacing: 0;
+    line-height: 1.2em;
+  }
+}
+
+/* Desktop: Use desktop typography preset styling */
+@media (min-width: 1200px) {
+  .sdt-team--global .sdt-team__name-text {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5, #c12b20);
+    letter-spacing: 0;
+    line-height: 1.2em;
+    text-transform: none;
+  }
+
+  .sdt-team--global .sdt-team__title-text-inner {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, #412104);
+    letter-spacing: 0;
+    line-height: 1.2em;
+  }
 }
