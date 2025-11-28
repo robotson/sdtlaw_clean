@@ -382,14 +382,6 @@ test.describe('Current vs Baseline Comparison', () => {
     await expect(page).toHaveScreenshot('baseline-firm-navigation-phone-menu.png', { fullPage: false });
   });
 
-  /**
-   * NOTE: This test will fail because we intentionally rewrote the mobile menu
-   * structure (removed Framer dependencies, simplified markup). The baseline
-   * snapshot is from the old Framer version, so visual differences are expected.
-   * 
-   * The test correctly captures the new menu state - the failure indicates
-   * the intentional structural changes we made.
-   */
   test('mobile menu matches baseline', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'phone', 'Phone only');
 

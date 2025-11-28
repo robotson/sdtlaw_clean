@@ -11,16 +11,21 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 ### Refactoring Progress
 
 **Layout extraction complete:**
-- ✅ Header - consolidated to global element, semantic CSS
+- ✅ Header - consolidated to global element, semantic CSS, inline SVG hamburger/close icons
 - ✅ Footer - consolidated to global element, semantic CSS
 - ✅ Hero section - consolidated to global element, semantic CSS
-- ✅ Firm section - semantic layout CSS (still in breakpoint containers)
-- 🔲 Team section - still Framer markup
+- ✅ Firm section - consolidated to global element, semantic CSS
+- ✅ Gift section (Star Quilt) - consolidated to global element, semantic CSS
+- 🔲 Team section - semantic classes added, typography hoisted, still in breakpoint containers
 
-**Blocking issue for full consolidation:**
-- Framer text presets (`framer-styles-preset-*`) require parent class context (`.framer-Ay79T`, etc.)
-- Sections with text styling can't be extracted from breakpoint containers until typography is migrated
-- See "Typography System Migration" section below
+**Typography migration:**
+- ✅ All typography presets hoisted to global scope (no longer require parent class context)
+- ✅ Semantic aliases created for all presets (e.g., `.sdt-section-heading`, `.sdt-attorney-name`)
+
+**Mobile menu:**
+- ✅ Hamburger/close icons converted to inline SVG
+- ✅ JS updated to use `.is-open` class instead of Framer classes
+- ✅ Removed all Framer class dependencies
 
 ## Rules
 
@@ -30,7 +35,7 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 - Do not rationalize, explain away, or defer fixing failing tests
 - Do not suggest "moving forward" with failing tests
 - If tests fail after changes, the changes must be fixed or reverted
-- The test suite is the contract - 67 passing (8 skipped) is the expected state
+- The test suite is the contract - 73 passing (14 skipped) is the expected state
 
 ### Always Reference Live Framer
 - When matching Framer behavior, check the actual live Framer app
@@ -123,7 +128,7 @@ Two separate test files with distinct purposes:
 # Install dependencies (first time)
 npm install && npx playwright install chromium
 
-# Run all tests (67 tests, 8 skipped)
+# Run all tests (73 passed, 14 skipped)
 npm test
 
 # Run only current site tests
@@ -173,113 +178,104 @@ open index.html
 npm run serve
 ```
 
-## Typography System Migration
+## Typography System
 
-### The Problem
+### Hoisted Presets
 
-Framer generates text styling through "style presets" that use CSS custom properties. These presets require parent class context to work:
+All Framer typography presets have been hoisted to work outside breakpoint containers. Each preset has a semantic alias:
 
+| Preset Class | Semantic Alias | Used For |
+|-------------|----------------|----------|
+| `framer-styles-preset-2kmccc` | `.sdt-section-heading` | Section headings (tablet/desktop) |
+| `framer-styles-preset-1dbdxg9` | `.sdt-section-heading--phone` | Section headings (phone) |
+| `framer-styles-preset-1gd00jq` | `.sdt-body-text` | Body text paragraphs |
+| `framer-styles-preset-grvcjq` | `.sdt-tagline` | Tagline ("Indians Serving Indians") |
+| `framer-styles-preset-1ur8ep5` | `.sdt-attorney-name` | Attorney names (desktop) |
+| `framer-styles-preset-1054p22` | `.sdt-attorney-name--phone` | Attorney names (phone/tablet) |
+| `framer-styles-preset-te7ga4` | `.sdt-attorney-title` | Attorney titles (desktop) |
+| `framer-styles-preset-1cqgywt` | `.sdt-attorney-title--phone` | Attorney titles (phone/tablet) |
+| `framer-styles-preset-19zukr5` | `.sdt-bio-heading` | Bio panel headings |
+
+### How Hoisting Works
+
+Original Framer presets required parent class context:
 ```css
-/* Example: This preset only works inside .framer-Ay79T */
-.framer-Ay79T .framer-styles-preset-2kmccc h1 {
-  --framer-font-family: "Montserrat", sans-serif;
-  --framer-font-size: 28px;
-  --framer-text-color: #c12b20;
-  /* ... many more properties */
-}
+.framer-Ay79T .framer-styles-preset-2kmccc h1 { ... }
 ```
 
-When we extract sections from breakpoint containers, they lose this parent context and text styling breaks.
+Hoisted presets work globally:
+```css
+.framer-styles-preset-2kmccc:not(.rich-text-wrapper),
+.sdt-section-heading { ... }
+```
 
-### Current Framer Typography Classes
+## Global Extraction Pattern
 
-| Preset Class | Parent Required | Element | Used For |
-|-------------|-----------------|---------|----------|
-| `framer-styles-preset-2kmccc` | `.framer-Ay79T` | h1 | Section headings (tablet/desktop "our firm", "our team") |
-| `framer-styles-preset-1dbdxg9` | `.framer-rU5N4` | h1 | Section headings (phone variant) |
-| `framer-styles-preset-1gd00jq` | `.framer-ja2YZ` | p | Body text paragraphs |
-| `framer-styles-preset-grvcjq` | `.framer-qE7ir` | h2 | Tagline ("Indians Serving Indians") |
-| `framer-styles-preset-19zukr5` | `.framer-avUKP` | h5 | Bio panel headings |
-| `framer-styles-preset-gxwp0p` | `.framer-mfAtc` | h6 | Photo captions ("Star Quilt...") |
-| `framer-styles-preset-19qfgc8` | `.framer-yNZqP` | p | Bio panel body text |
-| `framer-styles-preset-5gdcdh` | `.framer-QhN6u` | a/span | Navigation links |
-| `framer-styles-preset-1ur8ep5` | `.framer-Yvx1F` | h3 | Attorney names (desktop) |
-| `framer-styles-preset-1054p22` | `.framer-8OqIg` | h3 | Attorney names (tablet/phone) |
-| `framer-styles-preset-tbuoeu` | `.framer-W8HVz` | h2 | Attorney names variant |
-| `framer-styles-preset-te7ga4` | `.framer-5k5uO` | h4 | Attorney titles (desktop) |
-| `framer-styles-preset-1cqgywt` | `.framer-fmga6` | h4 | Attorney titles (tablet/phone) |
+### The Process
 
-### Migration Strategy Options
+When extracting a section from breakpoint containers to a global element:
 
-**Option A: Replace presets with semantic classes**
-1. Audit all `framer-styles-preset-*` usage
-2. Create semantic typography classes (`.sdt-heading-section`, `.sdt-body-text`, etc.)
-3. Write CSS that doesn't depend on parent context
-4. Replace preset classes in HTML with semantic classes
-5. Then extract sections from breakpoint containers
+1. **Hoist typography** - Ensure all text presets work outside containers
+2. **Create semantic CSS** - Duplicate Framer layout rules with `.sdt-*` classes
+3. **Add semantic classes to HTML** - Tag all elements in breakpoint copies
+4. **Create global HTML** - Build new element with semantic classes
+5. **Add hide rules** - CSS to hide breakpoint copies, show global
+6. **Test and fix** - Iterate on CSS until visual tests pass
+7. **Delete breakpoint copies** - Remove redundant HTML
 
-**Option B: Hoist preset styles to global scope**
-1. Copy preset CSS rules and remove parent selector requirement
-2. Add to `styles.css` without `.framer-Ay79T` parent
-3. Preset classes continue to work outside breakpoint containers
-4. Less HTML changes, but keeps Framer naming
+### JavaScript Considerations
 
-**Option C: Hybrid approach**
-1. Create semantic typography system
-2. Map semantic classes to Framer CSS variables (keeps visual fidelity)
-3. Gradually replace in HTML as sections are extracted
+When sections have interactive elements (like Team cards with bio overlays), the JavaScript may depend on specific selectors:
 
-### Recommended Approach
+```javascript
+// JS looks for these specific classes/IDs
+const cards = document.querySelectorAll('.framer-1kq6r0t-container');
+const cardId = cardContainer.id;  // expects "1kq6r0t"
+```
 
-Option A (semantic classes) is cleanest long-term but most work.
+The global element must include these same classes/IDs for JS to work, OR the JS must be updated to use semantic selectors.
 
-For incremental progress:
-1. Start with Option B to unblock section extraction
-2. Gradually migrate to Option A as sections are refactored
-3. Eventually remove all `framer-styles-preset-*` classes
+## Lessons Learned
 
-## Post-Mortems & Lessons Learned
+### Don't Revert on First Failure
 
-### 2024-11-25: Failed Typography Hoisting + Firm Extraction
+When tests fail after changes, the correct approach is:
 
-**What was attempted:**
-1. Hoisted 4 Framer typography presets to global scope in `styles.css` (removing parent class dependencies)
-2. Added global Firm container to HTML (before breakpoint containers)
-3. Added CSS to hide breakpoint Firm copies and show global version
-4. Fixed missing hamburger icon in global header (added CSS mask)
+1. **Look at the diff images** in `test-results/` - understand what's actually different
+2. **Identify the specific CSS gaps** - compare computed styles
+3. **Fix incrementally** - add missing styles one by one, testing after each
+4. **Keep going until tests pass**
 
-**What went wrong:**
-- Phone tests failed (3 failures) after changes
-- Visual diff showed all content shifted vertically
-- The global Firm section positioning differed from the breakpoint-container version
-- Typography preset hoisting may have had subtle cascade/specificity issues
+Reverting immediately when "visual differences are too significant" is giving up. The strangler fig pattern expects iteration.
 
-**Why tests initially seemed to pass after hoisting alone:**
-- We ran tests after hoisting typography but BEFORE extracting Firm to global
-- The hoisted presets were being used by elements still inside breakpoint containers
-- The real breakage came when Firm moved outside those containers
+### Test After Every Atomic Change
 
-**Key learnings:**
+Don't batch multiple changes:
+- ❌ "Hoist typography + extract to global" in one step
+- ✅ Hoist typography → test → extract to global → test
 
-1. **Test after EVERY atomic change** - Don't batch "hoist typography" + "extract to global container". These are separate changes that should be tested independently.
+### Global Extraction Requires Full CSS Audit
 
-2. **Global extraction is fragile** - Moving sections out of breakpoint containers changes:
-   - Parent selector context (breaks Framer preset selectors)
-   - Document flow and stacking
-   - Inherited styles from breakpoint wrapper elements
+Moving sections outside breakpoint containers means losing:
+- Parent selector context
+- Inherited styles from wrapper elements
+- Document flow positioning
 
-3. **The hamburger icon gotcha** - The global header's `.sdt-menu-toggle` was an empty div. Framer's hamburger icon comes from CSS mask on `.framer-5AVC2` class. When we use semantic classes, we need to include the icon styling explicitly.
+All of these must be explicitly replicated in the semantic CSS.
 
-4. **Chrome vs Chromium rendering** - Playwright uses Chromium, which renders slightly differently than Chrome. Tests can pass in Chromium while visual differences exist in Chrome. Manual QA in actual browsers is still necessary.
+### Bio Overlay JS Dependencies
 
-5. **Don't update snapshots to make tests pass** - That's "reward hacking". If tests fail, either fix the code or understand why the visual difference is acceptable.
+The bio overlay system in `site.js` depends on:
+- Container classes: `.framer-1kq6r0t-container`, `.framer-a2aut-container`, `.framer-1175ksh-container`
+- Card class: `.framer-74g9dq`
+- Container IDs: `1kq6r0t`, `a2aut`, `1175ksh` (used as keys in `bioData`)
 
-**What to do differently next time:**
+Global Team extraction must preserve these or update the JS.
 
-1. **One preset at a time** - Hoist a SINGLE typography preset, test, commit. Then the next one. Don't batch 4 presets together.
-2. **Don't combine hoisting with extraction** - Hoisting typography and extracting to global container are separate tasks. Do one, verify, commit. Then the other.
-3. When hoisting typography presets, verify the exact same CSS properties are being set (use browser DevTools computed styles comparison)
-4. For Firm section specifically: the breakpoint copies have complex Framer layout classes that may be providing spacing/layout. Need to audit those before extraction.
-5. Consider keeping Firm section in breakpoint containers until ALL Framer dependencies are removed (typography, layout, spacing)
+### Current State
 
-**Current state:** Changes reverted. Tests pass (67 passed, 8 skipped). Typography system migration strategy documented but not implemented.
+Tests pass (73 passed, 14 skipped). Team section has:
+- ✅ Typography presets hoisted
+- ✅ Semantic CSS created (`.sdt-team__*`)
+- ✅ Semantic classes added to all breakpoint copies
+- 🔲 Global extraction pending - needs CSS iteration to match visual fidelity
