@@ -437,32 +437,31 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
   function initMobileMenu() {
     const menuToggle = document.querySelector('.sdt-menu-toggle');
     const menuOverlay = document.querySelector('.sdt-mobile-menu');
-    const menuContainer = document.querySelector('.framer-pqPzZ');
 
-    if (!menuToggle || !menuOverlay || !menuContainer) {
+    if (!menuToggle || !menuOverlay) {
       return;
     }
 
     menuOverlay.style.display = 'none';
-    menuToggle.classList.remove('framer-IRM4W');
-    menuToggle.classList.add('framer-5AVC2');
+    menuToggle.classList.remove('is-open');
     mobileMenuOpen = false;
 
     menuToggle.addEventListener('click', () => {
       mobileMenuOpen = !mobileMenuOpen;
 
       if (mobileMenuOpen) {
+        menuOverlay.classList.add('is-open');
         menuOverlay.style.display = 'flex';
         menuOverlay.classList.add('menu-opening');
-        menuToggle.classList.remove('framer-5AVC2');
-        menuToggle.classList.add('framer-IRM4W');
+        menuToggle.classList.add('is-open');
+        menuToggle.setAttribute('aria-label', 'Close menu');
 
         setTimeout(() => {
           menuOverlay.classList.remove('menu-opening');
         }, 300);
       } else {
-        menuToggle.classList.remove('framer-IRM4W');
-        menuToggle.classList.add('framer-5AVC2');
+        menuToggle.classList.remove('is-open');
+        menuToggle.setAttribute('aria-label', 'Open menu');
 
         const collapseDiv = document.createElement('div');
         collapseDiv.style.cssText = `
@@ -481,6 +480,7 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
 
         collapseDiv.offsetHeight;
         menuOverlay.style.display = 'none';
+        menuOverlay.classList.remove('is-open');
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
@@ -494,14 +494,16 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
       }
     });
 
-    // Handle nested links (spans with data-nested-link) specially
-    const nestedLinks = menuOverlay.querySelectorAll('[data-nested-link="true"]');
-    nestedLinks.forEach(link => {
+    // Handle mobile menu links
+    const menuLinks = menuOverlay.querySelectorAll('.sdt-mobile-menu__link');
+    
+    menuLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
 
         const href = link.getAttribute('href');
+        
         if (href && href.startsWith('#')) {
           const targetId = href.slice(1);
           const target = document.querySelector('#' + targetId);
@@ -520,14 +522,6 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
         }
       });
     });
-
-    // Regular anchor links in menu
-    const menuLinks = menuOverlay.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        closeMobileMenu();
-      });
-    });
   }
 
   // Close mobile menu
@@ -535,13 +529,16 @@ Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds
     const menuToggle = document.querySelector('.sdt-menu-toggle');
     const menuOverlay = document.querySelector('.sdt-mobile-menu');
 
-    if (!menuToggle || !menuOverlay) return;
+    if (!menuToggle || !menuOverlay) {
+      return;
+    }
 
     // Reset the shared state
     mobileMenuOpen = false;
 
-    menuToggle.classList.remove('framer-IRM4W');
-    menuToggle.classList.add('framer-5AVC2');
+    menuToggle.classList.remove('is-open');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+    menuOverlay.classList.remove('is-open');
 
     const collapseDiv = document.createElement('div');
     collapseDiv.style.cssText = `
