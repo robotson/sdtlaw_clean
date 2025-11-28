@@ -1,8 +1,0 @@
-html body {
- background: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233));
- }
- @media (max-width: 809.98px) {
- html body {
- background: var(--token-dd2b27b5-e48e-4081-9c48-a61bf4c9861b, rgba(242, 240, 233, 0.25));
- }
- }

@@ -164,6 +164,10 @@
    BASE / RESET
    ========================================================================== */
 
+body {
+  background-color: var(--color-bg-primary);
+}
+
 /* These are already set by Framer, but we define them for when we remove Framer */
 .sdt-base {
   box-sizing: border-box;
