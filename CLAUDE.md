@@ -29,8 +29,8 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 
 **Remaining Framer dependencies (long-term cleanup):**
 - 🔲 `assets/css/framer-ssr.css` - Still actively loaded and required for styling
-- 🔲 Font declarations in `<head>` - 14 font families loaded (only 2 used: EB Garamond, Montserrat)
-- 🔲 Team section still in breakpoint containers with Framer layout classes
+- ✅ Font declarations - trimmed to latin-only subsets for EB Garamond + Montserrat
+- 🔲 **Team section** - still in 3 breakpoint containers (next target for consolidation)
 
 ## Rules
 
