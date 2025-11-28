@@ -6,10 +6,6 @@ _tests/report/
 .DS_Store
 **/.DS_Store
 
-# Debug/one-off scripts
-_tests/inspect-*.js
-_tests/debug-*.js
-_tests/check-*.js
-
-# Extracted reference files (not used in build)
-assets/css/framer-ssr.css
+# Scratch folder for ephemeral/temporary scripts (keep .gitkeep)
+_scratch/*
+!_scratch/.gitkeep

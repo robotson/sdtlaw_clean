@@ -47,6 +47,11 @@ This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted fro
 - Other development work may be running on these ports simultaneously
 - Use the configured port 9753 (npm run serve) or other uncommon ports (9000+)
 
+### Temporary/Debug Scripts
+- Put all ephemeral scripts in `_scratch/` folder (gitignored)
+- Use for one-off debugging, style inspection, testing ideas
+- Don't clutter `_tests/` with temporary utilities
+
 ### Refactoring Approach
 - **Small, incremental changes** - never rewrite large sections at once
 - **Test after every change** - run `npm test` constantly
