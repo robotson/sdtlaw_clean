@@ -150,6 +150,14 @@ test.describe('Current Site Snapshots', () => {
         await openBioOverlay(page, attorney.id);
 
         await expect(page.locator('.bio-portal--visible')).toBeAttached();
+        
+        // Wait for the dialog to have animate-in class (for phone breakpoint)
+        await page.waitForFunction(() => {
+          const dialog = document.querySelector('.bio-portal--visible [role="dialog"]');
+          return dialog && dialog.classList.contains('animate-in');
+        }, { timeout: 2000 }).catch(() => {
+          // If no dialog found or class not added, that's okay - continue
+        });
 
         await expect(page).toHaveScreenshot(`current-bio-${attorney.name.toLowerCase()}.png`, {
           fullPage: false,

@@ -1967,20 +1967,20 @@ body {
    ========================================================================== */
 
 .sdt-bio-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: var(--z-modal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Position is set by JS (fixed/absolute with top/left) */
+  z-index: 11;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition-normal);
+  transition: opacity 0.3s ease;
 }
 
-.sdt-bio-overlay--visible {
+.sdt-bio-overlay.bio-portal--visible {
   opacity: 1;
   pointer-events: auto;
+}
+
+.sdt-bio-overlay.bio-portal--closing {
+  opacity: 0;
 }
 
 .sdt-bio-overlay__backdrop {
