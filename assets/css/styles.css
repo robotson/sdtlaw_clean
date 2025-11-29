@@ -2736,6 +2736,19 @@ body {
   inset: 0px;
 }
 
+/* Bio panel contact button - tablet bio overlay buttons with border */
+.bio-panel__contact-btn {
+  --border-bottom-width: 1px;
+  --border-color: rgb(65, 33, 4);
+  --border-left-width: 1px;
+  --border-right-width: 1px;
+  --border-style: solid;
+  --border-top-width: 1px;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  border-radius: 40px;
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
