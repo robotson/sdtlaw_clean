@@ -2730,6 +2730,12 @@ body {
   color: rgb(65, 33, 4);
 }
 
+/* Bio panel backdrop - fullscreen overlay behind modal */
+.bio-panel__backdrop {
+  position: fixed;
+  inset: 0px;
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
