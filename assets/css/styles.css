@@ -2669,6 +2669,23 @@ body {
   object-fit: cover;
 }
 
+/* .bio-panel__photo-wrapper - Image wrapper for absolute positioning (bio overlays) */
+.bio-panel__photo-wrapper {
+  position: absolute;
+  border-radius: inherit;
+  inset: 0;
+}
+
+/* .bio-panel__photo-img - The actual img element in bio overlays */
+.bio-panel__photo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: center;
+  object-fit: cover;
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
