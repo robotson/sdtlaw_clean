@@ -1968,7 +1968,7 @@ body {
 
 .sdt-bio-overlay {
   /* Position is set by JS (fixed/absolute with top/left) */
-  z-index: 11;
+  z-index: 201;  /* Must be higher than sticky nav (--z-sticky: 200) */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -2647,6 +2647,26 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* .sdt-team__photo-wrapper - Image wrapper for absolute positioning */
+.sdt-team__photo-wrapper {
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* .sdt-team__photo-actual - The actual img element */
+.sdt-team__photo-actual {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: center;
+  object-fit: cover;
 }
 
 /* ==========================================================================
