@@ -1,5 +1,23 @@
 # SDT Law - Clean Vanilla Site
 
+## ⚠️ CRITICAL: BASELINE IS FROZEN - NEVER MODIFY
+
+**DO NOT TOUCH THESE FILES/FOLDERS:**
+- `_baseline/` folder (frozen HTML, CSS, JS, assets)
+- `_tests/baseline.spec.js` (test code for baseline)
+- `_tests/baseline.spec.js-snapshots/` (baseline screenshot PNGs)
+
+**WHY:** The baseline is a frozen reference point. If baseline tests fail, it means your changes to the CURRENT site broke something. Fix the current site, not the baseline.
+
+**WHAT TO DO WHEN TESTS FAIL:**
+1. If `current-site.spec.js` tests fail → fix your code or update current snapshots (`npm run test:update`)
+2. If `baseline.spec.js` tests fail → your current site diverged from baseline; either fix current site to match, or accept the divergence is intentional
+3. NEVER run `npm run test:update-baseline` unless explicitly asked
+4. NEVER modify `_tests/baseline.spec.js`
+5. NEVER modify anything in `_baseline/` folder
+
+---
+
 ## Project Context
 
 This is a vanilla HTML/CSS/JS version of the SDT Law firm website, converted from Framer. We are progressively refactoring from Framer's generated code toward clean, semantic HTML/CSS using a "strangler fig" pattern.

@@ -2700,6 +2700,18 @@ body {
   display: block;
 }
 
+/* .bio-panel__card - Beige background card container in bio overlays (desktop variant) */
+.bio-panel__card--desktop {
+  background-color: rgb(242, 240, 233);
+  border-radius: 24px 24px 0px 0px;
+}
+
+/* .bio-panel__card--tablet - Beige background card container in bio overlays (tablet variant) */
+.bio-panel__card--tablet {
+  background-color: rgb(242, 240, 233);
+  border-radius: 16px;
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
