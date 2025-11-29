@@ -1800,6 +1800,7 @@ body {
 }
 
 /* .sdt-gift__text - Text container (replaces .framer-3cuwvs) */
+/* Includes RichTextContainer styles to allow removal of data-framer-component-type attribute */
 .sdt-gift__text {
   /* Desktop (default) */
   white-space: pre-wrap;
@@ -1811,6 +1812,12 @@ body {
   height: 75px;
   position: relative;
   transform: none;
+  /* RichTextContainer styles */
+  outline: none;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  display: flex;
 }
 
 /* Tablet */
