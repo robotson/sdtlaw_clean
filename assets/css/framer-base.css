@@ -111,6 +111,13 @@ flex-direction:column;
 flex-shrink:0;
 justify-content:flex-start;
 display:flex}
+/* Bio overlay text containers - replaces RichTextContainer attribute */
+.framer-1v239di,.framer-1iwl8ez,.framer-1iuxll0,.framer-mvaie3,.framer-z3ffe3{
+outline:none;
+flex-direction:column;
+flex-shrink:0;
+justify-content:flex-start;
+display:flex}
 p.text-content,div.text-content,figure.text-content,h1.text-content,h2.text-content,h3.text-content,h4.text-content,h5.text-content,h6.text-content,ol.text-content,ul.text-content{
 margin:0;
 padding:0}
