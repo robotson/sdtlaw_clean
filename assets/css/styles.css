@@ -2725,6 +2725,11 @@ body {
   font-weight: 600;
 }
 
+/* Bio panel title color - "Shareholder" subtitle */
+.bio-panel__title {
+  color: rgb(65, 33, 4);
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
