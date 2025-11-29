@@ -2686,6 +2686,20 @@ body {
   object-fit: cover;
 }
 
+/* .bio-panel__divider - Horizontal divider line container */
+.bio-panel__divider {
+  flex-shrink: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/* .bio-panel__divider svg - The SVG line inside divider */
+.bio-panel__divider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
