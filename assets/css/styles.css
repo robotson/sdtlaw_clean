@@ -2943,6 +2943,7 @@ body {
 }
 
 /* Global Team - Heading elements (matches .framer-qTkKF .framer-1524npc) */
+/* Includes RichTextContainer styles to allow removal of data-framer-component-type attribute */
 .sdt-team--global .sdt-team__heading {
   --framer-paragraph-spacing: 0px;
   white-space: pre;
@@ -2950,24 +2951,25 @@ body {
   width: auto;
   height: auto;
   position: relative;
+  /* RichTextContainer styles */
+  outline: none;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  display: flex;
 }
 
 /* Global Team - Heading visibility */
-/* Phone: Show phone heading, hide desktop heading */
+/* Base display: flex is already set, so we only need to hide the inactive heading */
+/* Phone: Hide desktop heading */
 @media (max-width: 809px) {
-  .sdt-team--global .sdt-team__heading--phone {
-    display: flex;
-  }
   .sdt-team--global .sdt-team__heading--desktop {
     display: none;
   }
 }
 
-/* Tablet and Desktop: Show desktop heading, hide phone heading */
+/* Tablet and Desktop: Hide phone heading */
 @media (min-width: 810px) {
-  .sdt-team--global .sdt-team__heading--desktop {
-    display: flex;
-  }
   .sdt-team--global .sdt-team__heading--phone {
     display: none;
   }
