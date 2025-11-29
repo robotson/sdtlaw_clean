@@ -12,7 +12,7 @@
   // Initialize bio overlays - make cards clickable
   function initBioOverlays() {
     // Select card containers by ID (works across all breakpoint variants)
-    const cards = document.querySelectorAll('[id="1kq6r0t"], [id="a2aut"], [id="1175ksh"]');
+    const cards = document.querySelectorAll('[id="attorney-tjs"], [id="attorney-had"], [id="attorney-pot"]');
     console.log('[BIO] initBioOverlays - found', cards.length, 'card containers');
 
     cards.forEach(cardContainer => {
@@ -102,7 +102,7 @@
 
     // Find the first visible card (Tammy's) to get the correct page position for the cards row
     // All overlays should appear at the same vertical position, aligned to first card row
-    const allCards = document.querySelectorAll('[id="1kq6r0t"]');
+    const allCards = document.querySelectorAll('[id="attorney-tjs"]');
     let cardsPageTop = 2000; // fallback
     for (const c of allCards) {
       const rect = c.getBoundingClientRect();
@@ -121,7 +121,7 @@
     overlay.style.top = overlayTop + 'px';
     overlay.style.left = leftPosition + 'px';
     overlay.style.width = portalWidth + 'px';
-    overlay.style.zIndex = '100';
+    overlay.style.zIndex = '201'; // Must be higher than sticky nav (--z-sticky: 200)
     overlay.removeAttribute('hidden');
     overlay.classList.add('bio-portal--visible');
 

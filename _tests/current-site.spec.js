@@ -10,9 +10,9 @@ const { test, expect } = require('@playwright/test');
 
 // Attorney data for bio overlay tests
 const attorneys = [
-  { id: '1kq6r0t', name: 'Tammy' },
-  { id: 'a2aut', name: 'Heidi' },
-  { id: '1175ksh', name: 'Phyllis' },
+  { id: 'attorney-tjs', name: 'Tammy' },
+  { id: 'attorney-had', name: 'Heidi' },
+  { id: 'attorney-pot', name: 'Phyllis' },
 ];
 
 /**
@@ -74,7 +74,8 @@ async function scrollToFooter(page) {
  * Helper: Open an attorney's bio overlay
  */
 async function openBioOverlay(page, attorneyId) {
-  const cardSelector = `.framer-${attorneyId}-container .framer-74g9dq`;
+  // Use attribute selector for IDs that start with numbers (invalid in CSS #id syntax)
+  const cardSelector = `[id="${attorneyId}"] .sdt-team__card`;
   const card = await findVisible(page, cardSelector);
   if (card) {
     await card.click();
@@ -88,9 +89,10 @@ async function openBioOverlay(page, attorneyId) {
  * Helper: Close the bio overlay
  */
 async function closeBioOverlay(page) {
-  const closeBtn = page.locator('.bio-panel__close');
-  if (await closeBtn.isVisible()) {
-    await closeBtn.click();
+  // Scope to visible overlay since all 3 phone overlays have .bio-panel__close
+  const closeBtn = page.locator('.bio-portal--visible .bio-panel__close');
+  if (await closeBtn.first().isVisible()) {
+    await closeBtn.first().click();
     await page.waitForTimeout(500);
     return;
   }
@@ -216,7 +218,7 @@ test.describe('Functional Checks', () => {
     await page.waitForLoadState('networkidle');
 
     await scrollToTeam(page);
-    await openBioOverlay(page, '1kq6r0t');
+    await openBioOverlay(page, 'attorney-tjs');
 
     await expect(page.locator('.bio-portal--visible')).toBeAttached();
 
@@ -230,7 +232,7 @@ test.describe('Functional Checks', () => {
     await page.waitForLoadState('networkidle');
 
     await scrollToTeam(page);
-    await openBioOverlay(page, '1kq6r0t');
+    await openBioOverlay(page, 'attorney-tjs');
 
     await expect(page.locator('.bio-portal--visible')).toBeAttached();
 
