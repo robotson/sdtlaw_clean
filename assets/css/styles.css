@@ -2493,6 +2493,11 @@ body {
   background-color: var(--token-367c5da4-8963-4c8e-8e84-c466e552fe57, rgb(242, 240, 233));
   border-radius: 4px;
   opacity: 1;
+  transition: background-color 0.2s ease-out;
+}
+
+.sdt-team__card:hover {
+  background-color: rgb(227, 216, 200) !important;
 }
 
 /* Phone/Tablet small card variant (replaces .framer-ErKEJ.framer-v-gfdl0n etc) */

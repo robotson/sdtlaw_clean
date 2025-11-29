@@ -18,7 +18,7 @@
     cards.forEach(cardContainer => {
       const cardId = cardContainer.id;
       // Card can have either semantic or Framer class
-      const card = cardContainer.querySelector('.sdt-team__card, .framer-74g9dq');
+      const card = cardContainer.querySelector('.sdt-team__card');
 
       if (!card || !cardId) {
         console.log('[BIO] Skipping - no card or cardId', cardId);
