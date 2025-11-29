@@ -2749,6 +2749,11 @@ body {
   border-radius: 40px;
 }
 
+/* Bio panel button text - centered text in tablet bio buttons */
+.bio-panel__btn-text {
+  --framer-text-alignment: center;
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
