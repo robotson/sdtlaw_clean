@@ -2669,6 +2669,102 @@ body {
   object-fit: cover;
 }
 
+/* ==========================================================================
+   Team Card Responsive Sizing (Phone/Tablet)
+   Replaces Framer variant mechanism (.framer-v-gfdl0n, etc.)
+   These styles apply at <1200px to match Framer's "Small" card variants.
+   ========================================================================== */
+
+@media (max-width: 1199px) {
+  /* All cards use "small" sizing at phone/tablet */
+  .sdt-team__card {
+    gap: 5px;
+    width: 217px;
+    height: 272px;
+  }
+
+  /* Photo container - all attorneys same size */
+  .sdt-team__card .sdt-team__photo {
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 1px;
+    width: 198px;
+    height: 208px;
+  }
+
+  /* Photo frame - all attorneys same positioning */
+  .sdt-team__card .sdt-team__photo-frame {
+    height: 207px;
+    overflow: var(--overflow-clip-fallback, clip);
+    width: unset;
+    z-index: 1;
+    align-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -16px;
+  }
+
+  /* TJS photo image sizing (phone/tablet) */
+  .sdt-team__card--tjs .sdt-team__photo-img {
+    width: 235px;
+    height: 256px;
+    top: calc(57.0048% - 128px);
+    left: calc(54.2056% - 117.5px);
+  }
+
+  /* HAD photo image sizing (phone/tablet) */
+  .sdt-team__card--had .sdt-team__photo-img {
+    width: 213px;
+    height: 310px;
+    top: calc(74.8792% - 155px);
+    left: calc(42.9907% - 106.5px);
+  }
+
+  /* POT photo image sizing (phone/tablet) */
+  .sdt-team__card--pot .sdt-team__photo-img {
+    width: 250px;
+    height: 270px;
+    top: calc(62.8019% - 135px);
+    left: calc(53.7383% - 125px);
+  }
+
+  /* Info row - all attorneys same */
+  .sdt-team__card .sdt-team__info {
+    align-self: unset;
+    width: 100%;
+  }
+
+  /* Arrow icon - all attorneys same */
+  .sdt-team__card .sdt-team__arrow-svg {
+    height: var(--framer-aspect-ratio-supported, 22px);
+    width: 22px;
+  }
+}
+
+/* ==========================================================================
+   Team Card Desktop Sizing
+   Replaces Framer variant mechanism (.framer-v-74g9dq, etc.)
+   These styles apply at >=1200px to match Framer's "Large" card variants.
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+  /* HAD has different photo positioning on desktop */
+  .sdt-team__card--had .sdt-team__photo-img {
+    width: 285px;
+    height: 345px;
+    top: 0;
+    left: calc(44.5344% - 142.5px);
+  }
+
+  /* POT has different height on desktop */
+  .sdt-team__card--pot .sdt-team__photo-img {
+    height: 283px;
+    top: 0;
+  }
+}
+
 /* .bio-panel__photo-wrapper - Image wrapper for absolute positioning (bio overlays) */
 .bio-panel__photo-wrapper {
   position: absolute;
