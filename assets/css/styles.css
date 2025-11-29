@@ -2611,6 +2611,7 @@ body {
 }
 
 /* .sdt-team__name, .sdt-team__title - Text containers (replaces .framer-ErKEJ .framer-1bmsbvg/1pk6khb) */
+/* Also includes RichTextContainer styles: display: flex, flex-direction: column, outline: none */
 .sdt-team__name,
 .sdt-team__title-text {
   white-space: pre;
@@ -2618,6 +2619,11 @@ body {
   width: auto;
   height: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  outline: none;
 }
 
 /* .sdt-team__arrow-area - Arrow button area (replaces .framer-ErKEJ .framer-7d20zd) */
@@ -3156,6 +3162,13 @@ body {
     top: 0px;
     left: -0.984375px;
   }
+}
+
+/* Global Team - Typography base reset (replaces framer-text margin/padding reset) */
+.sdt-team--global .sdt-team__name-text,
+.sdt-team--global .sdt-team__title-text-inner {
+  margin: 0;
+  padding: 0;
 }
 
 /* Global Team - Typography responsive rules */
