@@ -13,10 +13,12 @@ const { test, expect } = require('@playwright/test');
  */
 
 // Attorney data for bio overlay tests
+// - id: Framer ID (used for baseline tests with frozen HTML)
+// - semanticId: Semantic ID (used for comparison tests with current site)
 const attorneys = [
-  { id: '1kq6r0t', name: 'Tammy' },
-  { id: 'a2aut', name: 'Heidi' },
-  { id: '1175ksh', name: 'Phyllis' },
+  { id: '1kq6r0t', semanticId: 'attorney-tjs', name: 'Tammy' },
+  { id: 'a2aut', semanticId: 'attorney-had', name: 'Heidi' },
+  { id: '1175ksh', semanticId: 'attorney-pot', name: 'Phyllis' },
 ];
 
 /**
@@ -79,6 +81,20 @@ async function scrollToFooter(page) {
  */
 async function openBioOverlay(page, attorneyId) {
   const cardSelector = `.framer-${attorneyId}-container .framer-74g9dq`;
+  const card = await findVisible(page, cardSelector);
+  if (card) {
+    await card.click();
+    await page.waitForTimeout(1000);
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Helper: Open an attorney's bio overlay on the CURRENT site (using semantic IDs)
+ */
+async function openBioOverlayCurrent(page, semanticId) {
+  const cardSelector = `[id="${semanticId}"] .sdt-team__card`;
   const card = await findVisible(page, cardSelector);
   if (card) {
     await card.click();
@@ -416,7 +432,7 @@ test.describe('Current vs Baseline Comparison', () => {
       await page.waitForLoadState('networkidle');
       await page.waitForFunction(() => document.fonts.ready);
       await scrollToTeam(page);
-      await openBioOverlay(page, attorney.id);
+      await openBioOverlayCurrent(page, attorney.semanticId);
 
       await expect(page).toHaveScreenshot(`baseline-bio-${attorney.name.toLowerCase()}.png`, { fullPage: false });
     });
