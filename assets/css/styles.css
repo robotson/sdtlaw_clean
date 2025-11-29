@@ -2713,15 +2713,15 @@ body {
 }
 
 /* Address text typography - shared between label and value */
-.framer-address-label,
-.framer-address-value {
+.bio-panel__address-label,
+.bio-panel__address-value {
   font-family: 'EB Garamond', serif;
   line-height: 1.25em;
   color: rgb(65, 33, 4);
 }
 
 /* Address label is bold */
-.framer-address-label {
+.bio-panel__address-label {
   font-weight: 600;
 }
 
