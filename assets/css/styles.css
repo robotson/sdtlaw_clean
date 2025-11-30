@@ -2969,19 +2969,12 @@ body {
   display: flex;
 }
 
-/* Global Team - Heading visibility */
-/* Base display: flex is already set, so we only need to hide the inactive heading */
-/* Phone: Hide desktop heading */
+/* Global Team - Heading text responsive font sizing */
+/* Desktop/Tablet (default): 28px from .sdt-section-heading */
+/* Phone: Override font size to match original phone heading (22px) */
 @media (max-width: 809px) {
-  .sdt-team--global .sdt-team__heading--desktop {
-    display: none;
-  }
-}
-
-/* Tablet and Desktop: Hide phone heading */
-@media (min-width: 810px) {
-  .sdt-team--global .sdt-team__heading--phone {
-    display: none;
+  .sdt-team--global .sdt-team__heading h1 {
+    --framer-font-size: 22px;
   }
 }
 
