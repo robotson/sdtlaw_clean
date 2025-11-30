@@ -2871,6 +2871,17 @@ body {
   --framer-text-alignment: center;
 }
 
+/* Bio overlay links - semantic replacement for framer-styles-preset-bmzyej */
+/* Gold color links in bio overlays (email/phone) */
+.sdt-bio-link {
+  color: rgb(126, 104, 62);
+  text-decoration: none;
+}
+
+.sdt-bio-link:hover {
+  color: rgb(181, 158, 116);
+}
+
 /* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
