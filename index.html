@@ -74,8 +74,8 @@
       <a class="sdt-mobile-menu__link" href="#team">Our Team</a>
     </div>
     <div class="sdt-header-divider">
-      <svg class="sdt-header-divider__graphic" viewBox="0 0 1220 2" preserveAspectRatio="none" width="100%" height="2" aria-hidden="true">
-        <path d="M 0 0 L 1220 0 L 1220 2 L 0 2 Z" fill="var(--color-red, rgb(193, 43, 32))"></path>
+      <svg class="sdt-header-divider__graphic" viewBox="0 0 100 2" preserveAspectRatio="none" width="100%" height="2" aria-hidden="true">
+        <path d="M 0 0 L 100 0 L 100 2 L 0 2 Z" fill="var(--color-red, rgb(193, 43, 32))"></path>
       </svg>
     </div>
   </div>
@@ -227,8 +227,8 @@
       <div class="sdt-gift__content">
         <div class="sdt-gift__ornament-wrapper">
           <!-- Phone ornament (visible on phone only) -->
-          <div class="ssr-variant hidden-1xilv83 hidden-72rtr7">
-            <div class="sdt-gift__ornament hidden-72rtr7 hidden-1xilv83" aria-hidden="true">
+          <div class="sdt-show-phone-only">
+            <div class="sdt-gift__ornament" aria-hidden="true">
               <div class="svgContainer"><svg class="extracted-15" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 294 1" overflow="visible">
                   <path d="M 0 0 L 294 0 L 294 1 L 0 1 Z" fill="var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62))"></path>
                 </svg></div>
@@ -236,35 +236,33 @@
           </div>
         </div>
         <!-- Phone text (two h6 elements, visible on phone only) -->
-        <div class="ssr-variant hidden-1xilv83 hidden-72rtr7">
+        <div class="sdt-show-phone-only">
           <div class="sdt-gift__text">
-            <h6 class="framer-text framer-styles-preset-gxwp0p">Star Quilt Gifted by the </h6>
-            <h6 class="framer-text framer-styles-preset-gxwp0p">Clairmont family</h6>
+            <h6 class="sdt-text sdt-gift__caption">Star Quilt Gifted by the </h6>
+            <h6 class="sdt-text sdt-gift__caption">Clairmont family</h6>
           </div>
         </div>
         <!-- Tablet/Desktop text (single h6, visible on tablet and desktop) -->
-        <div class="ssr-variant hidden-1siuntv">
+        <div class="sdt-show-tablet-up">
           <div class="sdt-gift__text">
-            <h6 class="framer-text framer-styles-preset-gxwp0p">Star Quilt Gifted by the Clairmont Family</h6>
+            <h6 class="sdt-text sdt-gift__caption">Star Quilt Gifted by the Clairmont Family</h6>
           </div>
         </div>
       </div>
-      <!-- Phone image (with transform, visible on phone only) -->
-      <div class="ssr-variant hidden-1xilv83 hidden-72rtr7">
-        <div class="sdt-gift__image">
-          <div class="sdt-gift__image-wrapper"><img class="sdt-gift__image-img" decoding="auto" loading="lazy" width="770" height="762" sizes="258.1824px" srcset="./assets/images/firm-photo.jpg 512w,./assets/images/firm-photo.jpg 770w" src="./assets/images/firm-photo.jpg" alt=""></div>
-        </div>
-      </div>
-      <!-- Tablet image (without transform, visible on tablet only) -->
-      <div class="ssr-variant hidden-1siuntv hidden-72rtr7">
-        <div class="sdt-gift__image">
-          <div class="sdt-gift__image-wrapper"><img class="sdt-gift__image-img" decoding="auto" loading="lazy" width="770" height="762" sizes="398px" srcset="./assets/images/firm-photo.jpg 512w,./assets/images/firm-photo.jpg 770w" src="./assets/images/firm-photo.jpg" alt=""></div>
-        </div>
-      </div>
-      <!-- Desktop image (without transform, visible on desktop only) -->
-      <div class="ssr-variant hidden-1siuntv hidden-1xilv83">
-        <div class="sdt-gift__image">
-          <div class="sdt-gift__image-wrapper"><img class="sdt-gift__image-img" decoding="async" loading="lazy" width="770" height="762" sizes="544px" srcset="./assets/images/firm-photo.jpg 512w,./assets/images/firm-photo.jpg 770w" src="./assets/images/firm-photo.jpg" alt=""></div>
+      <!-- Responsive image (consolidated from breakpoint-specific containers) -->
+      <div class="sdt-gift__image">
+        <div class="sdt-gift__image-wrapper">
+          <img 
+            class="sdt-gift__image-img" 
+            decoding="auto" 
+            loading="lazy" 
+            width="770" 
+            height="762" 
+            sizes="(max-width: 809px) 258.1824px, (max-width: 1199px) 398px, 544px"
+            srcset="./assets/images/firm-photo.jpg 512w, ./assets/images/firm-photo.jpg 770w" 
+            src="./assets/images/firm-photo.jpg" 
+            alt=""
+          >
         </div>
       </div>
     </div>
@@ -335,7 +333,7 @@
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1kq6r0t-d)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1kq6r0t-d"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-go17s5">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a></p>
                     </div>
                   </div>
                   <div class="framer-e0xee0">
@@ -343,7 +341,7 @@
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1kq6r0t-d)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1kq6r0t-d"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-fly4qh">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
@@ -355,21 +353,21 @@
             </div>
             <div class="framer-1etjeh">
               <div class="framer-1lwgu3k">
-                <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
               <div class="framer-1xy1e9l">
                 <div class="framer-4h32yw">
-                  <p class="framer-text framer-styles-preset-19qfgc8">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
+                  <p class="sdt-text sdt-bio-text">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
             <div class="framer-1hrcbbx">
               <div class="framer-9biryz">
                 <div class="framer-wjb9w6">
-                  <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-1kq6r0t-desktop">Tammy J. Swanson</h5>
-                  <h5 class="framer-text framer-styles-preset-19zukr5 bio-panel__title">Shareholder</h5>
+                  <h5 class="sdt-text sdt-bio-name" id="bio-name-1kq6r0t-desktop">Tammy J. Swanson</h5>
+                  <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
                 <div class="framer-a94fu2-container">
                   <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
@@ -414,7 +412,7 @@
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1kq6r0t-t)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1kq6r0t-t"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-go17s5">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a></p>
                     </div>
                   </div>
                   <div class="framer-e0xee0">
@@ -422,7 +420,7 @@
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1kq6r0t-t)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1kq6r0t-t"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-fly4qh">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
@@ -434,21 +432,21 @@
             </div>
             <div class="framer-1etjeh">
               <div class="framer-1lwgu3k">
-                <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
               <div class="framer-1xy1e9l">
                 <div class="framer-4h32yw">
-                  <p class="framer-text framer-styles-preset-19qfgc8">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
+                  <p class="sdt-text sdt-bio-text">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
             <div class="framer-1hrcbbx">
               <div class="framer-9biryz">
                 <div class="framer-wjb9w6">
-                  <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-1kq6r0t-tablet">Tammy J. Swanson</h5>
-                  <h5 class="framer-text framer-styles-preset-19zukr5 bio-panel__title">Shareholder</h5>
+                  <h5 class="sdt-text sdt-bio-name" id="bio-name-1kq6r0t-tablet">Tammy J. Swanson</h5>
+                  <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
                 <div class="framer-a94fu2-container">
                   <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
@@ -482,7 +480,7 @@
                           <div class="framer-1gcx4ct">
                             <div class="framer-1v239di">
                               <p class="sdt-text bio-panel__btn-text">
-                                <a class="framer-text framer-styles-preset-bmzyej" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a>
+                                <a class="sdt-text framer-styles-preset-bmzyej" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a>
                               </p>
                             </div>
                           </div>
@@ -493,7 +491,7 @@
                           <div class="framer-1gcx4ct">
                             <div class="framer-1v239di">
                               <p class="sdt-text bio-panel__btn-text">
-                                <a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a>
+                                <a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a>
                               </p>
                             </div>
                           </div>
@@ -506,10 +504,10 @@
                   <div class="framer-q1pkkl">
                     <div class="framer-8w1a51">
                       <div class="framer-1iwl8ez">
-                        <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-1kq6r0t-phone">Tammy J. Swanson</h5>
+                        <h5 class="sdt-text sdt-bio-name" id="bio-name-1kq6r0t-phone">Tammy J. Swanson</h5>
                       </div>
                       <div class="framer-1iuxll0">
-                        <h6 class="framer-text framer-styles-preset-gxwp0p">Shareholder</h6>
+                        <h6 class="sdt-text sdt-bio-title">Shareholder</h6>
                       </div>
                     </div>
                     <div class="framer-lg96rc sdt-bio-close" tabindex="0" role="button" aria-label="Close">
@@ -531,13 +529,13 @@
                   </div>
                   <div class="framer-181u6dr">
                     <div class="framer-mvaie3">
-                      <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                      <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
                     </div>
                     <div class="framer-1t70tm6">
                       <div class="framer-z3ffe3">
-                        <p class="framer-text framer-styles-preset-19qfgc8">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p>
-                          <p class="framer-text framer-styles-preset-19qfgc8">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p>
-                          <p class="framer-text framer-styles-preset-19qfgc8">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p>
+                        <p class="sdt-text sdt-bio-text">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p>
+                          <p class="sdt-text sdt-bio-text">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p>
+                          <p class="sdt-text sdt-bio-text">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p>
                       </div>
                     </div>
                   </div>
@@ -575,7 +573,7 @@
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-a2aut-d)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-a2aut-d"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-go17s5">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a></p>
                     </div>
                   </div>
                   <div class="framer-e0xee0">
@@ -583,7 +581,7 @@
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-a2aut-d)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-a2aut-d"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-fly4qh">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
@@ -595,20 +593,20 @@
             </div>
             <div class="framer-1etjeh">
               <div class="framer-1lwgu3k">
-                <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
               <div class="framer-1xy1e9l">
                 <div class="framer-4h32yw">
-                  <p class="framer-text framer-styles-preset-19qfgc8">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
+                  <p class="sdt-text sdt-bio-text">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
             <div class="framer-1hrcbbx">
               <div class="framer-9biryz">
                 <div class="framer-wjb9w6">
-                  <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-a2aut-desktop">Heidi A. Drobnick</h5>
-                  <h5 class="framer-text framer-styles-preset-19zukr5 bio-panel__title">Shareholder</h5>
+                  <h5 class="sdt-text sdt-bio-name" id="bio-name-a2aut-desktop">Heidi A. Drobnick</h5>
+                  <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
                 <div class="framer-a94fu2-container">
                   <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
@@ -653,7 +651,7 @@
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-a2aut-t)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-a2aut-t"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-go17s5">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a></p>
                     </div>
                   </div>
                   <div class="framer-e0xee0">
@@ -661,7 +659,7 @@
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-a2aut-t)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-a2aut-t"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-fly4qh">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
@@ -673,20 +671,20 @@
             </div>
             <div class="framer-1etjeh">
               <div class="framer-1lwgu3k">
-                <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
               <div class="framer-1xy1e9l">
                 <div class="framer-4h32yw">
-                  <p class="framer-text framer-styles-preset-19qfgc8">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
+                  <p class="sdt-text sdt-bio-text">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
             <div class="framer-1hrcbbx">
               <div class="framer-9biryz">
                 <div class="framer-wjb9w6">
-                  <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-a2aut-tablet">Heidi A. Drobnick</h5>
-                  <h5 class="framer-text framer-styles-preset-19zukr5 bio-panel__title">Shareholder</h5>
+                  <h5 class="sdt-text sdt-bio-name" id="bio-name-a2aut-tablet">Heidi A. Drobnick</h5>
+                  <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
                 <div class="framer-a94fu2-container">
                   <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
@@ -720,7 +718,7 @@
                           <div class="framer-1gcx4ct">
                             <div class="framer-1v239di">
                               <p class="sdt-text bio-panel__btn-text">
-                                <a class="framer-text framer-styles-preset-bmzyej" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a>
+                                <a class="sdt-text framer-styles-preset-bmzyej" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a>
                               </p>
                             </div>
                           </div>
@@ -731,7 +729,7 @@
                           <div class="framer-1gcx4ct">
                             <div class="framer-1v239di">
                               <p class="sdt-text bio-panel__btn-text">
-                                <a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a>
+                                <a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a>
                               </p>
                             </div>
                           </div>
@@ -744,10 +742,10 @@
                   <div class="framer-q1pkkl">
                     <div class="framer-8w1a51">
                       <div class="framer-1iwl8ez">
-                        <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-a2aut-phone">Heidi A. Drobnick</h5>
+                        <h5 class="sdt-text sdt-bio-name" id="bio-name-a2aut-phone">Heidi A. Drobnick</h5>
                       </div>
                       <div class="framer-1iuxll0">
-                        <h6 class="framer-text framer-styles-preset-gxwp0p">Shareholder</h6>
+                        <h6 class="sdt-text sdt-bio-title">Shareholder</h6>
                       </div>
                     </div>
                     <div class="framer-lg96rc sdt-bio-close" tabindex="0" role="button" aria-label="Close">
@@ -769,12 +767,12 @@
                   </div>
                   <div class="framer-181u6dr">
                     <div class="framer-mvaie3">
-                      <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                      <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
                     </div>
                     <div class="framer-1t70tm6">
                       <div class="framer-z3ffe3">
-                        <p class="framer-text framer-styles-preset-19qfgc8">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p>
-                          <p class="framer-text framer-styles-preset-19qfgc8">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p>
+                        <p class="sdt-text sdt-bio-text">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p>
+                          <p class="sdt-text sdt-bio-text">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p>
                       </div>
                     </div>
                   </div>
@@ -812,7 +810,7 @@
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1175ksh-d)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1175ksh-d"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-go17s5">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a></p>
                     </div>
                   </div>
                   <div class="framer-e0xee0">
@@ -820,7 +818,7 @@
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1175ksh-d)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1175ksh-d"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-fly4qh">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
@@ -832,21 +830,21 @@
             </div>
             <div class="framer-1etjeh">
               <div class="framer-1lwgu3k">
-                <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
               <div class="framer-1xy1e9l">
                 <div class="framer-4h32yw">
-                  <p class="framer-text framer-styles-preset-19qfgc8">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
+                  <p class="sdt-text sdt-bio-text">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
             <div class="framer-1hrcbbx">
               <div class="framer-9biryz">
                 <div class="framer-wjb9w6">
-                  <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-1175ksh-desktop">Phyllis O. Tousey</h5>
-                  <h5 class="framer-text framer-styles-preset-19zukr5 bio-panel__title">Of-Counsel</h5>
+                  <h5 class="sdt-text sdt-bio-name" id="bio-name-1175ksh-desktop">Phyllis O. Tousey</h5>
+                  <h5 class="sdt-text sdt-bio-title">Of-Counsel</h5>
                 </div>
                 <div class="framer-a94fu2-container">
                   <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
@@ -891,7 +889,7 @@
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1175ksh-t)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1175ksh-t"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-go17s5">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a></p>
                     </div>
                   </div>
                   <div class="framer-e0xee0">
@@ -899,7 +897,7 @@
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1175ksh-t)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1175ksh-t"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
                     <div class="framer-fly4qh">
-                      <p class="sdt-text"><a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
+                      <p class="sdt-text"><a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
@@ -911,21 +909,21 @@
             </div>
             <div class="framer-1etjeh">
               <div class="framer-1lwgu3k">
-                <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
               <div class="framer-1xy1e9l">
                 <div class="framer-4h32yw">
-                  <p class="framer-text framer-styles-preset-19qfgc8">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
-              <p class="framer-text framer-styles-preset-19qfgc8">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p><p class="framer-text framer-styles-preset-19qfgc8"><br class="sdt-text trailing-break"></p>
+                  <p class="sdt-text sdt-bio-text">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
+              <p class="sdt-text sdt-bio-text">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
             <div class="framer-1hrcbbx">
               <div class="framer-9biryz">
                 <div class="framer-wjb9w6">
-                  <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-1175ksh-tablet">Phyllis O. Tousey</h5>
-                  <h5 class="framer-text framer-styles-preset-19zukr5 bio-panel__title">Of-Counsel</h5>
+                  <h5 class="sdt-text sdt-bio-name" id="bio-name-1175ksh-tablet">Phyllis O. Tousey</h5>
+                  <h5 class="sdt-text sdt-bio-title">Of-Counsel</h5>
                 </div>
                 <div class="framer-a94fu2-container">
                   <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
@@ -960,7 +958,7 @@
                           <div class="framer-1gcx4ct">
                             <div class="framer-1v239di">
                               <p class="sdt-text bio-panel__btn-text">
-                                <a class="framer-text framer-styles-preset-bmzyej" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a>
+                                <a class="sdt-text framer-styles-preset-bmzyej" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a>
                               </p>
                             </div>
                           </div>
@@ -971,7 +969,7 @@
                           <div class="framer-1gcx4ct">
                             <div class="framer-1v239di">
                               <p class="sdt-text bio-panel__btn-text">
-                                <a class="framer-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a>
+                                <a class="sdt-text framer-styles-preset-bmzyej" href="tel:651-739-9615">Phone: 651-739-9615</a>
                               </p>
                             </div>
                           </div>
@@ -984,10 +982,10 @@
                   <div class="framer-q1pkkl">
                     <div class="framer-8w1a51">
                       <div class="framer-1iwl8ez">
-                        <h5 class="framer-text framer-styles-preset-19zukr5" id="bio-name-1175ksh-phone">Phyllis O. Tousey</h5>
+                        <h5 class="sdt-text sdt-bio-name" id="bio-name-1175ksh-phone">Phyllis O. Tousey</h5>
                       </div>
                       <div class="framer-1iuxll0">
-                        <h6 class="framer-text framer-styles-preset-gxwp0p">Of-Counsel</h6>
+                        <h6 class="sdt-text sdt-bio-title">Of-Counsel</h6>
                       </div>
                     </div>
                     <div class="framer-lg96rc sdt-bio-close" tabindex="0" role="button" aria-label="Close">
@@ -1009,13 +1007,13 @@
                   </div>
                   <div class="framer-181u6dr">
                     <div class="framer-mvaie3">
-                      <h5 class="framer-text framer-styles-preset-19zukr5">Biography</h5>
+                      <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
                     </div>
                     <div class="framer-1t70tm6">
                       <div class="framer-z3ffe3">
-                        <p class="framer-text framer-styles-preset-19qfgc8">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p>
-                          <p class="framer-text framer-styles-preset-19qfgc8">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p>
-                          <p class="framer-text framer-styles-preset-19qfgc8">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p>
+                        <p class="sdt-text sdt-bio-text">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p>
+                          <p class="sdt-text sdt-bio-text">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p>
+                          <p class="sdt-text sdt-bio-text">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p>
                       </div>
                     </div>
                   </div>

@@ -50,9 +50,9 @@
   }
 }
 
-/* Tablet: Ensure header divider doesn't exceed viewport */
+/* Tablet: Header divider spans full container width */
 @media (min-width: 810px) and (max-width: 1199px) {
-  .sdt-header-divider {
+  .sdt-header-global-container .sdt-header-divider {
     width: 100%;
     max-width: 100%;
   }
@@ -1273,65 +1273,70 @@ body {
   display: none !important;
 }
 
-/* Global Gift Section - Responsive visibility for breakpoint variants */
-/* Hide all variants by default */
-.sdt-gift--global .ssr-variant {
+/* Global Gift Section - Responsive visibility utility classes */
+/* Semantic replacements for Framer hidden-* classes:
+   .sdt-show-phone-only    = visible only on phone (<810px)
+   .sdt-show-tablet-up     = visible on tablet and desktop (>=810px)
+   .sdt-show-tablet-only   = visible only on tablet (810-1199px)
+   .sdt-show-desktop-only  = visible only on desktop (>=1200px)
+*/
+
+/* Hide all by default, show based on breakpoint */
+.sdt-gift--global .sdt-show-phone-only,
+.sdt-gift--global .sdt-show-tablet-up,
+.sdt-gift--global .sdt-show-tablet-only,
+.sdt-gift--global .sdt-show-desktop-only {
   display: none !important;
 }
 
-/* Phone: Show phone variants (hidden-1xilv83 hidden-72rtr7 means visible on phone only) */
+/* Phone: Show phone-only variants */
 @media (max-width: 809px) {
-  .sdt-gift--global .ssr-variant.hidden-1xilv83.hidden-72rtr7 {
+  .sdt-gift--global .sdt-show-phone-only {
     display: block !important;
   }
 }
 
-/* Tablet: Show tablet variants (hidden-1siuntv means visible on tablet and desktop) */
+/* Tablet: Show tablet-up and tablet-only variants */
 @media (min-width: 810px) and (max-width: 1199px) {
-  .sdt-gift--global .ssr-variant.hidden-1siuntv {
+  .sdt-gift--global .sdt-show-tablet-up,
+  .sdt-gift--global .sdt-show-tablet-only {
     display: block !important;
-  }
-  /* Hide desktop-only variants on tablet */
-  .sdt-gift--global .ssr-variant.hidden-1siuntv.hidden-1xilv83 {
-    display: none !important;
   }
 }
 
-/* Desktop: Show desktop variants (hidden-1siuntv means visible on tablet and desktop) */
+/* Desktop: Show tablet-up and desktop-only variants */
 @media (min-width: 1200px) {
-  .sdt-gift--global .ssr-variant.hidden-1siuntv {
-    display: block !important;
-  }
-  /* Show desktop-only variants */
-  .sdt-gift--global .ssr-variant.hidden-1siuntv.hidden-1xilv83 {
+  .sdt-gift--global .sdt-show-tablet-up,
+  .sdt-gift--global .sdt-show-desktop-only {
     display: block !important;
   }
 }
 
-/* Gift section typography - ensure styles apply */
-.sdt-gift__text .framer-styles-preset-gxwp0p,
-.sdt-gift--global .framer-styles-preset-gxwp0p {
-  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+/* Gift section typography - semantic class replaces framer-styles-preset-gxwp0p */
+/* Increased specificity to override .sdt-text base styles */
+.sdt-gift__text .sdt-gift__caption,
+.sdt-gift .sdt-gift__caption {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif !important;
   /* Desktop (default): 22px */
   font-size: 22px;
   line-height: 1.3em;
-  color: var(--color-gold, #7e683e);
+  color: var(--color-gold, #7e683e) !important;
   margin: 0;
   text-align: center;
 }
 
 /* Tablet: 18px */
 @media (min-width: 810px) and (max-width: 1199px) {
-  .sdt-gift__text .framer-styles-preset-gxwp0p,
-  .sdt-gift--global .framer-styles-preset-gxwp0p {
+  .sdt-gift__text .sdt-gift__caption,
+  .sdt-gift .sdt-gift__caption {
     font-size: 18px;
   }
 }
 
 /* Phone: 16px */
 @media (max-width: 809px) {
-  .sdt-gift__text .framer-styles-preset-gxwp0p,
-  .sdt-gift--global .framer-styles-preset-gxwp0p {
+  .sdt-gift__text .sdt-gift__caption,
+  .sdt-gift .sdt-gift__caption {
     font-size: 16px;
   }
 }
@@ -1721,7 +1726,7 @@ body {
   /* Desktop (default) */
   height: min-content;
   overflow: var(--overflow-clip-fallback, clip);
-  z-index: 1;
+  z-index: 2;
   flex-flow: column;
   flex: none;
   place-content: center;
@@ -1797,6 +1802,11 @@ body {
   width: 100%;
   height: 100%;
   aspect-ratio: inherit;
+}
+
+/* Ensure SVG path gets gold color - override any inherited styles */
+.sdt-gift__ornament svg path {
+  fill: var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62)) !important;
 }
 
 /* .sdt-gift__text - Text container (replaces .framer-3cuwvs) */
@@ -2827,15 +2837,18 @@ body {
 }
 
 /* Address text typography - shared between label and value */
-.bio-panel__address-label,
-.bio-panel__address-value {
+/* Scoped under .sdt-bio-overlay to win over .sdt-text */
+.sdt-bio-overlay .bio-panel__address-label,
+.sdt-bio-overlay .bio-panel__address-value {
   font-family: 'EB Garamond', serif;
+  font-size: 14px;
   line-height: 1.25em;
   color: rgb(65, 33, 4);
+  font-weight: 400;
 }
 
 /* Address label is bold */
-.bio-panel__address-label {
+.sdt-bio-overlay .bio-panel__address-label {
   font-weight: 600;
 }
 
