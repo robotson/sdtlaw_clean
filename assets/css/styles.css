@@ -1418,28 +1418,18 @@ body {
   transform: none;
 }
 
-/* Responsive heading visibility for global Firm section
- * Must come AFTER base .sdt-firm__heading-container to override display:flex */
-.sdt-firm__heading-container--phone {
-  display: none;
-}
-.sdt-firm__heading-container--desktop {
-  display: flex;
-}
-
-@media (max-width: 809px) {
-  .sdt-firm__heading-container--phone {
-    display: flex;
-  }
-  .sdt-firm__heading-container--desktop {
-    display: none;
-  }
-}
-
 /* .sdt-firm__heading - H1 heading text */
 .sdt-firm__heading {
   /* Inherits from framer-styles-preset classes */
   margin: 0;
+  /* Desktop/Tablet (default): 28px from .sdt-section-heading */
+}
+
+/* Phone: Override font size to match original phone heading (22px) */
+@media (max-width: 809px) {
+  .sdt-firm__heading {
+    --framer-font-size: 22px;
+  }
 }
 
 /* .sdt-firm__line - Gold divider line SVG (simplified) */
