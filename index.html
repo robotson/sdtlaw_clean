@@ -221,24 +221,15 @@
           <!-- Phone ornament (visible on phone only) -->
           <div class="sdt-show-phone-only">
             <div class="sdt-gift__ornament" aria-hidden="true">
-              <div class="svgContainer"><svg class="extracted-15" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 294 1" overflow="visible">
+              <div class="svgContainer"><svg preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 294 1" overflow="visible">
                   <path d="M 0 0 L 294 0 L 294 1 L 0 1 Z" fill="var(--token-04d28ab2-8152-4d1c-a89d-d5104464ce03, rgb(126, 104, 62))"></path>
                 </svg></div>
             </div>
           </div>
         </div>
-        <!-- Phone text (two h6 elements, visible on phone only) -->
-        <div class="sdt-show-phone-only">
-          <div class="sdt-gift__text">
-            <h6 class="sdt-text sdt-gift__caption">Star Quilt Gifted by the </h6>
-            <h6 class="sdt-text sdt-gift__caption">Clairmont family</h6>
-          </div>
-        </div>
-        <!-- Tablet/Desktop text (single h6, visible on tablet and desktop) -->
-        <div class="sdt-show-tablet-up">
-          <div class="sdt-gift__text">
-            <h6 class="sdt-text sdt-gift__caption">Star Quilt Gifted by the Clairmont Family</h6>
-          </div>
+        <!-- Consolidated text (responsive line break and capitalization via CSS) -->
+        <div class="sdt-gift__text">
+          <h6 class="sdt-text sdt-gift__caption">Star Quilt Gifted by the <span class="sdt-gift__line-break">Clairmont Family</span></h6>
         </div>
       </div>
       <!-- Responsive image (consolidated from breakpoint-specific containers) -->

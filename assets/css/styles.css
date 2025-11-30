@@ -1834,6 +1834,20 @@ body {
     width: auto;
     height: auto;
   }
+  
+  /* Line break before "Clairmont" and lowercase "family" on phone */
+  .sdt-gift__line-break {
+    display: block;
+    text-transform: lowercase;
+  }
+}
+
+/* Tablet/Desktop: Keep inline (no line break) and capitalized */
+@media (min-width: 810px) {
+  .sdt-gift__line-break {
+    display: inline;
+    text-transform: none;
+  }
 }
 
 /* .sdt-gift__image - Image container (replaces .framer-1n3d6h9) */
