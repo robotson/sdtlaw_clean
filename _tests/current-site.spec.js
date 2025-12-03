@@ -148,6 +148,7 @@ test.describe('Current Site Snapshots', () => {
       test(`${attorney.name} bio overlay`, async ({ page }) => {
         await page.goto('/');
         await page.waitForLoadState('networkidle');
+        await page.waitForFunction(() => document.fonts.ready);
         await scrollToTeam(page);
         await openBioOverlay(page, attorney.id);
 
@@ -159,6 +160,20 @@ test.describe('Current Site Snapshots', () => {
           return dialog && dialog.classList.contains('animate-in');
         }, { timeout: 2000 }).catch(() => {
           // If no dialog found or class not added, that's okay - continue
+        });
+
+        // Wait for layout to stabilize - ensure positioning is complete
+        await page.waitForTimeout(300);
+        
+        // Wait for any pending layout calculations
+        await page.waitForFunction(() => {
+          return new Promise(resolve => {
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                resolve(true);
+              });
+            });
+          });
         });
 
         await expect(page).toHaveScreenshot(`current-bio-${attorney.name.toLowerCase()}.png`, {

@@ -136,7 +136,7 @@
 .framer-hz73lt,
 .framer-e0xee0 {
   display: flex !important;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   width: 100% !important;
   height: auto !important;
@@ -149,11 +149,23 @@
   width: 18px !important;
   height: 18px !important;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Email icon - needs to come down a couple pixels */
+.framer-vu0rjv {
+  margin-top: 4px !important;
+}
+
+/* Phone icon - needs to come up a pixel */
+.framer-1749sgb {
+  margin-top: 1px !important;
 }
 
 /* Address section */
 .framer-1cexlgh {
-  margin-top: 20px;
+  margin-top: 21px;
   width: 100% !important;
   height: auto !important;
 }
@@ -221,7 +233,7 @@
 /* Divider line */
 .framer-17say78 {
   width: 100% !important;
-  height: 3px !important;
+  height: 1px !important;
   margin-top: 15px;
 }
 

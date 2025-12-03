@@ -84,6 +84,10 @@
    ========================================================================== */
 
 :root {
+  /* Font Rendering - Match baseline for consistent text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   /*
    * Color Palette
    * Mapped from Framer's --token-* variables to semantic names
@@ -2897,6 +2901,590 @@ body {
 }
 
 /* ==========================================================================
+   BIO OVERLAY - SEMANTIC CSS (Desktop/Tablet)
+   ========================================================================== */
+
+/* Desktop/Tablet Bio Overlay - Dialog wrapper (replaces .framer-SXe1m) */
+/* Base styles inherited from .framer-SXe1m during transition */
+
+/* ==========================================================================
+   BIO OVERLAY - DESKTOP BREAKPOINT (>=1200px)
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+  /* Desktop - Panel wrapper (replaces .framer-rop5of) */
+  .sdt-bio-dialog .sdt-bio-panel-wrapper {
+    flex: 0 0 auto;
+    gap: 0px;
+    height: 738px;
+    left: 38px;
+    overflow: visible;
+    position: absolute;
+    top: 61px;
+    width: 1123px;
+  }
+
+  /* Desktop - Main panel container (replaces .framer-1edteoo) */
+  .sdt-bio-dialog .sdt-bio-panel {
+    bottom: 0px;
+    flex: 0 0 auto;
+    height: 738px;
+    left: calc(50% - 561.5px);
+    position: absolute;
+    width: 1123px;
+    background-color: rgb(242, 240, 233);
+    border-radius: 24px 24px 0px 0px;
+  }
+}
+
+/* Shared styles for Desktop and Tablet (>=810px) */
+@media (min-width: 810px) {
+  /* Desktop/Tablet Bio Overlay - Profile column (replaces .framer-1k4oklk) */
+  .sdt-bio-dialog .sdt-bio-profile {
+    place-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column;
+    overflow: clip;
+    padding: 0px;
+    position: absolute;
+  }
+
+  /* Desktop-specific profile column values */
+  @media (min-width: 1200px) {
+    .sdt-bio-dialog .sdt-bio-profile {
+      bottom: 56px;
+      gap: 180px;
+      height: 539px;
+      left: 41px;
+      width: 24%;
+    }
+  }
+
+/* Desktop/Tablet Bio Overlay - Photo section (replaces .framer-1p8rmjh) */
+.sdt-bio-dialog .sdt-bio-profile__photo {
+  place-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* Desktop/Tablet Bio Overlay - Photo wrapper (replaces .framer-1pi7at3) */
+.sdt-bio-dialog .sdt-bio-profile__photo-wrapper {
+  place-content: center;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: min-content;
+}
+
+/* Desktop/Tablet Bio Overlay - Image container (replaces .framer-mxqsoo-container) */
+.sdt-bio-dialog .sdt-bio-profile__image-container {
+  flex: 0 0 auto;
+  height: 273px;
+  position: relative;
+  width: 269px;
+}
+
+/* Desktop/Tablet Bio Overlay - Image base container (replaces .framer-DCJfz) */
+.sdt-bio-dialog .sdt-bio-profile__image-base {
+  display: flex;
+  position: relative;
+  overflow: clip;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Desktop/Tablet Bio Overlay - Image wrapper (replaces .framer-1si2gga) */
+.sdt-bio-dialog .sdt-bio-profile__image-wrapper {
+  flex: 0 0 auto;
+  height: 294px;
+  overflow: hidden;
+  position: relative;
+  width: 270px;
+  border-radius: 4px;
+}
+
+/* Desktop/Tablet Bio Overlay - Image inner (replaces .framer-o0j920) */
+.sdt-bio-dialog .sdt-bio-profile__image-inner {
+  position: absolute;
+  overflow: visible;
+  flex: 0 0 auto;
+}
+
+/* Desktop/Tablet Bio Overlay - Contact section (replaces .framer-8siksq) */
+.sdt-bio-dialog .sdt-bio-profile__contact {
+  place-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 5px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* Desktop/Tablet Bio Overlay - Contact row (replaces .framer-hz73lt, .framer-e0xee0) */
+.sdt-bio-dialog .sdt-bio-contact {
+  place-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 220px;
+}
+
+/* Desktop/Tablet Bio Overlay - Contact icon wrapper (replaces .framer-vu0rjv, .framer-1749sgb) */
+.sdt-bio-dialog .sdt-bio-contact__icon {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop/Tablet Bio Overlay - Email icon (replaces .framer-vu0rjv) */
+.sdt-bio-dialog .sdt-bio-contact__icon--email {
+  margin-top: 4px;
+}
+
+/* Desktop/Tablet Bio Overlay - Phone icon (replaces .framer-1749sgb) */
+.sdt-bio-dialog .sdt-bio-contact__icon--phone {
+  margin-top: 1px;
+}
+
+/* Desktop/Tablet Bio Overlay - Contact text wrapper (replaces .framer-go17s5, .framer-fly4qh) */
+.sdt-bio-dialog .sdt-bio-contact__text {
+  flex: 0 0 auto;
+  width: 192px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop/Tablet Bio Overlay - Contact text styling */
+.sdt-bio-dialog .sdt-bio-contact .sdt-text,
+.sdt-bio-dialog .sdt-bio-contact a,
+.sdt-bio-dialog .sdt-bio-contact__text .sdt-text {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+  margin-top: -2px;
+}
+
+/* Desktop/Tablet Bio Overlay - Address section (replaces .framer-1cexlgh) */
+.sdt-bio-dialog .sdt-bio-profile__address {
+  flex: 0 0 auto;
+  gap: 0px;
+  height: 41px;
+  overflow: visible;
+  position: relative;
+  width: 192px;
+  margin-top: 1px;
+}
+
+/* Desktop/Tablet Bio Overlay - Biography container (replaces .framer-1etjeh) */
+.sdt-bio-dialog .sdt-bio-content {
+  place-content: flex-start;
+  align-items: flex-start;
+  bottom: 56px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 22px;
+  height: min-content;
+  left: 514px;
+  overflow: clip;
+  padding: 0px;
+  position: absolute;
+  width: 50%;
+}
+
+/* Desktop/Tablet Bio Overlay - Biography heading wrapper (replaces .framer-1lwgu3k) */
+.sdt-bio-dialog .sdt-bio-content__heading-wrapper {
+  display: flex;
+  flex: 0 0 auto;
+  height: 36px;
+  position: relative;
+  white-space: pre-wrap;
+  width: 552px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Desktop/Tablet Bio Overlay - Biography text scrollable area (replaces .framer-1xy1e9l) */
+.sdt-bio-dialog .sdt-bio-content__text-area {
+  flex: 0 0 auto;
+  gap: 0px;
+  height: 395px;
+  overflow: auto;
+  position: relative;
+  width: 552px;
+}
+
+/* Desktop/Tablet Bio Overlay - Biography text container (replaces .framer-4h32yw) */
+.sdt-bio-dialog .sdt-bio-content__text-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  inset: 0px 0px -271px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Desktop/Tablet Bio Overlay - Header container (replaces .framer-1hrcbbx) */
+.sdt-bio-dialog .sdt-bio-header {
+  place-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 11px;
+  height: min-content;
+  left: 50%;
+  overflow: visible;
+  padding: 0px;
+  position: absolute;
+  top: 32px;
+  width: 92%;
+  transform: translateX(-50%);
+}
+
+/* Desktop/Tablet Bio Overlay - Header row (replaces .framer-9biryz) */
+.sdt-bio-dialog .sdt-bio-header__row {
+  place-content: flex-start space-between;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* Desktop/Tablet Bio Overlay - Header name wrapper (replaces .framer-wjb9w6) */
+.sdt-bio-dialog .sdt-bio-header__name-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  height: auto;
+  position: relative;
+  white-space: pre;
+  width: auto;
+}
+
+/* Desktop/Tablet Bio Overlay - Header divider container (replaces .framer-17say78) */
+.sdt-bio-dialog .sdt-bio-header__divider {
+  place-content: center;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* Desktop/Tablet Bio Overlay - Close button container (replaces .framer-a94fu2-container) */
+.sdt-bio-dialog .sdt-bio-header__close-container {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Desktop/Tablet Bio Overlay - Close button (replaces .framer-uGpGz.framer-9s8yld) */
+.sdt-bio-dialog .sdt-bio-close {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 10px;
+}
+
+/* Desktop/Tablet Bio Overlay - Close button icon (replaces .framer-IRM4W.framer-fpfecg) */
+.sdt-bio-dialog .sdt-bio-close > div {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(126, 104, 62);
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.sdt-bio-dialog .sdt-bio-close:hover > div {
+  background-color: rgb(193, 43, 32);
+}
+
+/* Desktop/Tablet Bio Overlay - Image variant insets (Tammy - replaces .framer-v-1l6mjat) */
+.sdt-bio-dialog .sdt-bio-profile__image-base--tammy .sdt-bio-profile__image-inner {
+  inset: -1px -6px -38px -6px;
+}
+
+/* Desktop/Tablet Bio Overlay - Image variant insets (Heidi - replaces .framer-v-6s7snk) */
+.sdt-bio-dialog .sdt-bio-profile__image-base--heidi .sdt-bio-profile__image-inner {
+  inset: 0px -1px -116px -12px;
+}
+
+  /* Desktop/Tablet Bio Overlay - Image variant insets (Phyllis - replaces .framer-v-1ouk2x7) */
+  .sdt-bio-dialog .sdt-bio-profile__image-base--phyllis .sdt-bio-profile__image-inner {
+    inset: -15px -22px -74px -2px;
+  }
+}
+
+/* ==========================================================================
+   BIO OVERLAY - TABLET BREAKPOINT (810px - 1199px)
+   ========================================================================== */
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  /* Tablet - Panel wrapper (replaces .framer-rop5of) */
+  /* Centered horizontally while preserving vertical positioning */
+  .sdt-bio-dialog .sdt-bio-panel-wrapper {
+    height: 498px;
+    width: 758px;
+    top: 24px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  /* Tablet - Main panel container (replaces .framer-1edteoo) */
+  /* Positioned at left: 0 relative to the centered wrapper */
+  .sdt-bio-dialog .sdt-bio-panel {
+    height: 498px;
+    left: 0px;
+    right: auto;
+    width: 758px;
+    position: absolute;
+    top: 0px;
+    background-color: rgb(242, 240, 233);
+    border-radius: 16px;
+  }
+
+  /* Tablet - Profile column (replaces .framer-1k4oklk) */
+  .sdt-bio-dialog .sdt-bio-profile {
+    bottom: 38px;
+    gap: 123.53px;
+    height: 364px;
+    left: 28px;
+  }
+
+  /* Tablet - Photo section gap */
+  .sdt-bio-dialog .sdt-bio-profile__photo {
+    gap: 6.75px;
+  }
+
+  /* Tablet - Photo wrapper (replaces .framer-1pi7at3) */
+  .sdt-bio-dialog .sdt-bio-profile__photo-wrapper {
+    gap: 6.75px;
+    width: 181px;
+    height: 184px;
+  }
+
+  /* Tablet - Image container (replaces .framer-mxqsoo-container) */
+  .sdt-bio-dialog .sdt-bio-profile__image-container {
+    width: 181px;
+    height: 184px;
+  }
+
+  /* Tablet - Contact section gap */
+  .sdt-bio-dialog .sdt-bio-profile__contact {
+    gap: 3.38px;
+  }
+
+  /* Tablet - Contact row (replaces .framer-hz73lt, .framer-e0xee0) */
+  .sdt-bio-dialog .sdt-bio-contact {
+    gap: 6.75px;
+    width: 149px;
+    height: 12px;
+  }
+
+  /* Tablet - Email icon (replaces .framer-vu0rjv) - scale from 18x12 to 12x8 */
+  .sdt-bio-dialog .sdt-bio-contact__icon--email {
+    width: 12px !important;
+    height: 8px !important;
+    position: relative;
+    inset: 0px;
+  }
+  .sdt-bio-dialog .sdt-bio-contact__icon--email svg {
+    display: block;
+    width: 12px !important;
+    height: 8px !important;
+    overflow: hidden;
+  }
+
+  /* Tablet - Phone icon (replaces .framer-1749sgb) - scale from 17x17 to 12x11 */
+  .sdt-bio-dialog .sdt-bio-contact__icon--phone {
+    width: 12px !important;
+    height: 11px !important;
+    position: relative;
+    inset: 0px;
+  }
+  .sdt-bio-dialog .sdt-bio-contact__icon--phone svg {
+    display: block;
+    width: 12px !important;
+    height: 11px !important;
+    overflow: hidden;
+  }
+
+  /* Tablet - Contact text wrapper (replaces .framer-go17s5, .framer-fly4qh) */
+  .sdt-bio-dialog .sdt-bio-contact__text {
+    width: 130px;
+    height: 12px;
+    position: relative;
+    gap: 0px;
+  }
+
+  /* Tablet - Contact text styling (9px font size) */
+  .sdt-bio-dialog .sdt-bio-contact .sdt-text,
+  .sdt-bio-dialog .sdt-bio-contact a,
+  .sdt-bio-dialog .sdt-bio-contact__text .sdt-text {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif !important;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgb(126, 104, 62);
+  }
+
+  /* Tablet - Address section (replaces .framer-1cexlgh) */
+  .sdt-bio-dialog .sdt-bio-profile__address {
+    height: 28px;
+    width: 130px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Tablet - Address text (9px font size) */
+  .sdt-bio-dialog .sdt-bio-profile__address .sdt-text {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif !important;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgb(126, 104, 62);
+    display: block;
+    height: 11.25px;
+  }
+  
+  /* Tablet - Address label (bold, chocolate color) */
+  .sdt-bio-dialog .sdt-bio-profile__address .bio-panel__address-label {
+    font-weight: 600;
+    color: rgb(65, 33, 4);
+  }
+  
+  /* Tablet - Address value (chocolate color) */
+  .sdt-bio-dialog .sdt-bio-profile__address .bio-panel__address-value {
+    color: rgb(65, 33, 4);
+  }
+
+  /* Tablet - Biography container (replaces .framer-1etjeh) */
+  .sdt-bio-dialog .sdt-bio-content {
+    left: 347px;
+    bottom: 38px;
+    gap: 14.85px;
+  }
+
+  /* Tablet - Biography heading wrapper (replaces .framer-1lwgu3k) */
+  .sdt-bio-dialog .sdt-bio-content__heading-wrapper {
+    height: 24px;
+    width: 373px;
+  }
+
+  /* Tablet - Biography text scrollable area (replaces .framer-1xy1e9l) */
+  .sdt-bio-dialog .sdt-bio-content__text-area {
+    height: 267px;
+    width: 373px;
+  }
+
+  /* Tablet - Biography text container (replaces .framer-4h32yw) */
+  .sdt-bio-dialog .sdt-bio-content__text-container {
+    inset: 0px 0px -183px;
+  }
+
+  /* Tablet - Header container (replaces .framer-1hrcbbx) */
+  .sdt-bio-dialog .sdt-bio-header {
+    gap: 7.43px;
+    top: 22px;
+  }
+
+  /* Tablet - Header divider (replaces .framer-17say78) */
+  .sdt-bio-dialog .sdt-bio-header__divider {
+    gap: 6.75px;
+  }
+
+  /* Tablet - Image wrapper sizes (replaces .framer-1si2gga) */
+  .sdt-bio-dialog .sdt-bio-profile__image-wrapper {
+    border-radius: 2.7px;
+  }
+
+  /* Tablet - Tammy image variant (replaces .framer-v-ys564s) */
+  .sdt-bio-dialog .sdt-bio-profile__image-base--tammy .sdt-bio-profile__image-wrapper {
+    height: 246px;
+    width: 210px;
+  }
+  .sdt-bio-dialog .sdt-bio-profile__image-base--tammy .sdt-bio-profile__image-inner {
+    inset: 10px -9px -32px -2px;
+  }
+
+  /* Tablet - Heidi image variant (replaces .framer-v-1hckrtz) */
+  .sdt-bio-dialog .sdt-bio-profile__image-base--heidi .sdt-bio-profile__image-wrapper {
+    height: 245px;
+    width: 210px;
+  }
+  .sdt-bio-dialog .sdt-bio-profile__image-base--heidi .sdt-bio-profile__image-inner {
+    inset: 13px -5px -61px 0px;
+  }
+
+  /* Tablet - Phyllis image variant (replaces .framer-v-1g5jp36) */
+  .sdt-bio-dialog .sdt-bio-profile__image-base--phyllis .sdt-bio-profile__image-wrapper {
+    height: 236px;
+    width: 210px;
+  }
+  .sdt-bio-dialog .sdt-bio-profile__image-base--phyllis .sdt-bio-profile__image-inner {
+    inset: -6px -9px -30px -4px;
+  }
+}
+
+/* ==========================================================================
    GLOBAL TEAM SECTION - Hide breakpoint copies, show global version
    ========================================================================== */
 
@@ -3245,5 +3833,298 @@ body {
     color: var(--token-0f5e4091-1546-4168-9926-3cb355a3b190, #412104);
     letter-spacing: 0;
     line-height: 1.2em;
+  }
+}
+
+/* ==========================================================================
+   BIO OVERLAY - PHONE BREAKPOINT (<810px)
+   ========================================================================== */
+
+@media (max-width: 809px) {
+  /* Phone Bio Overlay - Dialog wrapper (replaces .framer-esofaf) */
+  /* Support both .bio-portal and .sdt-bio-overlay--phone for transition */
+  .bio-portal .sdt-bio-dialog,
+  .sdt-bio-overlay--phone .sdt-bio-dialog {
+    display: block;
+    position: relative;
+    width: 380px;
+    height: 852px;
+    overflow: clip;
+    background-color: transparent;
+  }
+
+  /* Phone Bio Overlay - Panel wrapper (replaces .framer-185jkq1) */
+  .bio-portal .sdt-bio-panel-wrapper,
+  .sdt-bio-overlay--phone .sdt-bio-panel-wrapper {
+    display: block;
+    position: absolute;
+    inset: 0px 17px 19px 18px;
+    width: 345px;
+    height: 833px;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  /* Phone Bio Overlay - Panel inner (replaces .framer-1udf3gh) */
+  .bio-portal .sdt-bio-panel__inner,
+  .sdt-bio-overlay--phone .sdt-bio-panel__inner {
+    display: block;
+    position: absolute;
+    inset: 0px;
+    width: 345px;
+    height: 833px;
+    overflow: visible;
+  }
+
+  /* Phone Bio Overlay - Panel card (replaces .framer-nis8ht) */
+  .bio-portal .sdt-bio-panel,
+  .sdt-bio-overlay--phone .sdt-bio-panel {
+    display: block;
+    position: absolute;
+    inset: 19px 1.5px 74px;
+    width: 342px;
+    height: 740px;
+    background-color: rgb(242, 240, 233);
+    border-radius: 24px;
+    overflow: visible;
+  }
+
+  /* Phone Bio Overlay - Contact buttons container (replaces .framer-1utqvcz) */
+  .bio-portal .sdt-bio-panel__contact-buttons,
+  .sdt-bio-overlay--phone .sdt-bio-panel__contact-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 604px 0px 0px;
+    width: 342px;
+    height: 136px;
+    gap: 11px;
+    padding: 16px;
+    overflow: clip;
+  }
+
+  /* Phone Bio Overlay - Contact buttons wrapper (replaces .framer-mpug57) */
+  .bio-portal .sdt-bio-panel__contact-buttons-wrapper,
+  .sdt-bio-overlay--phone .sdt-bio-panel__contact-buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 310px;
+    height: 95px;
+    gap: 10px;
+    overflow: clip;
+    margin-top: 9px;
+  }
+
+  /* Phone Bio Overlay - Contact button container (replaces .framer-rjug5d-container, .framer-h10esh-container) */
+  .bio-portal .sdt-bio-panel__contact-btn-container,
+  .sdt-bio-overlay--phone .sdt-bio-panel__contact-btn-container {
+    display: block;
+    position: relative;
+    width: 310px;
+    height: 39px;
+  }
+
+  /* Phone Bio Overlay - Contact button inner wrapper (replaces .framer-1gcx4ct) */
+  .bio-portal .sdt-bio-panel__contact-btn-inner,
+  .sdt-bio-overlay--phone .sdt-bio-panel__contact-btn-inner {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    gap: 10px;
+    padding: 0px 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Phone Bio Overlay - Contact button text wrapper (replaces .framer-1v239di) */
+  .bio-portal .sdt-bio-panel__contact-btn-text-wrapper,
+  .sdt-bio-overlay--phone .sdt-bio-panel__contact-btn-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Phone Bio Overlay - Content area (replaces .framer-1tylomn) */
+  .bio-portal .sdt-bio-panel__content,
+  .sdt-bio-overlay--phone .sdt-bio-panel__content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 24px;
+    left: calc(50% - 171px);
+    width: 342px;
+    height: auto;
+    gap: 0;
+  }
+
+  /* Phone Bio Overlay - Header (replaces .framer-q1pkkl) */
+  .bio-portal .sdt-bio-header,
+  .sdt-bio-overlay--phone .sdt-bio-header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 342px;
+    height: auto;
+    gap: 14px;
+    padding: 16px 16px 0px;
+    justify-content: space-between;
+  }
+
+  /* Phone Bio Overlay - Header name wrapper (replaces .framer-8w1a51) */
+  .bio-portal .sdt-bio-header__name-wrapper,
+  .sdt-bio-overlay--phone .sdt-bio-header__name-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 257px;
+    gap: 2px;
+    overflow: clip;
+  }
+
+  /* Phone Bio Overlay - Name container (replaces .framer-1iwl8ez) */
+  .bio-portal .sdt-bio-header__name-container,
+  .sdt-bio-overlay--phone .sdt-bio-header__name-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 257px;
+    height: 30px;
+  }
+
+  /* Phone Bio Overlay - Title container (replaces .framer-1iuxll0) */
+  .bio-portal .sdt-bio-header__title-container,
+  .sdt-bio-overlay--phone .sdt-bio-header__title-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 257px;
+    height: auto;
+  }
+
+  /* Phone Bio Overlay - Close button container (replaces .framer-lg96rc) */
+  .bio-portal .sdt-bio-header__close-container,
+  .sdt-bio-overlay--phone .sdt-bio-header__close-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 39px;
+    height: 38px;
+    padding: 9px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Phone Bio Overlay - Close icon container (replaces .framer-ppocil-container) */
+  .bio-portal .sdt-bio-header__close-icon-container,
+  .sdt-bio-overlay--phone .sdt-bio-header__close-icon-container {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Phone Bio Overlay - Close icon wrapper (replaces .framer-uGpGz) */
+  .bio-portal .sdt-bio-close > div,
+  .sdt-bio-overlay--phone .sdt-bio-close > div {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Phone Bio Overlay - Close icon (replaces .framer-fpfecg) */
+  .bio-portal .sdt-bio-close > div > div,
+  .sdt-bio-overlay--phone .sdt-bio-close > div > div {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-left: -3px;
+    margin-top: -3px;
+    background-color: rgb(126, 104, 62);
+    mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+
+  .bio-portal .sdt-bio-close:hover > div > div,
+  .sdt-bio-overlay--phone .sdt-bio-close:hover > div > div {
+    background-color: rgb(193, 43, 32);
+  }
+
+  /* Phone Bio Overlay - Divider (replaces .framer-1l9pg37) */
+  .bio-portal .sdt-bio-header__divider,
+  .sdt-bio-overlay--phone .sdt-bio-header__divider {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 342px;
+    height: 23px;
+    gap: 14px;
+    padding: 10px 16px 9px;
+    overflow: clip;
+    margin-top: 1px;
+  }
+
+  /* Phone Bio Overlay - Divider inner (replaces .framer-1oxt2pa) */
+  .bio-portal .sdt-bio-header__divider-inner,
+  .sdt-bio-overlay--phone .sdt-bio-header__divider-inner {
+    display: block;
+    position: relative;
+    width: 310px;
+    height: 3px;
+    flex: 1;
+  }
+
+  .bio-portal .sdt-bio-header__divider-inner .svgContainer,
+  .sdt-bio-overlay--phone .sdt-bio-header__divider-inner .svgContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Phone Bio Overlay - Biography section (replaces .framer-181u6dr) */
+  .bio-portal .sdt-bio-content,
+  .sdt-bio-overlay--phone .sdt-bio-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 342px;
+    height: 525px;
+    gap: 12px;
+    padding: 16px;
+    overflow: hidden;
+  }
+
+  /* Phone Bio Overlay - Biography heading wrapper (replaces .framer-mvaie3) */
+  .bio-portal .sdt-bio-content__heading-wrapper,
+  .sdt-bio-overlay--phone .sdt-bio-content__heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 307px;
+    height: 30px;
+  }
+
+  /* Phone Bio Overlay - Biography text area (replaces .framer-1t70tm6) */
+  .bio-portal .sdt-bio-content__text-area,
+  .sdt-bio-overlay--phone .sdt-bio-content__text-area {
+    display: block;
+    position: relative;
+    width: 298px;
+    height: 451px;
+    overflow: auto;
+  }
+
+  /* Phone Bio Overlay - Biography text container (replaces .framer-z3ffe3) */
+  .bio-portal .sdt-bio-content__text-container,
+  .sdt-bio-overlay--phone .sdt-bio-content__text-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 298px;
+    padding: 0px;
+  }
+
+  .bio-portal .sdt-bio-content__text-container p,
+  .sdt-bio-overlay--phone .sdt-bio-content__text-container p {
+    margin: 0 0 1em 0;
   }
 }

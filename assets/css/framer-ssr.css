@@ -451,7 +451,12 @@
     a.framer-text,
     a.framer-text span.framer-text:not([data-text-fill]),
     span.framer-text[data-nested-link],
-    span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]) {
+    span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]),
+    /* Semantic alias - allows replacing framer-text with sdt-text */
+    a.sdt-text,
+    a.sdt-text span.sdt-text:not([data-text-fill]),
+    span.sdt-text[data-nested-link],
+    span.sdt-text[data-nested-link] span.sdt-text:not([data-text-fill]) {
       font-family: var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
       font-style: var(--framer-blockquote-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
       font-weight: var(--framer-blockquote-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
@@ -465,7 +470,10 @@
     }
 
     a.framer-text,
-    span.framer-text[data-nested-link] {
+    span.framer-text[data-nested-link],
+    /* Semantic alias */
+    a.sdt-text,
+    span.sdt-text[data-nested-link] {
       -webkit-text-decoration-line: var(--framer-blockquote-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial)));
       text-decoration-line: var(--framer-blockquote-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial)));
       -webkit-text-decoration-style: var(--framer-blockquote-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, initial)));

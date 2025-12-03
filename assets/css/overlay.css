@@ -122,7 +122,7 @@
 
 .bio-panel--desktop .bio-panel__divider svg {
   width: 100%;
-  height: 3px;
+  height: 1px;
   display: block;
 }
 
@@ -315,11 +315,13 @@
 }
 
 /* ============================================
-   Typography - Extracted from Framer presets
+   Semantic Typography Classes for Bio Overlays
+   These replace the Framer preset classes
+   Scoped under .sdt-bio-overlay for specificity
    ============================================ */
 
-/* Name heading - red (Framer preset: framer-styles-preset-19zukr5) */
-.bio-panel .framer-styles-preset-19zukr5 {
+/* Attorney name - red heading (replaces framer-styles-preset-19zukr5 for names) */
+.sdt-bio-overlay .sdt-bio-name {
   font-family: "EB Garamond", "EB Garamond Placeholder", serif;
   font-weight: 500;
   color: rgb(193, 43, 32);
@@ -328,18 +330,28 @@
   line-height: 1.25em;
 }
 
-/* Title - brown (Framer: 28px, 400 weight, 1.25em line-height, -0.01em letter-spacing) */
-.bio-panel .framer-styles-preset-gxwp0p {
+/* Title/role - brown (replaces framer-styles-preset-gxwp0p for titles like "Shareholder") */
+.sdt-bio-overlay .sdt-bio-title {
   font-family: "EB Garamond", "EB Garamond Placeholder", serif;
-  font-weight: 400;
+  font-weight: 500;
   color: rgb(65, 33, 4);
   margin: 0;
   line-height: 1.25em;
   letter-spacing: -0.01em;
 }
 
-/* Body text (Framer preset: framer-styles-preset-19qfgc8) */
-.bio-panel .framer-styles-preset-19qfgc8 {
+/* Section heading - brown (for "Biography" heading) */
+.sdt-bio-overlay .sdt-bio-section-heading {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-weight: 500;
+  color: rgb(65, 33, 4);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25em;
+}
+
+/* Body text (replaces framer-styles-preset-19qfgc8) */
+.sdt-bio-overlay .sdt-bio-text {
   font-family: "EB Garamond", "EB Garamond Placeholder", serif;
   font-size: 18px;
   font-weight: 400;
@@ -350,7 +362,48 @@
 }
 
 /* Paragraph spacing for bio text */
-.bio-panel .framer-styles-preset-19qfgc8 + .framer-styles-preset-19qfgc8 {
+.sdt-bio-overlay .sdt-bio-text + .sdt-bio-text {
+  margin-top: 20px;
+}
+
+/* ============================================
+   Legacy support: Framer preset aliases
+   Keep these while transitioning HTML
+   ============================================ */
+
+/* Name heading - red (Framer preset: framer-styles-preset-19zukr5) */
+.sdt-bio-overlay .framer-styles-preset-19zukr5 {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-weight: 500;
+  color: rgb(193, 43, 32);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25em;
+}
+
+/* Title - brown (Framer: 28px, 400 weight, 1.25em line-height, -0.01em letter-spacing) */
+.sdt-bio-overlay .framer-styles-preset-gxwp0p {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-weight: 400;
+  color: rgb(65, 33, 4);
+  margin: 0;
+  line-height: 1.25em;
+  letter-spacing: -0.01em;
+}
+
+/* Body text (Framer preset: framer-styles-preset-19qfgc8) */
+.sdt-bio-overlay .framer-styles-preset-19qfgc8 {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.25em;
+  letter-spacing: -0.01em;
+  color: rgb(65, 33, 4);
+  margin: 0;
+}
+
+/* Paragraph spacing for bio text */
+.sdt-bio-overlay .framer-styles-preset-19qfgc8 + .framer-styles-preset-19qfgc8 {
   margin-top: 20px;
 }
 
@@ -360,32 +413,114 @@
 
 /* Phone (max-width: 809px) */
 @media (max-width: 809px) {
-  .bio-panel .framer-styles-preset-19zukr5 {
+  .sdt-bio-overlay .sdt-bio-name,
+  .sdt-bio-overlay .sdt-bio-section-heading {
     font-size: 24px;
   }
 
-  .bio-panel .framer-styles-preset-gxwp0p {
+  .sdt-bio-overlay .sdt-bio-title {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0em;
+  }
+
+  /* Override .sdt-text properties for bio text in phone overlays */
+  /* Baseline uses --framer-line-height: 1.3em, margin: 0 0 1em 0 for phone */
+  /* Using 20px (approx 1.33em) to force integer pixel height and fix sub-pixel rendering issues */
+  .sdt-bio-overlay .sdt-bio-text,
+  .sdt-bio-overlay .sdt-text.sdt-bio-text,
+  .sdt-bio-overlay--phone .sdt-bio-text,
+  .sdt-bio-overlay--phone .sdt-text.sdt-bio-text {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: rgb(65, 33, 4);
+    margin: 0 0 1em 0;
+  }
+
+  /* Override paragraph spacing from base .sdt-bio-text styles */
+  .sdt-bio-overlay--phone .sdt-bio-text + .sdt-bio-text {
+    margin-top: 0;
+  }
+
+  /* Legacy support */
+  .sdt-bio-overlay .framer-styles-preset-19zukr5 {
+    font-size: 24px;
+  }
+
+  .sdt-bio-overlay .framer-styles-preset-gxwp0p {
     font-size: 16px;
   }
 
-  .bio-panel .framer-styles-preset-19qfgc8 {
+  .sdt-bio-overlay .framer-styles-preset-19qfgc8 {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif;
     font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: rgb(65, 33, 4);
   }
 }
 
 /* Tablet (810px - 1199px) - Framer uses different layout */
 @media (min-width: 810px) and (max-width: 1199px) {
-  .bio-panel .framer-styles-preset-19zukr5 {
+  .sdt-bio-overlay .sdt-bio-name,
+  .sdt-bio-overlay .sdt-bio-section-heading {
     font-size: 19px;
   }
 
-  .bio-panel .framer-styles-preset-gxwp0p {
+  .sdt-bio-overlay .sdt-bio-title {
     font-size: 19px;
     font-weight: 500;
   }
 
-  .bio-panel .framer-styles-preset-19qfgc8 {
+  .sdt-bio-overlay .sdt-bio-text {
     font-size: 12px;
+  }
+
+  /* Legacy support */
+  .sdt-bio-overlay .framer-styles-preset-19zukr5 {
+    font-size: 19px;
+  }
+
+  .sdt-bio-overlay .framer-styles-preset-gxwp0p {
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .sdt-bio-overlay .framer-styles-preset-19qfgc8 {
+    font-size: 12px;
+  }
+
+  /* Reduced paragraph spacing on tablet - 2nd element and beyond */
+  .sdt-bio-overlay .sdt-bio-text:not(:first-child) {
+    margin-top: 7.5px;
+  }
+
+  /* Hide trailing br elements in bio overlay on tablet */
+  .sdt-bio-overlay br {
+    display: none;
+  }
+
+  /* Tablet email/phone/address - override .sdt-text font-size */
+  .sdt-bio-overlay--tablet .sdt-bio-dialog .sdt-bio-contact__text .sdt-text,
+  .sdt-bio-overlay--tablet .sdt-bio-dialog .sdt-bio-profile__address .sdt-text {
+    font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgb(126, 104, 62);
+  }
+
+  .sdt-bio-overlay--tablet .sdt-bio-profile__address .bio-panel__address-label {
+    font-weight: 600;
+    color: rgb(65, 33, 4);
+  }
+
+  .sdt-bio-overlay--tablet .sdt-bio-profile__address .bio-panel__address-value {
+    color: rgb(65, 33, 4);
   }
 
   /* Tablet container adjustments - Framer: height: 498px, width: 758px */
@@ -449,23 +584,37 @@
     gap: 7.43px;
   }
 
-  /* Divider line - Framer: height: 2px */
+  /* Divider line - same 1px as desktop for visual parity */
   .bio-panel--desktop .bio-panel__divider svg {
-    height: 2px;
+    height: 1px;
   }
 }
 
 /* Desktop (1200px+) */
 @media (min-width: 1200px) {
-  .bio-panel .framer-styles-preset-19zukr5 {
+  .sdt-bio-overlay .sdt-bio-name,
+  .sdt-bio-overlay .sdt-bio-section-heading {
     font-size: 28px;
   }
 
-  .bio-panel .framer-styles-preset-gxwp0p {
+  .sdt-bio-overlay .sdt-bio-title {
     font-size: 28px;
   }
 
-  .bio-panel .framer-styles-preset-19qfgc8 {
+  .sdt-bio-overlay .sdt-bio-text {
+    font-size: 18px;
+  }
+
+  /* Legacy support */
+  .sdt-bio-overlay .framer-styles-preset-19zukr5 {
+    font-size: 28px;
+  }
+
+  .sdt-bio-overlay .framer-styles-preset-gxwp0p {
+    font-size: 28px;
+  }
+
+  .sdt-bio-overlay .framer-styles-preset-19qfgc8 {
     font-size: 18px;
   }
 }

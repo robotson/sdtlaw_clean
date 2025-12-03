@@ -27,6 +27,40 @@
 
   <!-- Load EB Garamond (400-700, normal & italic) and Montserrat (400-900, normal & italic) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,400..900;1,400..900&display=swap">
+  
+  <!-- Override EB Garamond normal 400 with baseline's exact @font-face declaration (woff2 latin subset) -->
+  <!-- This matches the baseline's font loading method to ensure consistent rendering -->
+  <style>
+    /* Override EB Garamond normal 400 latin subset to match baseline's font loading */
+    @font-face {
+      font-family: 'EB Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/ebgaramond/v32/SlGUmQSNjdsmc35JDF1K5GR1SDk.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* Placeholder font definitions to match baseline font metrics */
+    @font-face {
+      font-family: "EB Garamond Placeholder";
+      src: local("Times New Roman");
+      ascent-override: 107.66%;
+      descent-override: 31.86%;
+      line-gap-override: 0.00%;
+      size-adjust: 93.54%;
+    }
+    
+    @font-face {
+      font-family: "Montserrat Placeholder";
+      src: local("Arial");
+      ascent-override: 84.95%;
+      descent-override: 22.03%;
+      line-gap-override: 0.00%;
+      size-adjust: 113.95%;
+    }
+  </style>
+  
   <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://sdtlaw.com/">
   <meta property="og:url" content="https://sdtlaw.com/">
@@ -292,16 +326,16 @@
 
     <!-- Tammy J. Swanson - Desktop -->
     <div class="sdt-bio-overlay sdt-bio-overlay--desktop bio-portal" data-bio-id="attorney-tjs" hidden>
-      <div class="framer-SXe1m framer-yBnve framer-avUKP framer-yNZqP" role="dialog" aria-labelledby="bio-name-1kq6r0t-desktop">
-        <div class="framer-rop5of">
-          <div class="framer-1edteoo bio-panel__card--desktop">
-            <div class="framer-1k4oklk">
-              <div class="framer-1p8rmjh">
-                <div class="framer-1pi7at3">
-                  <div class="framer-mxqsoo-container">
-                    <div class="framer-DCJfz framer-v-1l6mjat">
-                      <div class="framer-1si2gga">
-                        <div class="framer-o0j920">
+      <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-1kq6r0t-desktop">
+        <div class="sdt-bio-panel-wrapper">
+          <div class="bio-panel__card--desktop sdt-bio-panel">
+            <div class="sdt-bio-profile">
+              <div class="sdt-bio-profile__photo">
+                <div class="sdt-bio-profile__photo-wrapper">
+                  <div class="sdt-bio-profile__image-container">
+                    <div class="sdt-bio-profile__image-base sdt-bio-profile__image-base--tammy">
+                      <div class="sdt-bio-profile__image-wrapper">
+                        <div class="sdt-bio-profile__image-inner">
                           <div class="bio-panel__photo-wrapper">
                             <img class="bio-panel__photo-img" src="./assets/images/attorney-tammy-swanson.jpg" alt="Tammy J. Swanson">
                           </div>
@@ -310,56 +344,56 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-8siksq">
-                  <div class="framer-hz73lt">
-                    <div class="framer-vu0rjv" aria-hidden="true">
+                <div class="sdt-bio-profile__contact">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--email" aria-hidden="true">
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1kq6r0t-d)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1kq6r0t-d"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-go17s5">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a></p>
                     </div>
                   </div>
-                  <div class="framer-e0xee0">
-                    <div class="framer-1749sgb" aria-hidden="true">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--phone" aria-hidden="true">
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1kq6r0t-d)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1kq6r0t-d"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-fly4qh">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="framer-1cexlgh">
+              <div class="sdt-bio-profile__address">
                 <p class="sdt-text bio-panel__address-label">Address:</p>
                 <p class="sdt-text bio-panel__address-value">3120 Woodbury Drive Suite 200</p>
               </div>
             </div>
-            <div class="framer-1etjeh">
-              <div class="framer-1lwgu3k">
+            <div class="sdt-bio-content">
+              <div class="sdt-bio-content__heading-wrapper">
                 <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
-              <div class="framer-1xy1e9l">
-                <div class="framer-4h32yw">
+              <div class="sdt-bio-content__text-area">
+                <div class="sdt-bio-content__text-container">
                   <p class="sdt-text sdt-bio-text">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
-            <div class="framer-1hrcbbx">
-              <div class="framer-9biryz">
-                <div class="framer-wjb9w6">
+            <div class="sdt-bio-header">
+              <div class="sdt-bio-header__row">
+                <div class="sdt-bio-header__name-wrapper">
                   <h5 class="sdt-text sdt-bio-name" id="bio-name-1kq6r0t-desktop">Tammy J. Swanson</h5>
                   <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
-                <div class="framer-a94fu2-container">
-                  <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
-                    <div class="framer-IRM4W framer-fpfecg"></div>
+                <div class="sdt-bio-header__close-container">
+                  <button class="sdt-bio-close" aria-label="Close bio">
+                    <div></div>
                   </button>
                 </div>
               </div>
-              <div class="framer-17say78">
-                <div class="framer-ovoqie bio-panel__divider" aria-hidden="true">
+              <div class="sdt-bio-header__divider">
+                <div class="bio-panel__divider" aria-hidden="true">
                   <svg viewBox="0 0 1024 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="1024" y2="0.5" stroke="#412104" stroke-width="0.5"></line></svg>
                 </div>
               </div>
@@ -371,16 +405,16 @@
 
     <!-- Tammy J. Swanson - Tablet -->
     <div class="sdt-bio-overlay sdt-bio-overlay--tablet bio-portal" data-bio-id="attorney-tjs" hidden>
-      <div class="framer-SXe1m framer-yBnve framer-avUKP framer-yNZqP framer-10ae6pz framer-v-xc8jbw" role="dialog" aria-labelledby="bio-name-1kq6r0t-tablet">
-        <div class="framer-rop5of">
-          <div class="framer-1edteoo bio-panel__card--tablet">
-            <div class="framer-1k4oklk">
-              <div class="framer-1p8rmjh">
-                <div class="framer-1pi7at3">
-                  <div class="framer-mxqsoo-container">
-                    <div class="framer-DCJfz framer-1l6mjat framer-v-ys564s">
-                      <div class="framer-1si2gga">
-                        <div class="framer-o0j920">
+      <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-1kq6r0t-tablet">
+        <div class="sdt-bio-panel-wrapper">
+          <div class="bio-panel__card--tablet sdt-bio-panel">
+            <div class="sdt-bio-profile">
+              <div class="sdt-bio-profile__photo">
+                <div class="sdt-bio-profile__photo-wrapper">
+                  <div class="sdt-bio-profile__image-container">
+                    <div class="sdt-bio-profile__image-base sdt-bio-profile__image-base--tammy">
+                      <div class="sdt-bio-profile__image-wrapper">
+                        <div class="sdt-bio-profile__image-inner">
                           <div class="bio-panel__photo-wrapper">
                             <img class="bio-panel__photo-img" src="./assets/images/attorney-tammy-swanson.jpg" alt="Tammy J. Swanson">
                           </div>
@@ -389,56 +423,56 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-8siksq">
-                  <div class="framer-hz73lt">
-                    <div class="framer-vu0rjv" aria-hidden="true">
+                <div class="sdt-bio-profile__contact">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--email" aria-hidden="true">
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1kq6r0t-t)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1kq6r0t-t"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-go17s5">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a></p>
                     </div>
                   </div>
-                  <div class="framer-e0xee0">
-                    <div class="framer-1749sgb" aria-hidden="true">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--phone" aria-hidden="true">
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1kq6r0t-t)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1kq6r0t-t"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-fly4qh">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="framer-1cexlgh">
+              <div class="sdt-bio-profile__address">
                 <p class="sdt-text bio-panel__address-label">Address:</p>
                 <p class="sdt-text bio-panel__address-value">3120 Woodbury Drive Suite 200</p>
               </div>
             </div>
-            <div class="framer-1etjeh">
-              <div class="framer-1lwgu3k">
+            <div class="sdt-bio-content">
+              <div class="sdt-bio-content__heading-wrapper">
                 <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
-              <div class="framer-1xy1e9l">
-                <div class="framer-4h32yw">
+              <div class="sdt-bio-content__text-area">
+                <div class="sdt-bio-content__text-container">
                   <p class="sdt-text sdt-bio-text">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
-            <div class="framer-1hrcbbx">
-              <div class="framer-9biryz">
-                <div class="framer-wjb9w6">
+            <div class="sdt-bio-header">
+              <div class="sdt-bio-header__row">
+                <div class="sdt-bio-header__name-wrapper">
                   <h5 class="sdt-text sdt-bio-name" id="bio-name-1kq6r0t-tablet">Tammy J. Swanson</h5>
                   <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
-                <div class="framer-a94fu2-container">
-                  <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
-                    <div class="framer-IRM4W framer-fpfecg"></div>
+                <div class="sdt-bio-header__close-container">
+                  <button class="sdt-bio-close" aria-label="Close bio">
+                    <div></div>
                   </button>
                 </div>
               </div>
-              <div class="framer-17say78">
-                <div class="framer-ovoqie bio-panel__divider" aria-hidden="true">
+              <div class="sdt-bio-header__divider">
+                <div class="bio-panel__divider" aria-hidden="true">
                   <svg viewBox="0 0 1024 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="1024" y2="0.5" stroke="#412104" stroke-width="0.5"></line></svg>
                 </div>
               </div>
@@ -449,19 +483,19 @@
     </div>
 
     <!-- Tammy J. Swanson - Phone -->
-    <div class="sdt-bio-overlay sdt-bio-overlay--phone bio-portal framer-qTkKF framer-Ay79T framer-rU5N4 framer-ja2YZ framer-qE7ir framer-avUKP framer-mfAtc framer-yNZqP" data-bio-id="attorney-tjs" hidden>
+    <div class="sdt-bio-overlay sdt-bio-overlay--phone bio-portal" data-bio-id="attorney-tjs" hidden>
       <div class="bio-panel__backdrop" aria-hidden="true"></div>
       <div>
-        <div class="framer-esofaf" role="dialog" aria-labelledby="bio-name-1kq6r0t-phone">
-            <div class="framer-185jkq1">
-              <div class="framer-1udf3gh">
-                <div class="framer-nis8ht">
-                  <div class="framer-1utqvcz">
-                    <div class="framer-mpug57">
-                      <div class="framer-rjug5d-container">
-                        <div class="framer-htz6z framer-yBnve framer-1myzxpd framer-v-1myzxpd bio-panel__contact-btn" data-border="true" tabindex="0">
-                          <div class="framer-1gcx4ct">
-                            <div class="framer-1v239di">
+        <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-1kq6r0t-phone">
+            <div class="sdt-bio-panel-wrapper">
+              <div class="sdt-bio-panel__inner">
+                <div class="sdt-bio-panel">
+                  <div class="sdt-bio-panel__contact-buttons">
+                    <div class="sdt-bio-panel__contact-buttons-wrapper">
+                      <div class="sdt-bio-panel__contact-btn-container">
+                        <div class="bio-panel__contact-btn" data-border="true" tabindex="0">
+                          <div class="sdt-bio-panel__contact-btn-inner">
+                            <div class="sdt-bio-panel__contact-btn-text-wrapper">
                               <p class="sdt-text bio-panel__btn-text">
                                 <a class="sdt-text sdt-bio-link" href="mailto:TSwanson@sdtlaw.com">Email: TSwanson@sdtlaw.com</a>
                               </p>
@@ -469,10 +503,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="framer-h10esh-container">
-                        <div class="framer-htz6z framer-yBnve framer-1myzxpd framer-v-1myzxpd bio-panel__contact-btn" data-border="true" tabindex="0">
-                          <div class="framer-1gcx4ct">
-                            <div class="framer-1v239di">
+                      <div class="sdt-bio-panel__contact-btn-container">
+                        <div class="bio-panel__contact-btn" data-border="true" tabindex="0">
+                          <div class="sdt-bio-panel__contact-btn-inner">
+                            <div class="sdt-bio-panel__contact-btn-text-wrapper">
                               <p class="sdt-text bio-panel__btn-text">
                                 <a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a>
                               </p>
@@ -483,26 +517,26 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-1tylomn">
-                  <div class="framer-q1pkkl">
-                    <div class="framer-8w1a51">
-                      <div class="framer-1iwl8ez">
+                <div class="sdt-bio-panel__content">
+                  <div class="sdt-bio-header">
+                    <div class="sdt-bio-header__name-wrapper">
+                      <div class="sdt-bio-header__name-container">
                         <h5 class="sdt-text sdt-bio-name" id="bio-name-1kq6r0t-phone">Tammy J. Swanson</h5>
                       </div>
-                      <div class="framer-1iuxll0">
+                      <div class="sdt-bio-header__title-container">
                         <h6 class="sdt-text sdt-bio-title">Shareholder</h6>
                       </div>
                     </div>
-                    <div class="framer-lg96rc sdt-bio-close" tabindex="0" role="button" aria-label="Close">
-                      <div class="framer-ppocil-container">
-                        <div class="framer-uGpGz framer-9s8yld framer-v-9s8yld" tabindex="0">
-                          <div class="framer-IRM4W framer-fpfecg"></div>
+                    <div class="sdt-bio-close sdt-bio-header__close-container" tabindex="0" role="button" aria-label="Close">
+                      <div class="sdt-bio-header__close-icon-container">
+                        <div tabindex="0">
+                          <div></div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="framer-1l9pg37">
-                    <div class="framer-1oxt2pa" aria-hidden="true">
+                  <div class="sdt-bio-header__divider">
+                    <div class="sdt-bio-header__divider-inner" aria-hidden="true">
                       <div class="svgContainer">
                         <svg viewBox="0 0 300 3" preserveAspectRatio="none" width="100%" height="100%">
                           <line x1="0" y1="1.5" x2="300" y2="1.5" stroke="rgb(126, 104, 62)" stroke-width="0.5"/>
@@ -510,12 +544,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="framer-181u6dr">
-                    <div class="framer-mvaie3">
+                  <div class="sdt-bio-content">
+                    <div class="sdt-bio-content__heading-wrapper">
                       <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
                     </div>
-                    <div class="framer-1t70tm6">
-                      <div class="framer-z3ffe3">
+                    <div class="sdt-bio-content__text-area">
+                      <div class="sdt-bio-content__text-container">
                         <p class="sdt-text sdt-bio-text">Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas of family law, child protection and Federal Indian Law with a special emphasis on Indian Child Welfare Act cases. Tammy is a zealous advocate for her clients and was the 2008 Advocate of the Year for the Minnesota Fathers & Families Network. Her legal career has been devoted to protecting the best interests of children and the rights of parents and tribes. Prior to the founding of the firm in 2003, Tammy worked as staff attorney and later Director of Litigation at the Indian Child Welfare Law Center, a non-profit public defense organization that represents families in child protection cases governed by the Indian Child Welfare Act. She is also a qualified mediator for all types of family law cases.</p>
                           <p class="sdt-text sdt-bio-text">Tammy brings not only a courtroom perspective to her cases, but a judicial one as well. Tammy began her legal career as law clerk to the Hon. Isabel Gomez in the Fourth Judicial District. She then went on to serve as Chief Judge of the Minnesota Chippewa Tribe Court of Appeals and Associate Appellate Judge for the Prairie Island Indian Community. Tammy currently serves as Special Magistrate for the Mille Lacs Band of Ojibwe Tribal Court.</p>
                           <p class="sdt-text sdt-bio-text">Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She holds a B.A. in Psychology and a Juris Doctorate from the University of Minnesota.</p>
@@ -532,16 +566,16 @@
 
     <!-- Heidi A. Drobnick - Desktop -->
     <div class="sdt-bio-overlay sdt-bio-overlay--desktop bio-portal" data-bio-id="attorney-had" hidden>
-      <div class="framer-SXe1m framer-yBnve framer-avUKP framer-yNZqP" role="dialog" aria-labelledby="bio-name-a2aut-desktop">
-        <div class="framer-rop5of">
-          <div class="framer-1edteoo bio-panel__card--desktop">
-            <div class="framer-1k4oklk">
-              <div class="framer-1p8rmjh">
-                <div class="framer-1pi7at3">
-                  <div class="framer-mxqsoo-container">
-                    <div class="framer-DCJfz framer-v-6s7snk">
-                      <div class="framer-1si2gga">
-                        <div class="framer-o0j920">
+      <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-a2aut-desktop">
+        <div class="sdt-bio-panel-wrapper">
+          <div class="bio-panel__card--desktop sdt-bio-panel">
+            <div class="sdt-bio-profile">
+              <div class="sdt-bio-profile__photo">
+                <div class="sdt-bio-profile__photo-wrapper">
+                  <div class="sdt-bio-profile__image-container">
+                    <div class="sdt-bio-profile__image-base sdt-bio-profile__image-base--heidi">
+                      <div class="sdt-bio-profile__image-wrapper">
+                        <div class="sdt-bio-profile__image-inner">
                           <div class="bio-panel__photo-wrapper">
                             <img class="bio-panel__photo-img" src="./assets/images/attorney-heidi-drobnick.jpg" alt="Heidi A. Drobnick">
                           </div>
@@ -550,55 +584,55 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-8siksq">
-                  <div class="framer-hz73lt">
-                    <div class="framer-vu0rjv" aria-hidden="true">
+                <div class="sdt-bio-profile__contact">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--email" aria-hidden="true">
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-a2aut-d)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-a2aut-d"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-go17s5">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a></p>
                     </div>
                   </div>
-                  <div class="framer-e0xee0">
-                    <div class="framer-1749sgb" aria-hidden="true">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--phone" aria-hidden="true">
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-a2aut-d)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-a2aut-d"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-fly4qh">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="framer-1cexlgh">
+              <div class="sdt-bio-profile__address">
                 <p class="sdt-text bio-panel__address-label">Address:</p>
                 <p class="sdt-text bio-panel__address-value">3120 Woodbury Drive Suite 200</p>
               </div>
             </div>
-            <div class="framer-1etjeh">
-              <div class="framer-1lwgu3k">
+            <div class="sdt-bio-content">
+              <div class="sdt-bio-content__heading-wrapper">
                 <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
-              <div class="framer-1xy1e9l">
-                <div class="framer-4h32yw">
+              <div class="sdt-bio-content__text-area">
+                <div class="sdt-bio-content__text-container">
                   <p class="sdt-text sdt-bio-text">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
-            <div class="framer-1hrcbbx">
-              <div class="framer-9biryz">
-                <div class="framer-wjb9w6">
+            <div class="sdt-bio-header">
+              <div class="sdt-bio-header__row">
+                <div class="sdt-bio-header__name-wrapper">
                   <h5 class="sdt-text sdt-bio-name" id="bio-name-a2aut-desktop">Heidi A. Drobnick</h5>
                   <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
-                <div class="framer-a94fu2-container">
-                  <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
-                    <div class="framer-IRM4W framer-fpfecg"></div>
+                <div class="sdt-bio-header__close-container">
+                  <button class="sdt-bio-close" aria-label="Close bio">
+                    <div></div>
                   </button>
                 </div>
               </div>
-              <div class="framer-17say78">
-                <div class="framer-ovoqie bio-panel__divider" aria-hidden="true">
+              <div class="sdt-bio-header__divider">
+                <div class="bio-panel__divider" aria-hidden="true">
                   <svg viewBox="0 0 1024 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="1024" y2="0.5" stroke="#412104" stroke-width="0.5"></line></svg>
                 </div>
               </div>
@@ -610,16 +644,16 @@
 
     <!-- Heidi A. Drobnick - Tablet -->
     <div class="sdt-bio-overlay sdt-bio-overlay--tablet bio-portal" data-bio-id="attorney-had" hidden>
-      <div class="framer-SXe1m framer-yBnve framer-avUKP framer-yNZqP framer-10ae6pz framer-v-xc8jbw" role="dialog" aria-labelledby="bio-name-a2aut-tablet">
-        <div class="framer-rop5of">
-          <div class="framer-1edteoo bio-panel__card--tablet">
-            <div class="framer-1k4oklk">
-              <div class="framer-1p8rmjh">
-                <div class="framer-1pi7at3">
-                  <div class="framer-mxqsoo-container">
-                    <div class="framer-DCJfz framer-6s7snk framer-v-1hckrtz">
-                      <div class="framer-1si2gga">
-                        <div class="framer-o0j920">
+      <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-a2aut-tablet">
+        <div class="sdt-bio-panel-wrapper">
+          <div class="bio-panel__card--tablet sdt-bio-panel">
+            <div class="sdt-bio-profile">
+              <div class="sdt-bio-profile__photo">
+                <div class="sdt-bio-profile__photo-wrapper">
+                  <div class="sdt-bio-profile__image-container">
+                    <div class="sdt-bio-profile__image-base sdt-bio-profile__image-base--heidi">
+                      <div class="sdt-bio-profile__image-wrapper">
+                        <div class="sdt-bio-profile__image-inner">
                           <div class="bio-panel__photo-wrapper">
                             <img class="bio-panel__photo-img" src="./assets/images/attorney-heidi-drobnick.jpg" alt="Heidi A. Drobnick">
                           </div>
@@ -628,55 +662,55 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-8siksq">
-                  <div class="framer-hz73lt">
-                    <div class="framer-vu0rjv" aria-hidden="true">
+                <div class="sdt-bio-profile__contact">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--email" aria-hidden="true">
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-a2aut-t)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-a2aut-t"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-go17s5">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a></p>
                     </div>
                   </div>
-                  <div class="framer-e0xee0">
-                    <div class="framer-1749sgb" aria-hidden="true">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--phone" aria-hidden="true">
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-a2aut-t)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-a2aut-t"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-fly4qh">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="framer-1cexlgh">
+              <div class="sdt-bio-profile__address">
                 <p class="sdt-text bio-panel__address-label">Address:</p>
                 <p class="sdt-text bio-panel__address-value">3120 Woodbury Drive Suite 200</p>
               </div>
             </div>
-            <div class="framer-1etjeh">
-              <div class="framer-1lwgu3k">
+            <div class="sdt-bio-content">
+              <div class="sdt-bio-content__heading-wrapper">
                 <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
-              <div class="framer-1xy1e9l">
-                <div class="framer-4h32yw">
+              <div class="sdt-bio-content__text-area">
+                <div class="sdt-bio-content__text-container">
                   <p class="sdt-text sdt-bio-text">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
-            <div class="framer-1hrcbbx">
-              <div class="framer-9biryz">
-                <div class="framer-wjb9w6">
+            <div class="sdt-bio-header">
+              <div class="sdt-bio-header__row">
+                <div class="sdt-bio-header__name-wrapper">
                   <h5 class="sdt-text sdt-bio-name" id="bio-name-a2aut-tablet">Heidi A. Drobnick</h5>
                   <h5 class="sdt-text sdt-bio-title">Shareholder</h5>
                 </div>
-                <div class="framer-a94fu2-container">
-                  <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
-                    <div class="framer-IRM4W framer-fpfecg"></div>
+                <div class="sdt-bio-header__close-container">
+                  <button class="sdt-bio-close" aria-label="Close bio">
+                    <div></div>
                   </button>
                 </div>
               </div>
-              <div class="framer-17say78">
-                <div class="framer-ovoqie bio-panel__divider" aria-hidden="true">
+              <div class="sdt-bio-header__divider">
+                <div class="bio-panel__divider" aria-hidden="true">
                   <svg viewBox="0 0 1024 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="1024" y2="0.5" stroke="#412104" stroke-width="0.5"></line></svg>
                 </div>
               </div>
@@ -687,19 +721,19 @@
     </div>
 
     <!-- Heidi A. Drobnick - Phone -->
-    <div class="sdt-bio-overlay sdt-bio-overlay--phone bio-portal framer-qTkKF framer-Ay79T framer-rU5N4 framer-ja2YZ framer-qE7ir framer-avUKP framer-mfAtc framer-yNZqP" data-bio-id="attorney-had" hidden>
+    <div class="sdt-bio-overlay sdt-bio-overlay--phone bio-portal" data-bio-id="attorney-had" hidden>
       <div class="bio-panel__backdrop" aria-hidden="true"></div>
       <div>
-        <div class="framer-esofaf" role="dialog" aria-labelledby="bio-name-a2aut-phone">
-            <div class="framer-185jkq1">
-              <div class="framer-1udf3gh">
-                <div class="framer-nis8ht">
-                  <div class="framer-1utqvcz">
-                    <div class="framer-mpug57">
-                      <div class="framer-rjug5d-container">
-                        <div class="framer-htz6z framer-yBnve framer-1myzxpd framer-v-1myzxpd bio-panel__contact-btn" data-border="true" tabindex="0">
-                          <div class="framer-1gcx4ct">
-                            <div class="framer-1v239di">
+        <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-a2aut-phone">
+            <div class="sdt-bio-panel-wrapper">
+              <div class="sdt-bio-panel__inner">
+                <div class="sdt-bio-panel">
+                  <div class="sdt-bio-panel__contact-buttons">
+                    <div class="sdt-bio-panel__contact-buttons-wrapper">
+                      <div class="sdt-bio-panel__contact-btn-container">
+                        <div class="bio-panel__contact-btn" data-border="true" tabindex="0">
+                          <div class="sdt-bio-panel__contact-btn-inner">
+                            <div class="sdt-bio-panel__contact-btn-text-wrapper">
                               <p class="sdt-text bio-panel__btn-text">
                                 <a class="sdt-text sdt-bio-link" href="mailto:HDrobnick@sdtlaw.com">Email: HDrobnick@sdtlaw.com</a>
                               </p>
@@ -707,10 +741,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="framer-h10esh-container">
-                        <div class="framer-htz6z framer-yBnve framer-1myzxpd framer-v-1myzxpd bio-panel__contact-btn" data-border="true" tabindex="0">
-                          <div class="framer-1gcx4ct">
-                            <div class="framer-1v239di">
+                      <div class="sdt-bio-panel__contact-btn-container">
+                        <div class="bio-panel__contact-btn" data-border="true" tabindex="0">
+                          <div class="sdt-bio-panel__contact-btn-inner">
+                            <div class="sdt-bio-panel__contact-btn-text-wrapper">
                               <p class="sdt-text bio-panel__btn-text">
                                 <a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a>
                               </p>
@@ -721,26 +755,26 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-1tylomn">
-                  <div class="framer-q1pkkl">
-                    <div class="framer-8w1a51">
-                      <div class="framer-1iwl8ez">
+                <div class="sdt-bio-panel__content">
+                  <div class="sdt-bio-header">
+                    <div class="sdt-bio-header__name-wrapper">
+                      <div class="sdt-bio-header__name-container">
                         <h5 class="sdt-text sdt-bio-name" id="bio-name-a2aut-phone">Heidi A. Drobnick</h5>
                       </div>
-                      <div class="framer-1iuxll0">
+                      <div class="sdt-bio-header__title-container">
                         <h6 class="sdt-text sdt-bio-title">Shareholder</h6>
                       </div>
                     </div>
-                    <div class="framer-lg96rc sdt-bio-close" tabindex="0" role="button" aria-label="Close">
-                      <div class="framer-ppocil-container">
-                        <div class="framer-uGpGz framer-9s8yld framer-v-9s8yld" tabindex="0">
-                          <div class="framer-IRM4W framer-fpfecg"></div>
+                    <div class="sdt-bio-close sdt-bio-header__close-container" tabindex="0" role="button" aria-label="Close">
+                      <div class="sdt-bio-header__close-icon-container">
+                        <div tabindex="0">
+                          <div></div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="framer-1l9pg37">
-                    <div class="framer-1oxt2pa" aria-hidden="true">
+                  <div class="sdt-bio-header__divider">
+                    <div class="sdt-bio-header__divider-inner" aria-hidden="true">
                       <div class="svgContainer">
                         <svg viewBox="0 0 300 3" preserveAspectRatio="none" width="100%" height="100%">
                           <line x1="0" y1="1.5" x2="300" y2="1.5" stroke="rgb(126, 104, 62)" stroke-width="0.5"/>
@@ -748,12 +782,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="framer-181u6dr">
-                    <div class="framer-mvaie3">
+                  <div class="sdt-bio-content">
+                    <div class="sdt-bio-content__heading-wrapper">
                       <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
                     </div>
-                    <div class="framer-1t70tm6">
-                      <div class="framer-z3ffe3">
+                    <div class="sdt-bio-content__text-area">
+                      <div class="sdt-bio-content__text-container">
                         <p class="sdt-text sdt-bio-text">Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in the areas of business law, contracts, Tribal governance, and wills and trusts. Prior to founding the firm Heidi was an Accountant and a small business owner. She brings real-world experience and an accountant's attention to detail to every case she handles. Her skills are well-suited for cases involving financial details; whether it be in developing an estate plan, reviewing contracts or starting a Tribal Business.</p>
                           <p class="sdt-text sdt-bio-text">Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois Forte Band of Lake Superior Chippewa. She holds a B.Ac. in Accounting from the University of Minnesota - Duluth and a Juris Doctorate from the University of Minnesota.</p>
                       </div>
@@ -769,16 +803,16 @@
 
     <!-- Phyllis O. Tousey - Desktop -->
     <div class="sdt-bio-overlay sdt-bio-overlay--desktop bio-portal" data-bio-id="attorney-pot" hidden>
-      <div class="framer-SXe1m framer-yBnve framer-avUKP framer-yNZqP" role="dialog" aria-labelledby="bio-name-1175ksh-desktop">
-        <div class="framer-rop5of">
-          <div class="framer-1edteoo bio-panel__card--desktop">
-            <div class="framer-1k4oklk">
-              <div class="framer-1p8rmjh">
-                <div class="framer-1pi7at3">
-                  <div class="framer-mxqsoo-container">
-                    <div class="framer-DCJfz framer-v-1ouk2x7">
-                      <div class="framer-1si2gga">
-                        <div class="framer-o0j920">
+      <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-1175ksh-desktop">
+        <div class="sdt-bio-panel-wrapper">
+          <div class="bio-panel__card--desktop sdt-bio-panel">
+            <div class="sdt-bio-profile">
+              <div class="sdt-bio-profile__photo">
+                <div class="sdt-bio-profile__photo-wrapper">
+                  <div class="sdt-bio-profile__image-container">
+                    <div class="sdt-bio-profile__image-base sdt-bio-profile__image-base--phyllis">
+                      <div class="sdt-bio-profile__image-wrapper">
+                        <div class="sdt-bio-profile__image-inner">
                           <div class="bio-panel__photo-wrapper">
                             <img class="bio-panel__photo-img" src="./assets/images/attorney-phyllis-tousey.jpg" alt="Phyllis O. Tousey">
                           </div>
@@ -787,56 +821,56 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-8siksq">
-                  <div class="framer-hz73lt">
-                    <div class="framer-vu0rjv" aria-hidden="true">
+                <div class="sdt-bio-profile__contact">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--email" aria-hidden="true">
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1175ksh-d)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1175ksh-d"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-go17s5">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a></p>
                     </div>
                   </div>
-                  <div class="framer-e0xee0">
-                    <div class="framer-1749sgb" aria-hidden="true">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--phone" aria-hidden="true">
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1175ksh-d)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1175ksh-d"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-fly4qh">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="framer-1cexlgh">
+              <div class="sdt-bio-profile__address">
                 <p class="sdt-text bio-panel__address-label">Address:</p>
                 <p class="sdt-text bio-panel__address-value">3120 Woodbury Drive Suite 200</p>
               </div>
             </div>
-            <div class="framer-1etjeh">
-              <div class="framer-1lwgu3k">
+            <div class="sdt-bio-content">
+              <div class="sdt-bio-content__heading-wrapper">
                 <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
-              <div class="framer-1xy1e9l">
-                <div class="framer-4h32yw">
+              <div class="sdt-bio-content__text-area">
+                <div class="sdt-bio-content__text-container">
                   <p class="sdt-text sdt-bio-text">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
-            <div class="framer-1hrcbbx">
-              <div class="framer-9biryz">
-                <div class="framer-wjb9w6">
+            <div class="sdt-bio-header">
+              <div class="sdt-bio-header__row">
+                <div class="sdt-bio-header__name-wrapper">
                   <h5 class="sdt-text sdt-bio-name" id="bio-name-1175ksh-desktop">Phyllis O. Tousey</h5>
                   <h5 class="sdt-text sdt-bio-title">Of-Counsel</h5>
                 </div>
-                <div class="framer-a94fu2-container">
-                  <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
-                    <div class="framer-IRM4W framer-fpfecg"></div>
+                <div class="sdt-bio-header__close-container">
+                  <button class="sdt-bio-close" aria-label="Close bio">
+                    <div></div>
                   </button>
                 </div>
               </div>
-              <div class="framer-17say78">
-                <div class="framer-ovoqie bio-panel__divider" aria-hidden="true">
+              <div class="sdt-bio-header__divider">
+                <div class="bio-panel__divider" aria-hidden="true">
                   <svg viewBox="0 0 1024 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="1024" y2="0.5" stroke="#412104" stroke-width="0.5"></line></svg>
                 </div>
               </div>
@@ -848,16 +882,16 @@
 
     <!-- Phyllis O. Tousey - Tablet -->
     <div class="sdt-bio-overlay sdt-bio-overlay--tablet bio-portal" data-bio-id="attorney-pot" hidden>
-      <div class="framer-SXe1m framer-yBnve framer-avUKP framer-yNZqP framer-10ae6pz framer-v-xc8jbw" role="dialog" aria-labelledby="bio-name-1175ksh-tablet">
-        <div class="framer-rop5of">
-          <div class="framer-1edteoo bio-panel__card--tablet">
-            <div class="framer-1k4oklk">
-              <div class="framer-1p8rmjh">
-                <div class="framer-1pi7at3">
-                  <div class="framer-mxqsoo-container">
-                    <div class="framer-DCJfz framer-1ouk2x7 framer-v-1g5jp36">
-                      <div class="framer-1si2gga">
-                        <div class="framer-o0j920">
+      <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-1175ksh-tablet">
+        <div class="sdt-bio-panel-wrapper">
+          <div class="bio-panel__card--tablet sdt-bio-panel">
+            <div class="sdt-bio-profile">
+              <div class="sdt-bio-profile__photo">
+                <div class="sdt-bio-profile__photo-wrapper">
+                  <div class="sdt-bio-profile__image-container">
+                    <div class="sdt-bio-profile__image-base sdt-bio-profile__image-base--phyllis">
+                      <div class="sdt-bio-profile__image-wrapper">
+                        <div class="sdt-bio-profile__image-inner">
                           <div class="bio-panel__photo-wrapper">
                             <img class="bio-panel__photo-img" src="./assets/images/attorney-phyllis-tousey.jpg" alt="Phyllis O. Tousey">
                           </div>
@@ -866,56 +900,56 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-8siksq">
-                  <div class="framer-hz73lt">
-                    <div class="framer-vu0rjv" aria-hidden="true">
+                <div class="sdt-bio-profile__contact">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--email" aria-hidden="true">
                       <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><g clip-path="url(#email-clip-1175ksh-t)"><path d="M17.6931 0.306641V10.9839H0.306763V0.306641H17.6931ZM17.6931 0.306641V10.9839V0.357777L8.98972 7.91573L0.306763 0.357777V10.9839" stroke="#412104" stroke-width="0.715909" stroke-linejoin="round"/></g><rect x="0.256" y="0.256" width="17.489" height="10.78" stroke="#412104" stroke-width="0.511"/><defs><clipPath id="email-clip-1175ksh-t"><rect width="18" height="11.29" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-go17s5">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a></p>
                     </div>
                   </div>
-                  <div class="framer-e0xee0">
-                    <div class="framer-1749sgb" aria-hidden="true">
+                  <div class="sdt-bio-contact">
+                    <div class="sdt-bio-contact__icon sdt-bio-contact__icon--phone" aria-hidden="true">
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><g clip-path="url(#phone-clip-1175ksh-t)"><path d="M5.0079 11.9194C9.57923 16.5393 13.7747 16.6605 14.5386 16.6363C14.6113 16.6363 14.6841 16.5878 14.7326 16.5271L16.5999 13.4351C16.6605 13.326 16.6363 13.1926 16.5272 13.132L12.5864 10.5129C12.5136 10.4644 12.4045 10.4644 12.3317 10.5129L9.87024 12.2468C9.79749 12.2953 9.68836 12.3074 9.6156 12.2468C9.13058 11.9194 5.08065 7.86949 4.74114 7.37235C4.69264 7.29959 4.69264 7.19046 4.74114 7.11771L6.47509 4.65623C6.52359 4.58347 6.53572 4.47434 6.47509 4.40159L3.8681 0.460792C3.79535 0.363788 3.66197 0.327411 3.56496 0.388039L0.472951 2.2675C0.412324 2.30387 0.363822 2.37663 0.363822 2.46151C0.33957 3.23754 0.460826 7.43298 5.08065 11.9922L5.0079 11.9194Z" stroke="#412104" stroke-width="0.6" stroke-linejoin="round"/></g><defs><clipPath id="phone-clip-1175ksh-t"><rect width="17" height="17" fill="white"/></clipPath></defs></svg>
                     </div>
-                    <div class="framer-fly4qh">
+                    <div class="sdt-bio-contact__text">
                       <p class="sdt-text"><a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="framer-1cexlgh">
+              <div class="sdt-bio-profile__address">
                 <p class="sdt-text bio-panel__address-label">Address:</p>
                 <p class="sdt-text bio-panel__address-value">3120 Woodbury Drive Suite 200</p>
               </div>
             </div>
-            <div class="framer-1etjeh">
-              <div class="framer-1lwgu3k">
+            <div class="sdt-bio-content">
+              <div class="sdt-bio-content__heading-wrapper">
                 <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
               </div>
-              <div class="framer-1xy1e9l">
-                <div class="framer-4h32yw">
+              <div class="sdt-bio-content__text-area">
+                <div class="sdt-bio-content__text-container">
                   <p class="sdt-text sdt-bio-text">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
               <p class="sdt-text sdt-bio-text">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p><p class="sdt-text sdt-bio-text"><br class="sdt-text trailing-break"></p>
                 </div>
               </div>
             </div>
-            <div class="framer-1hrcbbx">
-              <div class="framer-9biryz">
-                <div class="framer-wjb9w6">
+            <div class="sdt-bio-header">
+              <div class="sdt-bio-header__row">
+                <div class="sdt-bio-header__name-wrapper">
                   <h5 class="sdt-text sdt-bio-name" id="bio-name-1175ksh-tablet">Phyllis O. Tousey</h5>
                   <h5 class="sdt-text sdt-bio-title">Of-Counsel</h5>
                 </div>
-                <div class="framer-a94fu2-container">
-                  <button class="framer-uGpGz framer-9s8yld sdt-bio-close" aria-label="Close bio">
-                    <div class="framer-IRM4W framer-fpfecg"></div>
+                <div class="sdt-bio-header__close-container">
+                  <button class="sdt-bio-close" aria-label="Close bio">
+                    <div></div>
                   </button>
                 </div>
               </div>
-              <div class="framer-17say78">
-                <div class="framer-ovoqie bio-panel__divider" aria-hidden="true">
+              <div class="sdt-bio-header__divider">
+                <div class="bio-panel__divider" aria-hidden="true">
                   <svg viewBox="0 0 1024 1" preserveAspectRatio="none"><line x1="0" y1="0.5" x2="1024" y2="0.5" stroke="#412104" stroke-width="0.5"></line></svg>
                 </div>
               </div>
@@ -927,19 +961,18 @@
 
     <!-- Phyllis O. Tousey - Phone -->
     <div class="sdt-bio-overlay sdt-bio-overlay--phone bio-portal" data-bio-id="attorney-pot" hidden>
-      <div class="framer-qTkKF framer-Ay79T framer-rU5N4 framer-ja2YZ framer-qE7ir framer-avUKP framer-mfAtc framer-yNZqP">
-        <div class="bio-panel__backdrop" aria-hidden="true"></div>
-        <div>
-          <div class="framer-esofaf" role="dialog" aria-labelledby="bio-name-1175ksh-phone">
-            <div class="framer-185jkq1">
-              <div class="framer-1udf3gh">
-                <div class="framer-nis8ht">
-                  <div class="framer-1utqvcz">
-                    <div class="framer-mpug57">
-                      <div class="framer-rjug5d-container">
-                        <div class="framer-htz6z framer-yBnve framer-1myzxpd framer-v-1myzxpd bio-panel__contact-btn" data-border="true" tabindex="0">
-                          <div class="framer-1gcx4ct">
-                            <div class="framer-1v239di">
+      <div class="bio-panel__backdrop" aria-hidden="true"></div>
+      <div>
+        <div class="sdt-bio-dialog" role="dialog" aria-labelledby="bio-name-1175ksh-phone">
+            <div class="sdt-bio-panel-wrapper">
+              <div class="sdt-bio-panel__inner">
+                <div class="sdt-bio-panel">
+                  <div class="sdt-bio-panel__contact-buttons">
+                    <div class="sdt-bio-panel__contact-buttons-wrapper">
+                      <div class="sdt-bio-panel__contact-btn-container">
+                        <div class="bio-panel__contact-btn" data-border="true" tabindex="0">
+                          <div class="sdt-bio-panel__contact-btn-inner">
+                            <div class="sdt-bio-panel__contact-btn-text-wrapper">
                               <p class="sdt-text bio-panel__btn-text">
                                 <a class="sdt-text sdt-bio-link" href="mailto:PTousey@sdtlaw.com">Email: PTousey@sdtlaw.com</a>
                               </p>
@@ -947,10 +980,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="framer-h10esh-container">
-                        <div class="framer-htz6z framer-yBnve framer-1myzxpd framer-v-1myzxpd bio-panel__contact-btn" data-border="true" tabindex="0">
-                          <div class="framer-1gcx4ct">
-                            <div class="framer-1v239di">
+                      <div class="sdt-bio-panel__contact-btn-container">
+                        <div class="bio-panel__contact-btn" data-border="true" tabindex="0">
+                          <div class="sdt-bio-panel__contact-btn-inner">
+                            <div class="sdt-bio-panel__contact-btn-text-wrapper">
                               <p class="sdt-text bio-panel__btn-text">
                                 <a class="sdt-text sdt-bio-link" href="tel:651-739-9615">Phone: 651-739-9615</a>
                               </p>
@@ -961,26 +994,26 @@
                     </div>
                   </div>
                 </div>
-                <div class="framer-1tylomn">
-                  <div class="framer-q1pkkl">
-                    <div class="framer-8w1a51">
-                      <div class="framer-1iwl8ez">
+                <div class="sdt-bio-panel__content">
+                  <div class="sdt-bio-header">
+                    <div class="sdt-bio-header__name-wrapper">
+                      <div class="sdt-bio-header__name-container">
                         <h5 class="sdt-text sdt-bio-name" id="bio-name-1175ksh-phone">Phyllis O. Tousey</h5>
                       </div>
-                      <div class="framer-1iuxll0">
+                      <div class="sdt-bio-header__title-container">
                         <h6 class="sdt-text sdt-bio-title">Of-Counsel</h6>
                       </div>
                     </div>
-                    <div class="framer-lg96rc sdt-bio-close" tabindex="0" role="button" aria-label="Close">
-                      <div class="framer-ppocil-container">
-                        <div class="framer-uGpGz framer-9s8yld framer-v-9s8yld" tabindex="0">
-                          <div class="framer-IRM4W framer-fpfecg"></div>
+                    <div class="sdt-bio-close sdt-bio-header__close-container" tabindex="0" role="button" aria-label="Close">
+                      <div class="sdt-bio-header__close-icon-container">
+                        <div tabindex="0">
+                          <div></div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="framer-1l9pg37">
-                    <div class="framer-1oxt2pa" aria-hidden="true">
+                  <div class="sdt-bio-header__divider">
+                    <div class="sdt-bio-header__divider-inner" aria-hidden="true">
                       <div class="svgContainer">
                         <svg viewBox="0 0 300 3" preserveAspectRatio="none" width="100%" height="100%">
                           <line x1="0" y1="1.5" x2="300" y2="1.5" stroke="rgb(126, 104, 62)" stroke-width="0.5"/>
@@ -988,12 +1021,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="framer-181u6dr">
-                    <div class="framer-mvaie3">
+                  <div class="sdt-bio-content">
+                    <div class="sdt-bio-content__heading-wrapper">
                       <h5 class="sdt-text sdt-bio-section-heading">Biography</h5>
                     </div>
-                    <div class="framer-1t70tm6">
-                      <div class="framer-z3ffe3">
+                    <div class="sdt-bio-content__text-area">
+                      <div class="sdt-bio-content__text-container">
                         <p class="sdt-text sdt-bio-text">Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the areas of criminal defense, child protection and Federal Indian Law. Phyllis is passionate about justice, equality, and criminal defense work and it shows in her aggressive negotiation skills. She worked tirelessly both in and out of the courtroom on her clients' behalf. Prior to founding the firm in 2003, Phyllis worked as a criminal defense attorney at the Neighborhood Justice Center representing low-income defendants and as staff attorney at the Indian Child Welfare Law Center, a non-profit public defense organization that represents American Indian parents in child protection cases governed by the Indian Child Welfare Act.</p>
                           <p class="sdt-text sdt-bio-text">Outside of the court room, Phyllis is committed to advancing equality and justice for all people, but particularly for Native and economically disadvantaged peoples. She has volunteered with The Partners in Human Rights Education Program at the University of Minnesota Human Rights Center. Prior to becoming an attorney she was a college-level educator and counselor in Women's and Indian Studies. She has also owned and operated several successful small businesses. Phyllis is a member of the Minnesota American Indian Bar Association.</p>
                           <p class="sdt-text sdt-bio-text">Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds a B.A. in Broad Area Art and a M.S. of Education in Guidance Counseling from the University of Wisconsin, River Falls; and a Juris Doctorate from the University of Minnesota.</p>

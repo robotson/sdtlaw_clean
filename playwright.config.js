@@ -75,7 +75,7 @@ module.exports = defineConfig({
       name: 'tablet',
       use: {
         browserName: 'chromium',
-        viewport: { width: 900, height: 1200 },
+        viewport: { width: 900, height: 840 },
       },
     },
     {
@@ -91,7 +91,7 @@ module.exports = defineConfig({
   webServer: {
     command: 'npx serve . -l 9753',
     url: 'http://localhost:9753',
-    reuseExistingServer: false,  // Always start fresh to avoid conflicts
+    reuseExistingServer: true,  // Reuse existing server if already running
     timeout: 10000,
   },
 });
