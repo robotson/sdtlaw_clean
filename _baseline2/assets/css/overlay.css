@@ -1,0 +1,479 @@
+/**
+ * Bio Panel Overlay Styles
+ * Extracted directly from Framer site's actual CSS
+ *
+ * Key behaviors:
+ * - NOT a fixed modal - portal is positioned absolutely
+ * - Page scrolls normally with overlay open (no scroll lock)
+ * - No dark backdrop overlay
+ * - Widths: 345px phone, 758px tablet, 1123px desktop
+ */
+
+/* ============================================
+   Portal Container (injected into body)
+   ============================================ */
+
+.bio-portal {
+  position: absolute;
+  /* top and left are set by JS based on viewport centering */
+  z-index: 11;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bio-portal--visible {
+  opacity: 1;
+}
+
+.bio-portal--closing {
+  opacity: 0;
+}
+
+/* ============================================
+   Bio Panel - Base Styles
+   ============================================ */
+
+.bio-panel {
+  background-color: rgb(242, 240, 233);
+}
+
+/* ============================================
+   Close Button - X Icon using CSS mask
+   ============================================ */
+
+.bio-panel__close {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.bio-panel__close-icon {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(126, 104, 62);
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.bio-panel__close:hover .bio-panel__close-icon,
+.bio-panel__close:focus .bio-panel__close-icon {
+  background-color: rgb(193, 43, 32);
+}
+
+.bio-panel__close:focus {
+  outline: none;
+}
+
+/* ============================================
+   Desktop Layout - Absolute Positioning
+   Extracted from Framer CSS: .framer-SXe1m selectors
+   Width: 1123px desktop
+   ============================================ */
+
+.bio-panel--desktop {
+  width: var(--panel-width, 1123px);
+  height: 738px;
+  border-radius: var(--panel-radius, 24px 24px 0 0);
+  position: relative;
+}
+
+.bio-panel--desktop .bio-panel__container {
+  background-color: rgb(242, 240, 233);
+  border-radius: var(--panel-radius, 24px 24px 0 0);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header - Framer: top: 32px, left: 50%, width: 92%, transform: translateX(-50%) */
+.bio-panel--desktop .bio-panel__header {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.bio-panel--desktop .bio-panel__header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.bio-panel--desktop .bio-panel__header-text {
+  flex: 0 0 auto;
+}
+
+/* Divider line - full width below header */
+.bio-panel--desktop .bio-panel__divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-panel--desktop .bio-panel__divider svg {
+  width: 100%;
+  height: 3px;
+  display: block;
+}
+
+/* Profile Card - Framer: bottom: 56px, left: 41px, height: 539px, width: 24%, gap: 183px */
+.bio-panel--desktop .bio-panel__profile {
+  position: absolute;
+  bottom: 56px;
+  left: 41px;
+  height: 539px;
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  gap: 183px;
+}
+
+/* Photo container - Framer: gap: 10px, column layout */
+.bio-panel--desktop .bio-panel__photo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Image wrapper - Framer: 270x294 with overflow:hidden and border-radius:4px */
+.bio-panel--desktop .bio-panel__photo-wrapper {
+  width: 270px;
+  height: 294px;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Image inner - insets are set per-attorney via inline styles in JS */
+.bio-panel--desktop .bio-panel__photo-inner {
+  position: absolute;
+  /* top, right, bottom, left set via inline style */
+}
+
+.bio-panel--desktop .bio-panel__photo-inner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: inherit;
+}
+
+/* Contact info - Framer: gap: 5px, column layout */
+.bio-panel--desktop .bio-panel__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bio-panel--desktop .bio-panel__contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 220px;
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: rgb(65, 33, 4);
+}
+
+.bio-panel--desktop .bio-panel__contact-row svg {
+  flex-shrink: 0;
+}
+
+.bio-panel--desktop .bio-panel__contact-row a {
+  color: rgb(126, 104, 62);
+  text-decoration: none;
+}
+
+.bio-panel--desktop .bio-panel__contact-row a:hover {
+  color: rgb(181, 158, 116);
+}
+
+/* Address - Framer: height: 41px, width: 192px */
+.bio-panel--desktop .bio-panel__address {
+  height: 41px;
+  width: 192px;
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 14px;
+  color: rgb(65, 33, 4);
+  line-height: 1.25em;
+}
+
+.bio-panel--desktop .bio-panel__address p {
+  margin: 0;
+}
+
+.bio-panel--desktop .bio-panel__address strong {
+  font-weight: 600;
+}
+
+/* Biography - Framer: bottom: 56px, left: 514px, width: 50%, gap: 22px */
+.bio-panel--desktop .bio-panel__biography {
+  position: absolute;
+  bottom: 56px;
+  left: 514px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Bio heading wrapper - Framer: height: 36px, width: 552px */
+.bio-panel--desktop .bio-panel__section-title {
+  height: 36px;
+  width: 552px;
+  margin: 0;
+}
+
+/* Bio text wrapper - Framer: height: 395px, width: 552px, overflow: auto */
+.bio-panel--desktop .bio-panel__bio {
+  height: 395px;
+  width: 552px;
+  overflow: auto;
+  position: relative;
+}
+
+/* Bio text inner - positioned to allow scrolling */
+.bio-panel--desktop .bio-panel__bio-inner {
+  position: relative;
+}
+
+/* ============================================
+   Phone Layout - Single Column
+   Width: 345px with side margins
+   Order: contact buttons, header, divider, bio
+   ============================================ */
+
+.bio-panel--phone {
+  width: 345px;
+}
+
+.bio-panel--phone .bio-panel__contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 0 16px;
+}
+
+.bio-panel--phone .bio-panel__contact-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 20px;
+  border: 1px solid rgb(65, 33, 4);
+  border-radius: 40px;
+  background: transparent;
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 16px;
+  color: rgb(65, 33, 4);
+  text-decoration: none;
+  text-align: center;
+}
+
+.bio-panel--phone .bio-panel__contact-btn:hover {
+  background: rgba(65, 33, 4, 0.05);
+}
+
+.bio-panel--phone .bio-panel__bio-page {
+  background-color: rgb(242, 240, 233);
+  padding: 20px;
+}
+
+.bio-panel--phone .bio-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.bio-panel--phone .bio-panel__header-text {
+  flex: 1;
+}
+
+.bio-panel--phone .bio-panel__divider {
+  margin: 0 0 20px;
+}
+
+.bio-panel--phone .bio-panel__divider svg {
+  display: block;
+}
+
+.bio-panel--phone .bio-panel__biography {
+  width: 100%;
+}
+
+/* ============================================
+   Typography - Extracted from Framer presets
+   ============================================ */
+
+/* Name heading - red (Framer preset: framer-styles-preset-19zukr5) */
+.bio-panel .framer-styles-preset-19zukr5 {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-weight: 500;
+  color: rgb(193, 43, 32);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25em;
+}
+
+/* Title - brown (Framer: 28px, 400 weight, 1.25em line-height, -0.01em letter-spacing) */
+.bio-panel .framer-styles-preset-gxwp0p {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-weight: 400;
+  color: rgb(65, 33, 4);
+  margin: 0;
+  line-height: 1.25em;
+  letter-spacing: -0.01em;
+}
+
+/* Body text (Framer preset: framer-styles-preset-19qfgc8) */
+.bio-panel .framer-styles-preset-19qfgc8 {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.25em;
+  letter-spacing: -0.01em;
+  color: rgb(65, 33, 4);
+  margin: 0;
+}
+
+/* Paragraph spacing for bio text */
+.bio-panel .framer-styles-preset-19qfgc8 + .framer-styles-preset-19qfgc8 {
+  margin-top: 20px;
+}
+
+/* ============================================
+   Responsive Typography Sizes
+   ============================================ */
+
+/* Phone (max-width: 809px) */
+@media (max-width: 809px) {
+  .bio-panel .framer-styles-preset-19zukr5 {
+    font-size: 24px;
+  }
+
+  .bio-panel .framer-styles-preset-gxwp0p {
+    font-size: 16px;
+  }
+
+  .bio-panel .framer-styles-preset-19qfgc8 {
+    font-size: 15px;
+  }
+}
+
+/* Tablet (810px - 1199px) - Framer uses different layout */
+@media (min-width: 810px) and (max-width: 1199px) {
+  .bio-panel .framer-styles-preset-19zukr5 {
+    font-size: 19px;
+  }
+
+  .bio-panel .framer-styles-preset-gxwp0p {
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  .bio-panel .framer-styles-preset-19qfgc8 {
+    font-size: 12px;
+  }
+
+  /* Tablet container adjustments - Framer: height: 498px, width: 758px */
+  .bio-panel--desktop {
+    height: 498px;
+  }
+
+  /* Profile - Framer: bottom: 38px, gap: 123.53px, height: 364px, left: 28px */
+  .bio-panel--desktop .bio-panel__profile {
+    bottom: 38px;
+    left: 28px;
+    height: 364px;
+    gap: 123.53px;
+  }
+
+  /* Photo wrapper - smaller on tablet */
+  .bio-panel--desktop .bio-panel__photo-wrapper {
+    width: 210px;
+    height: 246px;
+  }
+
+  /* Image inner - insets set per-attorney via inline styles in JS */
+
+  /* Contact rows - Framer: gap: 3.38px, width: 149px */
+  .bio-panel--desktop .bio-panel__contact {
+    gap: 3.38px;
+  }
+
+  .bio-panel--desktop .bio-panel__contact-row {
+    gap: 6.75px;
+    width: 149px;
+  }
+
+  /* Address - Framer: height: 28px, width: 130px */
+  .bio-panel--desktop .bio-panel__address {
+    height: 28px;
+    width: 130px;
+  }
+
+  /* Biography - Framer: bottom: 38px, left: 347px, gap: 14.85px */
+  .bio-panel--desktop .bio-panel__biography {
+    bottom: 38px;
+    left: 347px;
+    gap: 14.85px;
+  }
+
+  /* Bio heading/text - Framer: height: 24px/267px, width: 373px */
+  .bio-panel--desktop .bio-panel__section-title {
+    height: 24px;
+    width: 373px;
+  }
+
+  .bio-panel--desktop .bio-panel__bio {
+    height: 267px;
+    width: 373px;
+  }
+
+  /* Header - Framer: gap: 7.43px, top: 22px */
+  .bio-panel--desktop .bio-panel__header {
+    top: 22px;
+    gap: 7.43px;
+  }
+
+  /* Divider line - Framer: height: 2px */
+  .bio-panel--desktop .bio-panel__divider svg {
+    height: 2px;
+  }
+}
+
+/* Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .bio-panel .framer-styles-preset-19zukr5 {
+    font-size: 28px;
+  }
+
+  .bio-panel .framer-styles-preset-gxwp0p {
+    font-size: 28px;
+  }
+
+  .bio-panel .framer-styles-preset-19qfgc8 {
+    font-size: 18px;
+  }
+}
+
+/* ============================================
+   Legacy overlay support (if still used)
+   ============================================ */
+
+#overlay {
+  display: none;
+}

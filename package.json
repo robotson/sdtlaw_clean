@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test _tests/current-site.spec.js _tests/baseline.spec.js",
+    "test": "npx playwright test _tests/current-site.spec.js _tests/baseline.spec.js _tests/baseline2.spec.js",
     "test:ui": "npx playwright test --ui",
     "test:phone": "npx playwright test --project=phone",
     "test:tablet": "npx playwright test --project=tablet",
@@ -26,6 +26,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.56.1",
+    "pngjs": "^7.0.0",
     "serve": "^14.2.5"
   }
 }

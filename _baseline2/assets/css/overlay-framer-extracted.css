@@ -1,0 +1,347 @@
+/**
+ * Extracted CSS for bio overlay (from framer-base.css)
+ * Auto-generated - do not edit manually
+ * Classes used in the Framer bio overlay component
+ */
+
+.site-root .framer-esofaf,.site-root .framer-569m3q,.site-root .framer-it8b2v {
+  height:800px;
+  
+overflow:var(--overflow-clip-fallback,clip);
+  
+will-change:var(--framer-will-change-effect-override,transform);
+  
+width:1200px;
+  
+position:relative
+}
+
+.site-root .framer-ymfe32-container,.site-root .framer-ie57f3-container,.site-root .framer-1oqpj2s-container {
+  will-change:var(--framer-will-change-effect-override,transform);
+  
+flex:none;
+  
+position:absolute;
+  
+inset:0 0 -551px
+}
+
+.site-flex .framer-styles-preset-19zukr5:not(.rich-text-wrapper),.site-flex .framer-styles-preset-19zukr5.rich-text-wrapper h5 {
+  --framer-font-family:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-open-type-features:normal;
+  
+--framer-font-size:28px;
+  
+--framer-font-style:normal;
+  
+--framer-font-style-bold:normal;
+  
+--framer-font-style-bold-italic:italic;
+  
+--framer-font-style-italic:italic;
+  
+--framer-font-variation-axes:normal;
+  
+--framer-font-weight:500;
+  
+--framer-font-weight-bold:700;
+  
+--framer-font-weight-bold-italic:700;
+  
+--framer-font-weight-italic:500;
+  
+--framer-letter-spacing:-.01em;
+  
+--framer-line-height:1.25em;
+  
+--framer-paragraph-spacing:0px;
+  
+--framer-text-alignment:start;
+  
+--framer-text-color:var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5,#c12b20);
+  
+--framer-text-decoration:none;
+  
+--framer-text-stroke-color:initial;
+  
+--framer-text-stroke-width:initial;
+  
+--framer-text-transform:none
+}
+
+.site-flex .framer-styles-preset-19zukr5:not(.rich-text-wrapper),.site-flex .framer-styles-preset-19zukr5.rich-text-wrapper h5 {
+  --framer-font-family:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-open-type-features:normal;
+  
+--framer-font-size:19px;
+  
+--framer-font-style:normal;
+  
+--framer-font-style-bold:normal;
+  
+--framer-font-style-bold-italic:italic;
+  
+--framer-font-style-italic:italic;
+  
+--framer-font-variation-axes:normal;
+  
+--framer-font-weight:500;
+  
+--framer-font-weight-bold:700;
+  
+--framer-font-weight-bold-italic:700;
+  
+--framer-font-weight-italic:500;
+  
+--framer-letter-spacing:-.01em;
+  
+--framer-line-height:1.25em;
+  
+--framer-paragraph-spacing:0px;
+  
+--framer-text-alignment:start;
+  
+--framer-text-color:var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5,#c12b20);
+  
+--framer-text-decoration:none;
+  
+--framer-text-stroke-color:initial;
+  
+--framer-text-stroke-width:initial;
+  
+--framer-text-transform:none
+}
+
+.site-flex .framer-styles-preset-19zukr5:not(.rich-text-wrapper),.site-flex .framer-styles-preset-19zukr5.rich-text-wrapper h5 {
+  --framer-font-family:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-open-type-features:normal;
+  
+--framer-font-size:24px;
+  
+--framer-font-style:normal;
+  
+--framer-font-style-bold:normal;
+  
+--framer-font-style-bold-italic:italic;
+  
+--framer-font-style-italic:italic;
+  
+--framer-font-variation-axes:normal;
+  
+--framer-font-weight:500;
+  
+--framer-font-weight-bold:700;
+  
+--framer-font-weight-bold-italic:700;
+  
+--framer-font-weight-italic:500;
+  
+--framer-letter-spacing:-.01em;
+  
+--framer-line-height:1.25em;
+  
+--framer-paragraph-spacing:0px;
+  
+--framer-text-alignment:start;
+  
+--framer-text-color:var(--token-130b1e3d-0b5e-478c-94b5-4cdceae92ef5,#c12b20);
+  
+--framer-text-decoration:none;
+  
+--framer-text-stroke-color:initial;
+  
+--framer-text-stroke-width:initial;
+  
+--framer-text-transform:none
+}
+
+.site-breakpoints .framer-styles-preset-19qfgc8:not(.rich-text-wrapper),.site-breakpoints .framer-styles-preset-19qfgc8.rich-text-wrapper p {
+  --framer-font-family:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-open-type-features:normal;
+  
+--framer-font-size:18px;
+  
+--framer-font-style:normal;
+  
+--framer-font-style-bold:normal;
+  
+--framer-font-style-bold-italic:italic;
+  
+--framer-font-style-italic:italic;
+  
+--framer-font-variation-axes:normal;
+  
+--framer-font-weight:400;
+  
+--framer-font-weight-bold:700;
+  
+--framer-font-weight-bold-italic:700;
+  
+--framer-font-weight-italic:400;
+  
+--framer-letter-spacing:-.01em;
+  
+--framer-line-height:1.25em;
+  
+--framer-paragraph-spacing:20px;
+  
+--framer-text-alignment:start;
+  
+--framer-text-color:var(--token-0f5e4091-1546-4168-9926-3cb355a3b190,#412104);
+  
+--framer-text-decoration:none;
+  
+--framer-text-stroke-color:initial;
+  
+--framer-text-stroke-width:initial;
+  
+--framer-text-transform:none
+}
+
+.site-breakpoints .framer-styles-preset-19qfgc8:not(.rich-text-wrapper),.site-breakpoints .framer-styles-preset-19qfgc8.rich-text-wrapper p {
+  --framer-font-family:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-open-type-features:normal;
+  
+--framer-font-size:12px;
+  
+--framer-font-style:normal;
+  
+--framer-font-style-bold:normal;
+  
+--framer-font-style-bold-italic:italic;
+  
+--framer-font-style-italic:italic;
+  
+--framer-font-variation-axes:normal;
+  
+--framer-font-weight:400;
+  
+--framer-font-weight-bold:700;
+  
+--framer-font-weight-bold-italic:700;
+  
+--framer-font-weight-italic:400;
+  
+--framer-letter-spacing:-.01em;
+  
+--framer-line-height:1.25em;
+  
+--framer-paragraph-spacing:0px;
+  
+--framer-text-alignment:start;
+  
+--framer-text-color:var(--token-0f5e4091-1546-4168-9926-3cb355a3b190,#412104);
+  
+--framer-text-decoration:none;
+  
+--framer-text-stroke-color:initial;
+  
+--framer-text-stroke-width:initial;
+  
+--framer-text-transform:none
+}
+
+.site-breakpoints .framer-styles-preset-19qfgc8:not(.rich-text-wrapper),.site-breakpoints .framer-styles-preset-19qfgc8.rich-text-wrapper p {
+  --framer-font-family:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-bold-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-family-italic:"EB Garamond","EB Garamond Placeholder",serif;
+  
+--framer-font-open-type-features:normal;
+  
+--framer-font-size:15px;
+  
+--framer-font-style:normal;
+  
+--framer-font-style-bold:normal;
+  
+--framer-font-style-bold-italic:italic;
+  
+--framer-font-style-italic:italic;
+  
+--framer-font-variation-axes:normal;
+  
+--framer-font-weight:400;
+  
+--framer-font-weight-bold:700;
+  
+--framer-font-weight-bold-italic:700;
+  
+--framer-font-weight-italic:400;
+  
+--framer-letter-spacing:-.01em;
+  
+--framer-line-height:1.3em;
+  
+--framer-paragraph-spacing:0px;
+  
+--framer-text-alignment:start;
+  
+--framer-text-color:var(--token-0f5e4091-1546-4168-9926-3cb355a3b190,#412104);
+  
+--framer-text-decoration:none;
+  
+--framer-text-stroke-color:initial;
+  
+--framer-text-stroke-width:initial;
+  
+--framer-text-transform:none
+}
+
+.site-root .framer-esofaf,.site-root .framer-569m3q,.site-root .framer-it8b2v {
+  width:810px;
+  
+height:561px
+}
+
+.site-root .framer-ymfe32-container,.site-root .framer-ie57f3-container,.site-root .framer-1oqpj2s-container {
+  height:1112px;
+  
+bottom:-558px;
+  
+top:unset
+}
+
+.site-root .framer-esofaf {
+  width:380px;
+  
+height:852px
+}

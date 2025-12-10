@@ -148,7 +148,7 @@ test.describe('Current Site Snapshots', () => {
       test(`${attorney.name} bio overlay`, async ({ page }) => {
         await page.goto('/');
         await page.waitForLoadState('networkidle');
-        await page.waitForFunction(() => document.fonts.ready);
+        await page.evaluate(() => document.fonts.ready);
         await scrollToTeam(page);
         await openBioOverlay(page, attorney.id);
 
@@ -268,7 +268,10 @@ test.describe('Functional Checks', () => {
       await menuToggle.click();
       await page.waitForTimeout(400);
 
-      const teamLink = await findVisible(page, '.framer-lxsbpu a[href="#team"]');
+      const teamLink = await findVisible(
+        page,
+        '.sdt-mobile-menu a[href="#team"], .framer-lxsbpu a[href="#team"]'
+      );
       if (teamLink) {
         await teamLink.click();
         await page.waitForTimeout(800);

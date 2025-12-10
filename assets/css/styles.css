@@ -3887,9 +3887,25 @@ body {
     position: absolute;
     inset: 0px 17px 19px 18px;
     width: 345px;
-    height: 833px;
+    height: 759px; /* extend bottom slightly without moving inner content */
     overflow: hidden;
     gap: 0;
+  }
+
+  /* Phone Bio Overlay - Card background shell
+     Draw the rounded cream card as a pseudo-element so we can
+     nudge it horizontally without moving the inner content */
+  .bio-portal .sdt-bio-panel-wrapper::before,
+  .sdt-bio-overlay--phone .sdt-bio-panel-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2px; /* shift background 2px right to even out left/right clipping */
+    width: 340px; /* narrower card background; inner layout unchanged */
+    height: 833px;
+    background-color: rgb(242, 240, 233);
+    border-radius: 24px;
+    pointer-events: none;
   }
 
   /* Phone Bio Overlay - Panel inner (replaces .framer-1udf3gh) */
@@ -4145,8 +4161,13 @@ body {
     width: 342px;
     height: 525px;
     gap: 12px;
-  padding: 15.5px 16px 16px;
+    padding: 15.5px 16px 16px;
     overflow: hidden;
+  }
+
+  /* Fine-tune Phyllis phone overlay: reduce gap between heading and body text only for her */
+  .sdt-bio-overlay--phone[data-bio-id="attorney-pot"] .sdt-bio-content {
+    gap: 11.5px;
   }
 
   /* Phone Bio Overlay - Biography heading wrapper (replaces .framer-mvaie3) */

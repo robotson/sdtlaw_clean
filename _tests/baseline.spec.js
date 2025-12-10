@@ -130,7 +130,7 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
     test('hero section', async ({ page }) => {
       await page.goto('/_baseline/');
       await page.waitForLoadState('networkidle');
-      await page.waitForFunction(() => document.fonts.ready);
+      await page.evaluate(() => document.fonts.ready);
       await page.waitForTimeout(500);
 
       await expect(page).toHaveScreenshot('baseline-hero.png', { fullPage: false });
@@ -139,7 +139,7 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
     test('team section', async ({ page }) => {
       await page.goto('/_baseline/');
       await page.waitForLoadState('networkidle');
-      await page.waitForFunction(() => document.fonts.ready);
+      await page.evaluate(() => document.fonts.ready);
       await scrollToTeam(page);
 
       await expect(page).toHaveScreenshot('baseline-team.png', { fullPage: false });
@@ -148,7 +148,7 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
     test('footer section', async ({ page }) => {
       await page.goto('/_baseline/');
       await page.waitForLoadState('networkidle');
-      await page.waitForFunction(() => document.fonts.ready);
+      await page.evaluate(() => document.fonts.ready);
       await scrollToFooter(page);
 
       await expect(page).toHaveScreenshot('baseline-footer.png', { fullPage: false });
@@ -159,7 +159,7 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
       
       await page.goto('/_baseline/');
       await page.waitForLoadState('networkidle');
-      await page.waitForFunction(() => document.fonts.ready);
+      await page.evaluate(() => document.fonts.ready);
       await page.waitForTimeout(500);
       await navigateToFirm(page);
 
@@ -171,7 +171,7 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
       
       await page.goto('/_baseline/');
       await page.waitForLoadState('networkidle');
-      await page.waitForFunction(() => document.fonts.ready);
+      await page.evaluate(() => document.fonts.ready);
 
       // Open mobile menu
       const menuToggle = await findVisible(page, '.sdt-menu-toggle, .framer-1080cat');
@@ -238,7 +238,7 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
       test(`${attorney.name} bio overlay`, async ({ page }) => {
         await page.goto('/_baseline/');
         await page.waitForLoadState('networkidle');
-        await page.waitForFunction(() => document.fonts.ready);
+        await page.evaluate(() => document.fonts.ready);
         await scrollToTeam(page);
         await openBioOverlay(page, attorney.id);
 
@@ -253,7 +253,7 @@ test.describe('Baseline Snapshots (from _baseline/index.html)', () => {
 
       await page.goto('/_baseline/');
       await page.waitForLoadState('networkidle');
-      await page.waitForFunction(() => document.fonts.ready);
+      await page.evaluate(() => document.fonts.ready);
 
       // Baseline uses Framer classes: .framer-1080cat for toggle, .framer-lxsbpu for menu
       const menuToggle = await findVisible(page, '.sdt-menu-toggle, .framer-1080cat');
@@ -298,7 +298,7 @@ test.describe('Current vs Baseline Comparison', () => {
   test('hero matches baseline', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForFunction(() => document.fonts.ready);
+    await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(500);
 
     // Compare current site against baseline snapshot
@@ -308,7 +308,7 @@ test.describe('Current vs Baseline Comparison', () => {
   test('team section matches baseline', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForFunction(() => document.fonts.ready);
+    await page.evaluate(() => document.fonts.ready);
     await scrollToTeam(page);
 
     await expect(page).toHaveScreenshot('baseline-team.png', { fullPage: false });
@@ -317,7 +317,7 @@ test.describe('Current vs Baseline Comparison', () => {
   test('footer matches baseline', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForFunction(() => document.fonts.ready);
+    await page.evaluate(() => document.fonts.ready);
     await scrollToFooter(page);
 
     await expect(page).toHaveScreenshot('baseline-footer.png', { fullPage: false });
@@ -328,7 +328,7 @@ test.describe('Current vs Baseline Comparison', () => {
     
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForFunction(() => document.fonts.ready);
+    await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(500);
     await navigateToFirm(page);
 
@@ -340,7 +340,7 @@ test.describe('Current vs Baseline Comparison', () => {
     
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForFunction(() => document.fonts.ready);
+    await page.evaluate(() => document.fonts.ready);
 
     // Open mobile menu
     const menuToggle = await findVisible(page, '.sdt-menu-toggle');
@@ -403,7 +403,7 @@ test.describe('Current vs Baseline Comparison', () => {
 
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForFunction(() => document.fonts.ready);
+    await page.evaluate(() => document.fonts.ready);
 
     const menuToggle = await findVisible(page, '.sdt-menu-toggle');
     if (menuToggle) {
@@ -430,7 +430,7 @@ test.describe('Current vs Baseline Comparison', () => {
     test(`${attorney.name} bio matches baseline`, async ({ page }) => {
       await page.goto('/');
       await page.waitForLoadState('networkidle');
-      await page.waitForFunction(() => document.fonts.ready);
+      await page.evaluate(() => document.fonts.ready);
       await scrollToTeam(page);
       await openBioOverlayCurrent(page, attorney.semanticId);
 

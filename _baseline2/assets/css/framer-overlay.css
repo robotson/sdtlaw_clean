@@ -1,0 +1,678 @@
+/**
+ * Framer Overlay Styles - Extracted directly from Framer source
+ * This file contains the actual Framer CSS classes used for bio overlays
+ */
+
+/* ============================================
+   Container - The main panel container
+   ============================================ */
+
+/* Dialog wrapper - positions the panel */
+.framer-SXe1m .framer-rop5of {
+  flex: 0 0 auto;
+  gap: 0px;
+  height: 738px;
+  left: 38px;
+  overflow: visible;
+  position: absolute;
+  top: 62px;
+  width: 1123px;
+}
+
+/* Main container - cream background with rounded top corners */
+.framer-SXe1m .framer-1edteoo {
+  bottom: 0px;
+  flex: 0 0 auto;
+  height: 738px;
+  left: calc(50% - 561.5px);
+  position: absolute;
+  width: 1123px;
+  background-color: rgb(242, 240, 233);
+  border-radius: 24px 24px 0px 0px;
+}
+
+/* ============================================
+   Profile Column (left side)
+   ============================================ */
+
+/* Profile card container - absolute positioned */
+.framer-SXe1m .framer-1k4oklk {
+  place-content: flex-start;
+  align-items: flex-start;
+  bottom: 56px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 183px;
+  height: 539px;
+  left: 41px;
+  overflow: clip;
+  padding: 0px;
+  position: absolute;
+  width: 24%;
+}
+
+/* Photo section */
+.framer-SXe1m .framer-1p8rmjh {
+  place-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* Image alignment wrapper */
+.framer-SXe1m .framer-1pi7at3 {
+  place-content: center;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: min-content;
+}
+
+/* Contact info section */
+.framer-SXe1m .framer-8siksq {
+  place-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 5px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* Email and Phone rows */
+.framer-SXe1m .framer-hz73lt,
+.framer-SXe1m .framer-e0xee0 {
+  place-content: center;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 220px;
+}
+
+/* Icon wrappers */
+.framer-SXe1m .framer-vu0rjv,
+.framer-SXe1m .framer-1749sgb {
+  flex: 0 0 auto;
+  flex-shrink: 0;
+}
+
+/* Text wrappers in contact rows */
+.framer-SXe1m .framer-go17s5,
+.framer-SXe1m .framer-fly4qh {
+  flex: 0 0 auto;
+  width: 192px;
+  height: 18px;
+}
+
+/* Contact row text - ensure 14px EB Garamond font */
+.framer-SXe1m .framer-hz73lt .framer-text,
+.framer-SXe1m .framer-e0xee0 .framer-text,
+.framer-SXe1m .framer-hz73lt a,
+.framer-SXe1m .framer-e0xee0 a {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Link color - gold */
+.framer-SXe1m .framer-styles-preset-bmzyej,
+.framer-SXe1m a.framer-styles-preset-bmzyej {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif !important;
+  color: rgb(126, 104, 62);
+  text-decoration: none;
+}
+
+.framer-SXe1m .framer-styles-preset-bmzyej:hover,
+.framer-SXe1m a.framer-styles-preset-bmzyej:hover {
+  color: rgb(181, 158, 116);
+}
+
+/* Address section */
+.framer-SXe1m .framer-1cexlgh {
+  flex: 0 0 auto;
+  gap: 0px;
+  height: 41px;
+  overflow: visible;
+  position: relative;
+  width: 192px;
+}
+
+/* Address text - desktop size */
+.framer-SXe1m .framer-1cexlgh > p.framer-text {
+  font-size: 14px;
+  line-height: 1.25em;
+  margin: 0;
+}
+
+/* ============================================
+   Image Container - Per-Attorney Variants
+   ============================================ */
+
+/* Image component container - constrains height to clip overflow */
+.framer-SXe1m .framer-mxqsoo-container {
+  flex: 0 0 auto;
+  height: 273px;
+  position: relative;
+  width: 269px;
+}
+
+/* Base image container - critical for proper image cropping */
+.framer-DCJfz {
+  display: flex;
+  position: relative;
+  overflow: clip;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image wrapper - clips the inner image */
+.framer-DCJfz .framer-1si2gga {
+  flex: 0 0 auto;
+  height: 294px;
+  overflow: hidden;
+  position: relative;
+  width: 270px;
+  border-radius: 4px;
+}
+
+/* Image inner - positioned with negative insets to crop */
+.framer-DCJfz .framer-o0j920 {
+  position: absolute;
+  overflow: visible;
+  flex: 0 0 auto;
+}
+
+/* Background image wrapper */
+.framer-DCJfz [data-framer-background-image-wrapper] {
+  position: absolute;
+  border-radius: inherit;
+  inset: 0px;
+}
+
+.framer-DCJfz [data-framer-background-image-wrapper] img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: center center;
+  object-fit: cover;
+}
+
+/* Tammy (default variant) - Desktop insets */
+.framer-DCJfz.framer-v-1l6mjat .framer-o0j920 {
+  inset: -1px -6px -38px -6px;
+}
+
+/* Heidi variant - Desktop insets */
+.framer-DCJfz.framer-v-6s7snk .framer-o0j920 {
+  inset: 0px -1px -116px -12px;
+}
+
+/* Phyllis variant - Desktop insets */
+.framer-DCJfz.framer-v-1ouk2x7 .framer-o0j920 {
+  inset: -15px -22px -74px -2px;
+}
+
+/* ============================================
+   Biography Column (right side)
+   ============================================ */
+
+/* Biography container - absolute positioned */
+.framer-SXe1m .framer-1etjeh {
+  place-content: flex-start;
+  align-items: flex-start;
+  bottom: 56px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 22px;
+  height: min-content;
+  left: 514px;
+  overflow: clip;
+  padding: 0px;
+  position: absolute;
+  width: 50%;
+}
+
+/* Bio heading wrapper */
+.framer-SXe1m .framer-1lwgu3k {
+  display: flex;
+  flex: 0 0 auto;
+  height: 36px;
+  position: relative;
+  white-space: pre-wrap;
+  width: 552px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Bio text scrollable area */
+.framer-SXe1m .framer-1xy1e9l {
+  flex: 0 0 auto;
+  gap: 0px;
+  height: 395px;
+  overflow: auto;
+  position: relative;
+  width: 552px;
+}
+
+/* Bio text container */
+.framer-SXe1m .framer-4h32yw {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  inset: 0px 0px -271px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ============================================
+   Header Section
+   ============================================ */
+
+/* Header container - centered with transform */
+.framer-SXe1m .framer-1hrcbbx {
+  place-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 11px;
+  height: min-content;
+  left: 50%;
+  overflow: visible;
+  padding: 0px;
+  position: absolute;
+  top: 32px;
+  width: 92%;
+  transform: translateX(-50%);
+}
+
+/* Header row - name/title and close button */
+.framer-SXe1m .framer-9biryz {
+  place-content: flex-start space-between;
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* Name/title text wrapper */
+.framer-SXe1m .framer-wjb9w6 {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  height: auto;
+  position: relative;
+  white-space: pre;
+  width: auto;
+}
+
+/* Divider line container */
+.framer-SXe1m .framer-17say78 {
+  place-content: center;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 10px;
+  height: min-content;
+  overflow: clip;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
+/* SVG line */
+.framer-SXe1m .framer-ovoqie {
+  flex: 0 0 auto;
+  height: 3px;
+  position: relative;
+  width: 100%;
+}
+
+/* ============================================
+   Typography Presets
+   ============================================ */
+
+/* Name heading - red color */
+.framer-styles-preset-19zukr5 {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25em;
+  color: rgb(193, 43, 32);
+  margin: 0;
+}
+
+/* Bio text preset - brown color */
+.framer-styles-preset-19qfgc8 {
+  font-family: "EB Garamond", "EB Garamond Placeholder", serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.25em;
+  color: rgb(65, 33, 4);
+  margin: 0;
+}
+
+/* Link preset - gold color */
+.framer-styles-preset-bmzyej {
+  color: rgb(126, 104, 62);
+  text-decoration: none;
+}
+
+.framer-styles-preset-bmzyej:hover {
+  color: rgb(181, 158, 116);
+}
+
+/* ============================================
+   Tablet Breakpoint (810px - 1199px)
+   ============================================ */
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  .framer-SXe1m .framer-rop5of {
+    height: 498px;
+    width: 758px;
+    inset: 24px 26px auto 26px;
+    transform: none;
+  }
+
+  .framer-SXe1m .framer-1edteoo {
+    height: 498px;
+    left: calc(50% - 379px);
+    right: auto;
+    width: 758px;
+    inset: 0px auto auto calc(50% - 379px);
+  }
+
+  .framer-SXe1m .framer-1k4oklk {
+    bottom: 38px;
+    gap: 123.53px;
+    height: 364px;
+    left: 28px;
+  }
+
+  .framer-SXe1m .framer-1p8rmjh,
+  .framer-SXe1m .framer-17say78 {
+    gap: 6.75px;
+  }
+
+  /* Tablet image container sizes - critical for proper cropping */
+  .framer-SXe1m .framer-1pi7at3 {
+    gap: 6.75px;
+    width: 181px;
+    height: 184px;
+  }
+
+  .framer-SXe1m .framer-mxqsoo-container {
+    width: 181px;
+    height: 184px;
+  }
+
+  .framer-SXe1m .framer-8siksq {
+    gap: 3.38px;
+  }
+
+  .framer-SXe1m .framer-hz73lt,
+  .framer-SXe1m .framer-e0xee0 {
+    gap: 6.75px;
+    width: 149px;
+    height: 12px;
+  }
+
+  /* Email icon - tablet size (scale from 18x12 to 12x8) */
+  .framer-SXe1m .framer-vu0rjv {
+    width: 12px !important;
+    height: 8px !important;
+    position: relative;
+    inset: 0px;
+  }
+  .framer-SXe1m .framer-vu0rjv .svgContainer,
+  .framer-SXe1m .framer-vu0rjv > div {
+    display: block;
+    overflow: visible;
+  }
+  .framer-SXe1m .framer-vu0rjv svg {
+    display: block;
+    width: 12px !important;
+    height: 8px !important;
+    overflow: hidden;
+  }
+
+  /* Phone icon - tablet size (scale from 17x17 to 12x11) */
+  .framer-SXe1m .framer-1749sgb {
+    width: 12px !important;
+    height: 11px !important;
+    position: relative;
+    inset: 0px;
+  }
+  .framer-SXe1m .framer-1749sgb .svgContainer,
+  .framer-SXe1m .framer-1749sgb > div {
+    display: block;
+    overflow: visible;
+  }
+  .framer-SXe1m .framer-1749sgb svg {
+    display: block;
+    width: 12px !important;
+    height: 11px !important;
+    overflow: hidden;
+  }
+
+  /* Email text container - tablet size */
+  .framer-SXe1m .framer-go17s5 {
+    width: 130px;
+    height: 12px;
+    position: relative;
+    gap: 0px;
+  }
+
+  /* Phone text container - tablet size */
+  .framer-SXe1m .framer-fly4qh {
+    width: 130px;
+    height: 12px;
+    position: relative;
+    gap: 0px;
+  }
+
+  /* Contact info text - tablet font size and positioning */
+  .framer-SXe1m .framer-8siksq .framer-text {
+    font-size: 9px;
+  }
+
+  /* Direct child paragraph - tablet styling (our template uses p directly) */
+  .framer-SXe1m .framer-go17s5 > p.framer-text,
+  .framer-SXe1m .framer-fly4qh > p.framer-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    inset: 0px;
+    height: 12px;
+    margin: 0;
+  }
+
+  /* Inner link text spans - tablet styling */
+  .framer-SXe1m .framer-go17s5 .framer-text a,
+  .framer-SXe1m .framer-fly4qh .framer-text a {
+    display: block;
+    width: 130px;
+    min-width: auto;
+    min-height: auto;
+  }
+
+  .framer-SXe1m .framer-1cexlgh {
+    height: 28px;
+    width: 130px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Address text paragraphs - tablet size */
+  .framer-SXe1m .framer-1cexlgh > p.framer-text {
+    display: block;
+    width: 111.28px;
+    height: 11.25px;
+    font-size: 9px;
+    line-height: 1.25em;
+    margin: 0;
+  }
+
+  .framer-SXe1m .framer-1etjeh {
+    bottom: 38px;
+    gap: 14.85px;
+    left: 347px;
+  }
+
+  .framer-SXe1m .framer-1lwgu3k {
+    height: 24px;
+    width: 373px;
+  }
+
+  .framer-SXe1m .framer-1xy1e9l {
+    height: 267px;
+    width: 373px;
+  }
+
+  .framer-SXe1m .framer-1hrcbbx {
+    gap: 7.43px;
+    top: 22px;
+  }
+
+  .framer-SXe1m .framer-ovoqie {
+    height: 2px;
+  }
+
+  /* Tammy tablet - framer-v-ys564s */
+  .framer-DCJfz.framer-v-ys564s .framer-1si2gga {
+    height: 246px;
+    width: 210px;
+    border-radius: 2.7px;
+  }
+  .framer-DCJfz.framer-v-ys564s .framer-o0j920 {
+    inset: 10px -9px -32px -2px;
+  }
+
+  /* Heidi tablet - framer-v-1hckrtz */
+  .framer-DCJfz.framer-v-1hckrtz .framer-1si2gga {
+    height: 245px;
+    width: 210px;
+    border-radius: 2.7px;
+  }
+  .framer-DCJfz.framer-v-1hckrtz .framer-o0j920 {
+    inset: 13px -5px -61px 0px;
+  }
+
+  /* Phyllis tablet - framer-v-1g5jp36 */
+  .framer-DCJfz.framer-v-1g5jp36 .framer-1si2gga {
+    height: 236px;
+    width: 210px;
+    border-radius: 2.7px;
+  }
+  .framer-DCJfz.framer-v-1g5jp36 .framer-o0j920 {
+    inset: -6px -9px -30px -4px;
+  }
+
+  /* Typography adjustments */
+  .framer-styles-preset-19zukr5 {
+    font-size: 19px;
+  }
+
+  .framer-styles-preset-19qfgc8 {
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   Close Button
+   ============================================ */
+
+.framer-a94fu2-container {
+  opacity: 1;
+}
+
+.framer-uGpGz.framer-9s8yld {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 10px;
+}
+
+.framer-IRM4W.framer-fpfecg {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(126, 104, 62);
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.framer-uGpGz.framer-9s8yld:hover .framer-IRM4W.framer-fpfecg {
+  background-color: rgb(193, 43, 32);
+}
+
+/* ============================================
+   Overlay Animation (slide up + fade in)
+   Matches Framer: ~140px slide, 500ms, ease-out spring
+   ============================================ */
+
+/* Dialog - slide up + fade in */
+.bio-portal [role="dialog"] {
+  opacity: 0;
+  transform: translateY(140px);
+  transform-origin: 50% 0%;
+  will-change: transform, opacity;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.bio-portal [role="dialog"].animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}

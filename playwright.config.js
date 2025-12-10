@@ -66,7 +66,7 @@ module.exports = defineConfig({
       use: {
         browserName: 'chromium',
         viewport: { width: 390, height: 844 },
-        deviceScaleFactor: 3,
+        deviceScaleFactor: 2,
         isMobile: true,
         hasTouch: true,
       },

@@ -1,0 +1,485 @@
+[
+  {
+    "env": "baseline",
+    "attorney": "Tammy",
+    "data": {
+      "dialog": {
+        "tag": "DIV",
+        "classes": "framer-esofaf animate-in",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": 86.71875,
+        "left": 5,
+        "width": 380,
+        "height": 852
+      },
+      "content": null,
+      "textContainer": {
+        "tag": "DIV",
+        "classes": "framer-1t70tm6",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": 260.515625,
+        "left": 40.5,
+        "width": 298,
+        "height": 451
+      },
+      "paragraphs": [
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-nis8ht > div.framer-1utqvcz > div.framer-mpug57 > div.framer-rjug5d-container > div.framer-htz6z.framer-yBnve.framer-1myzxpd.framer-v-1myzxpd > div.framer-1gcx4ct > div.framer-1v239di > p.framer-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 744.625,
+          "height": 19.203125,
+          "textSample": "Email: TSwanson@sdtlaw.com"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-nis8ht > div.framer-1utqvcz > div.framer-mpug57 > div.framer-h10esh-container > div.framer-htz6z.framer-yBnve.framer-1myzxpd.framer-v-1myzxpd > div.framer-1gcx4ct > div.framer-1v239di > p.framer-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 793.625,
+          "height": 19.203125,
+          "textSample": "Phone: 651-739-9615"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 260.515625,
+          "height": 312,
+          "textSample": "Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas "
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 587.515625,
+          "height": 175.5,
+          "textSample": "Tammy brings not only a courtroom perspective to her cases, but a judicial one a"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 778.015625,
+          "height": 78,
+          "textSample": "Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She hol"
+        }
+      ]
+    }
+  },
+  {
+    "env": "baseline",
+    "attorney": "Heidi",
+    "data": {
+      "dialog": {
+        "tag": "DIV",
+        "classes": "framer-esofaf animate-in",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": 86.71875,
+        "left": 5,
+        "width": 380,
+        "height": 852
+      },
+      "content": null,
+      "textContainer": {
+        "tag": "DIV",
+        "classes": "framer-1t70tm6",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": 260.515625,
+        "left": 40.5,
+        "width": 298,
+        "height": 451
+      },
+      "paragraphs": [
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-nis8ht > div.framer-1utqvcz > div.framer-mpug57 > div.framer-rjug5d-container > div.framer-htz6z.framer-yBnve.framer-1myzxpd.framer-v-1myzxpd > div.framer-1gcx4ct > div.framer-1v239di > p.framer-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 744.625,
+          "height": 19.203125,
+          "textSample": "Email: HDrobnick@sdtlaw.com"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-nis8ht > div.framer-1utqvcz > div.framer-mpug57 > div.framer-h10esh-container > div.framer-htz6z.framer-yBnve.framer-1myzxpd.framer-v-1myzxpd > div.framer-1gcx4ct > div.framer-1v239di > p.framer-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 793.625,
+          "height": 19.203125,
+          "textSample": "Phone: 651-739-9615"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 260.515625,
+          "height": 195,
+          "textSample": "Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 470.515625,
+          "height": 97.5,
+          "textSample": "Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois F"
+        }
+      ]
+    }
+  },
+  {
+    "env": "baseline",
+    "attorney": "Phyllis",
+    "data": {
+      "dialog": {
+        "tag": "DIV",
+        "classes": "framer-esofaf animate-in",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": -53.28125,
+        "left": 5,
+        "width": 380,
+        "height": 852
+      },
+      "content": null,
+      "textContainer": {
+        "tag": "DIV",
+        "classes": "framer-1t70tm6",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": 120.515625,
+        "left": 40.5,
+        "width": 298,
+        "height": 451
+      },
+      "paragraphs": [
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-nis8ht > div.framer-1utqvcz > div.framer-mpug57 > div.framer-rjug5d-container > div.framer-htz6z.framer-yBnve.framer-1myzxpd.framer-v-1myzxpd > div.framer-1gcx4ct > div.framer-1v239di > p.framer-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 604.625,
+          "height": 19.203125,
+          "textSample": "Email: PTousey@sdtlaw.com"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-nis8ht > div.framer-1utqvcz > div.framer-mpug57 > div.framer-h10esh-container > div.framer-htz6z.framer-yBnve.framer-1myzxpd.framer-v-1myzxpd > div.framer-1gcx4ct > div.framer-1v239di > p.framer-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 653.625,
+          "height": 19.203125,
+          "textSample": "Phone: 651-739-9615"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 120.515625,
+          "height": 292.5,
+          "textSample": "Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the ar"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 428.015625,
+          "height": 214.5,
+          "textSample": "Outside of the court room, Phyllis is committed to advancing equality and justic"
+        },
+        {
+          "path": "div.bio-portal.framer-qTkKF.framer-Ay79T.framer-rU5N4.framer-ja2YZ.framer-qE7ir.framer-avUKP.framer-mfAtc.framer-yNZqP.bio-portal--visible > div > div.framer-esofaf.animate-in > div.framer-185jkq1.hidden-72rtr7.hidden-1xilv83 > div.framer-1udf3gh > div.framer-1tylomn > div.framer-181u6dr > div.framer-1t70tm6 > div.framer-z3ffe3 > p.framer-text.framer-styles-preset-19qfgc8",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 657.515625,
+          "height": 117,
+          "textSample": "Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds"
+        }
+      ]
+    }
+  },
+  {
+    "env": "current",
+    "attorney": "Tammy",
+    "data": {
+      "dialog": {
+        "tag": "DIV",
+        "classes": "sdt-bio-dialog animate-in",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "matrix(1, 0, 0, 1, 0, 3.9486)",
+        "top": 91.38610076904297,
+        "left": 5,
+        "width": 380,
+        "height": 852
+      },
+      "content": {
+        "tag": "DIV",
+        "classes": "sdt-bio-panel__content",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "matrix(1, 0, 0, 1, -171, 0)",
+        "top": 115.38610076904297,
+        "left": 24.5,
+        "width": 342,
+        "height": 617
+      },
+      "textContainer": {
+        "tag": "DIV",
+        "classes": "sdt-bio-content__text-container",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "matrix(1, 0, 0, 1, 0, -5.7)",
+        "top": 259.68609619140625,
+        "left": 40.5,
+        "width": 298,
+        "height": 451
+      },
+      "paragraphs": [
+        {
+          "path": "div#bio-overlays > div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel > div.sdt-bio-panel__contact-buttons > div.sdt-bio-panel__contact-buttons-wrapper > div.sdt-bio-panel__contact-btn-container > div.bio-panel__contact-btn > div.sdt-bio-panel__contact-btn-inner > div.sdt-bio-panel__contact-btn-text-wrapper > p.sdt-text.bio-panel__btn-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 746.8861083984375,
+          "height": 24,
+          "textSample": "Email: TSwanson@sdtlaw.com"
+        },
+        {
+          "path": "div#bio-overlays > div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel > div.sdt-bio-panel__contact-buttons > div.sdt-bio-panel__contact-buttons-wrapper > div.sdt-bio-panel__contact-btn-container > div.bio-panel__contact-btn > div.sdt-bio-panel__contact-btn-inner > div.sdt-bio-panel__contact-btn-text-wrapper > p.sdt-text.bio-panel__btn-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 795.8861083984375,
+          "height": 24,
+          "textSample": "Phone: 651-739-9615"
+        },
+        {
+          "path": "div#bio-overlays > div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 259.68609619140625,
+          "height": 312,
+          "textSample": "Tammy is a shareholder at Swanson, Drobnick & Tousey and practices in the areas "
+        },
+        {
+          "path": "div#bio-overlays > div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 586.6860961914062,
+          "height": 175.5,
+          "textSample": "Tammy brings not only a courtroom perspective to her cases, but a judicial one a"
+        },
+        {
+          "path": "div#bio-overlays > div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 777.1860961914062,
+          "height": 78,
+          "textSample": "Tammy Swanson is affiliated with the White Earth Band of Ojibwe Indians. She hol"
+        }
+      ]
+    }
+  },
+  {
+    "env": "current",
+    "attorney": "Heidi",
+    "data": {
+      "dialog": {
+        "tag": "DIV",
+        "classes": "sdt-bio-dialog animate-in",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "matrix(1, 0, 0, 1, 0, 3.01599)",
+        "top": 90.45348358154297,
+        "left": 5,
+        "width": 380,
+        "height": 852
+      },
+      "content": {
+        "tag": "DIV",
+        "classes": "sdt-bio-panel__content",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "matrix(1, 0, 0, 1, -171, 0)",
+        "top": 114.45348358154297,
+        "left": 24.5,
+        "width": 342,
+        "height": 617
+      },
+      "textContainer": {
+        "tag": "DIV",
+        "classes": "sdt-bio-content__text-container",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": 264.4534912109375,
+        "left": 40.5,
+        "width": 298,
+        "height": 451
+      },
+      "paragraphs": [
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel > div.sdt-bio-panel__contact-buttons > div.sdt-bio-panel__contact-buttons-wrapper > div.sdt-bio-panel__contact-btn-container > div.bio-panel__contact-btn > div.sdt-bio-panel__contact-btn-inner > div.sdt-bio-panel__contact-btn-text-wrapper > p.sdt-text.bio-panel__btn-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 745.9534912109375,
+          "height": 24,
+          "textSample": "Email: HDrobnick@sdtlaw.com"
+        },
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel > div.sdt-bio-panel__contact-buttons > div.sdt-bio-panel__contact-buttons-wrapper > div.sdt-bio-panel__contact-btn-container > div.bio-panel__contact-btn > div.sdt-bio-panel__contact-btn-inner > div.sdt-bio-panel__contact-btn-text-wrapper > p.sdt-text.bio-panel__btn-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 794.9534912109375,
+          "height": 24,
+          "textSample": "Phone: 651-739-9615"
+        },
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 264.4534912109375,
+          "height": 195,
+          "textSample": "Heidi is the managing shareholder of Swanson, Drobnick & Tousey and practices in"
+        },
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 474.4534912109375,
+          "height": 97.5,
+          "textSample": "Heidi A. Drobnick is an enrolled member of the Minnesota Chippewa Tribe - Bois F"
+        }
+      ]
+    }
+  },
+  {
+    "env": "current",
+    "attorney": "Phyllis",
+    "data": {
+      "dialog": {
+        "tag": "DIV",
+        "classes": "sdt-bio-dialog animate-in",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "matrix(1, 0, 0, 1, 0, 5.12674)",
+        "top": -47.435760498046875,
+        "left": 5,
+        "width": 380,
+        "height": 852
+      },
+      "content": {
+        "tag": "DIV",
+        "classes": "sdt-bio-panel__content",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "matrix(1, 0, 0, 1, -171, 0)",
+        "top": -23.435760498046875,
+        "left": 24.5,
+        "width": 342,
+        "height": 617
+      },
+      "textContainer": {
+        "tag": "DIV",
+        "classes": "sdt-bio-content__text-container",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "normal",
+        "transform": "none",
+        "top": 126.56423950195312,
+        "left": 40.5,
+        "width": 298,
+        "height": 450.9999694824219
+      },
+      "paragraphs": [
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel > div.sdt-bio-panel__contact-buttons > div.sdt-bio-panel__contact-buttons-wrapper > div.sdt-bio-panel__contact-btn-container > div.bio-panel__contact-btn > div.sdt-bio-panel__contact-btn-inner > div.sdt-bio-panel__contact-btn-text-wrapper > p.sdt-text.bio-panel__btn-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 608.064208984375,
+          "height": 24,
+          "textSample": "Email: PTousey@sdtlaw.com"
+        },
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel > div.sdt-bio-panel__contact-buttons > div.sdt-bio-panel__contact-buttons-wrapper > div.sdt-bio-panel__contact-btn-container > div.bio-panel__contact-btn > div.sdt-bio-panel__contact-btn-inner > div.sdt-bio-panel__contact-btn-text-wrapper > p.sdt-text.bio-panel__btn-text",
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "transform": "none",
+          "top": 657.064208984375,
+          "height": 24,
+          "textSample": "Phone: 651-739-9615"
+        },
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 126.56423950195312,
+          "height": 292.5,
+          "textSample": "Phyllis is Of-Counsel at Swanson, Drobnick & Tousey. Phyllis practiced in the ar"
+        },
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 434.0642395019531,
+          "height": 214.49996948242188,
+          "textSample": "Outside of the court room, Phyllis is committed to advancing equality and justic"
+        },
+        {
+          "path": "div.sdt-bio-overlay.sdt-bio-overlay--phone.bio-portal.bio-portal--visible > div > div.sdt-bio-dialog.animate-in > div.sdt-bio-panel-wrapper > div.sdt-bio-panel__inner > div.sdt-bio-panel__content > div.sdt-bio-content > div.sdt-bio-content__text-area > div.sdt-bio-content__text-container > p.sdt-text.sdt-bio-text",
+          "fontSize": "15px",
+          "lineHeight": "19.5px",
+          "transform": "none",
+          "top": 663.564208984375,
+          "height": 117,
+          "textSample": "Phyllis Tousey is an enrolled member of the Brothertown Indian Nation. She holds"
+        }
+      ]
+    }
+  }
+]
